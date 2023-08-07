@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bootstrap on Hinode</title>
+    <link>https://futurelog.xyz/en/tags/bootstrap/</link>
+    <description>Recent content in bootstrap on Hinode</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2023 Mark Dumay.</copyright>
+    <lastBuildDate>Sat, 05 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://futurelog.xyz/en/tags/bootstrap/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bootstrap elements</title>
+      <link>https://futurelog.xyz/en/blog/bootstrap-elements/</link>
+      <pubDate>Sat, 05 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/en/blog/bootstrap-elements/</guid>
+      <description>Hinode provides several shortcodes that wrap common Bootstrap components. Refer to the official documentation for more details.
+Accordion As an example, the following shortcode displays an accordion with three elements, of which the first element is expanded.
+Accordion Item #1 This is the first item&amp;rsquo;s accordion body. It supports HTML content. The item is shown by adding the value show to the class argument. Accordion Item #2 This is the second item&amp;rsquo;s accordion body.</description>
+    </item>
+    
+    <item>
+      <title>Components</title>
+      <link>https://futurelog.xyz/en/blog/components/</link>
+      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/en/blog/components/</guid>
+      <description>Hinode provides several shortcodes on top of the common Bootstrap elements. Refer to the official documentation for more details.
+Formula (KaTeX) As an example, the following markdown renders two formulas using the KaTeX typesetting library.
+This is an inline $-b \pm \sqrt{b^2 - 4ac} \over 2a$ formula
+This is not an inline formula:
+$$x = a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \frac{1}{a_3 + a_4}}}$$
+$$\forall x \in X, \quad \exists y \leq \epsilon$$</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -4,7 +4,7 @@ paginate = 9
 enableGitInfo = true
 
 # additional settings
-baseURL = "https://template.gethinode.com/"
+baseURL = "https://futurelog.xyz/"
 canonifyURLs = false
 enableEmoji = true
 enableRobotsTXT = true
@@ -15,6 +15,8 @@ enableInlineShortcodes = true
 ignoreErrors = ["error-remote-getjson"]
 
 timeout = "120s"
+
+publishDir = "docs"
 
 languageCode = "en-us"
 defaultContentLanguage = "en"

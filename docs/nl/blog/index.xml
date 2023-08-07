@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Hinode</title>
+    <link>https://futurelog.xyz/nl/blog/</link>
+    <description>Recent content in Blog on Hinode</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>nl</language>
+    <copyright>Copyright © 2023 Mark Dumay.</copyright><atom:link href="https://futurelog.xyz/nl/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bootstrap elementen</title>
+      <link>https://futurelog.xyz/nl/blog/bootstrap-elementen/</link>
+      <pubDate>Sat, 05 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/nl/blog/bootstrap-elementen/</guid>
+      <description>Hinode beschikt over meerdere shortcodes om eenvoudig Bootstrap elementen toe te voegen aan je website. De officiële documentatie bevat meer details.
+Accordion De volgende shortcode toont een accordion met drie elementen, waarvan de eerste is uitgeklapt.
+Accordion Item #1 Dit is de inhoud van het eerste element met ondersteuning voor HTML. De waarde show voor het argument class geeft aan dat het element uitgeklapt moet worden. Accordion Item #2 Dit is de inhoud van het tweede element.</description>
+    </item>
+    
+    <item>
+      <title>Componenten</title>
+      <link>https://futurelog.xyz/nl/blog/componenten/</link>
+      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/nl/blog/componenten/</guid>
+      <description>Hinode biedt meerdere shortcodes aan bovenop de gebruikelijke Bootstrap elementen. Zie de officiële documentatie voor meer details.
+Formule (KaTeX) De volgende markdown code genereert twee wiskundige formules met behulp van KaTeX.
+Dit is een inline $-b \pm \sqrt{b^2 - 4ac} \over 2a$ formule
+Dit is geen inline formule:
+$$x = a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \frac{1}{a_3 + a_4}}}$$
+$$\forall x \in X, \quad \exists y \leq \epsilon$$
+markdown Dit is een inline $-b \pm \sqrt{b^2 - 4ac} \over 2a$ formule Dit is geen inline formule: $$x = a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \frac{1}{a_3 + a_4}}}$$ $$\forall x \in X, \quad \exists y \leq \epsilon$$ Map De volgende shortcode toont een interactieve kaart van Amsterdam.</description>
+    </item>
+    
+    <item>
+      <title>Template</title>
+      <link>https://futurelog.xyz/nl/blog/template/</link>
+      <pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/nl/blog/template/</guid>
+      <description>Hinode is zowel beschikbaar als template en als main theme. De template gebruikt npm om te koppelen naar de laatst beschikbare versie van Hinode. Het is als zodanig minder geschikt als je van plan bent om veel onderdelen aan te passen. Andersom, het main theme maakt het makkelijker om veel wijzigingen door te voeren, maar is niet automatisch synchroon met de laatste versie van Hinode.</description>
+    </item>
+    
+    <item>
+      <title>Vierde artikel</title>
+      <link>https://futurelog.xyz/nl/blog/vierde-artikel/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/nl/blog/vierde-artikel/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam finibus libero in felis accumsan, vitae imperdiet metus vehicula. Quisque nec dignissim purus. In id dui porta sapien posuere viverra nec vel nisi. Sed varius tincidunt lectus, quis sagittis felis interdum id. Proin purus odio, ultrices auctor libero convallis, volutpat gravida turpis. Ut commodo metus orci, quis sagittis lectus rhoncus non. Nulla et lectus tortor. Suspendisse quam felis, molestie non odio quis, consequat venenatis orci.</description>
+    </item>
+    
+    <item>
+      <title>Derde artikel</title>
+      <link>https://futurelog.xyz/nl/blog/derde-artikel/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/nl/blog/derde-artikel/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id scelerisque ligula. Vestibulum eu lorem tortor. Suspendisse tristique ultrices mauris, non maximus lorem faucibus in. Suspendisse sagittis eleifend dapibus. Curabitur dignissim luctus sapien eu consequat. Proin congue dui vel ipsum bibendum varius. Pellentesque cursus nisi metus, egestas eleifend ipsum sollicitudin vitae. Sed vitae erat elementum, semper turpis sed, molestie nulla.
+Nulla molestie ultrices vehicula. Etiam iaculis, erat a blandit blandit, nulla tellus dapibus ligula, vitae venenatis turpis diam non felis.</description>
+    </item>
+    
+    <item>
+      <title>Tweede artikel</title>
+      <link>https://futurelog.xyz/nl/blog/tweede-artikel/</link>
+      <pubDate>Tue, 01 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/nl/blog/tweede-artikel/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non sollicitudin sapien. Ut porttitor lectus eu tempor ultricies. Sed semper tincidunt nibh pellentesque condimentum. Vivamus dictum sem eu rhoncus semper. Vestibulum convallis congue tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris magna urna, egestas sit amet ligula quis, viverra semper arcu. Praesent laoreet nunc vitae nulla posuere facilisis.
+Nunc eget dignissim ex, sed lobortis leo.</description>
+    </item>
+    
+    <item>
+      <title>Eerste artikel</title>
+      <link>https://futurelog.xyz/nl/blog/eerste-artikel/</link>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/nl/blog/eerste-artikel/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate, ante in luctus congue, leo risus semper justo, vel consequat sapien lectus quis ipsum. In imperdiet urna justo. Nulla vel pellentesque ipsum. Cras congue feugiat dolor ac aliquam. Pellentesque eget dui venenatis, ultrices urna ac, vehicula nibh. Curabitur est lectus, dapibus eu vehicula non, malesuada et dui. Nam enim nulla, egestas et nunc non, elementum aliquet justo. Mauris euismod mauris sapien, eget vestibulum odio dictum sit amet.</description>
+    </item>
+    
+  </channel>
+</rss>

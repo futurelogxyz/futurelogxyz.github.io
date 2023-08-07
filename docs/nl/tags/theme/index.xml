@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>theme on Hinode</title>
+    <link>https://futurelog.xyz/nl/tags/theme/</link>
+    <description>Recent content in theme on Hinode</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>nl</language>
+    <copyright>Copyright © 2023 Mark Dumay.</copyright>
+    <lastBuildDate>Fri, 17 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://futurelog.xyz/nl/tags/theme/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Template</title>
+      <link>https://futurelog.xyz/nl/blog/template/</link>
+      <pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/nl/blog/template/</guid>
+      <description>Hinode is zowel beschikbaar als template en als main theme. De template gebruikt npm om te koppelen naar de laatst beschikbare versie van Hinode. Het is als zodanig minder geschikt als je van plan bent om veel onderdelen aan te passen. Andersom, het main theme maakt het makkelijker om veel wijzigingen door te voeren, maar is niet automatisch synchroon met de laatste versie van Hinode.</description>
+    </item>
+    
+  </channel>
+</rss>

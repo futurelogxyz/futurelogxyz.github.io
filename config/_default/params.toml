@@ -15,7 +15,7 @@
 
 [docs]
     version = "0.9"
-    basePath = "_vendor/github.com/gethinode/hinode"
+    basePath = "/"
 
 [home]
     sections = ["blog", "projects"]
@@ -108,6 +108,7 @@
     logo = "img/favicon.png"
     sizes = [16, 32, 48]
 
+# toml-docs-start theme-colors
 [style]
     primary = "#2596be"
     secondary = "#6c757d"
@@ -120,6 +121,7 @@
     themeOpacity = "10"
     themeFont = "Inter"
     themeFontPath = "/fonts"
+# toml-docs-end theme-colors
 
 [schema]
     type = "Organization"

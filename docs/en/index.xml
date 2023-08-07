@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Welcome to Hinode! on Hinode</title>
+    <link>https://futurelog.xyz/en/</link>
+    <description>Recent content in Welcome to Hinode! on Hinode</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2023 Mark Dumay.</copyright><atom:link href="https://futurelog.xyz/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bootstrap elements</title>
+      <link>https://futurelog.xyz/en/blog/bootstrap-elements/</link>
+      <pubDate>Sat, 05 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/en/blog/bootstrap-elements/</guid>
+      <description>Hinode provides several shortcodes that wrap common Bootstrap components. Refer to the official documentation for more details.
+Accordion As an example, the following shortcode displays an accordion with three elements, of which the first element is expanded.
+Accordion Item #1 This is the first item&amp;rsquo;s accordion body. It supports HTML content. The item is shown by adding the value show to the class argument. Accordion Item #2 This is the second item&amp;rsquo;s accordion body.</description>
+    </item>
+    
+    <item>
+      <title>Components</title>
+      <link>https://futurelog.xyz/en/blog/components/</link>
+      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/en/blog/components/</guid>
+      <description>Hinode provides several shortcodes on top of the common Bootstrap elements. Refer to the official documentation for more details.
+Formula (KaTeX) As an example, the following markdown renders two formulas using the KaTeX typesetting library.
+This is an inline $-b \pm \sqrt{b^2 - 4ac} \over 2a$ formula
+This is not an inline formula:
+$$x = a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \frac{1}{a_3 + a_4}}}$$
+$$\forall x \in X, \quad \exists y \leq \epsilon$$</description>
+    </item>
+    
+    <item>
+      <title>Template</title>
+      <link>https://futurelog.xyz/en/blog/template/</link>
+      <pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/en/blog/template/</guid>
+      <description>Hinode is available as a template, and a main theme. The template uses npm to link to the latest available version of the Hinode theme. As such, it is less applicable if you plan to customize a lot. Vice versa, the main theme allows for heavy customization, but is not synchronized with the latest available Hinode theme automatically.</description>
+    </item>
+    
+    <item>
+      <title>Fourth post</title>
+      <link>https://futurelog.xyz/en/blog/fourth-post/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/en/blog/fourth-post/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam finibus libero in felis accumsan, vitae imperdiet metus vehicula. Quisque nec dignissim purus. In id dui porta sapien posuere viverra nec vel nisi. Sed varius tincidunt lectus, quis sagittis felis interdum id. Proin purus odio, ultrices auctor libero convallis, volutpat gravida turpis. Ut commodo metus orci, quis sagittis lectus rhoncus non. Nulla et lectus tortor. Suspendisse quam felis, molestie non odio quis, consequat venenatis orci.</description>
+    </item>
+    
+    <item>
+      <title>Third post</title>
+      <link>https://futurelog.xyz/en/blog/third-post/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/en/blog/third-post/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id scelerisque ligula. Vestibulum eu lorem tortor. Suspendisse tristique ultrices mauris, non maximus lorem faucibus in. Suspendisse sagittis eleifend dapibus. Curabitur dignissim luctus sapien eu consequat. Proin congue dui vel ipsum bibendum varius. Pellentesque cursus nisi metus, egestas eleifend ipsum sollicitudin vitae. Sed vitae erat elementum, semper turpis sed, molestie nulla.
+Nulla molestie ultrices vehicula. Etiam iaculis, erat a blandit blandit, nulla tellus dapibus ligula, vitae venenatis turpis diam non felis.</description>
+    </item>
+    
+    <item>
+      <title>Second post</title>
+      <link>https://futurelog.xyz/en/blog/second-post/</link>
+      <pubDate>Tue, 01 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/en/blog/second-post/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non sollicitudin sapien. Ut porttitor lectus eu tempor ultricies. Sed semper tincidunt nibh pellentesque condimentum. Vivamus dictum sem eu rhoncus semper. Vestibulum convallis congue tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris magna urna, egestas sit amet ligula quis, viverra semper arcu. Praesent laoreet nunc vitae nulla posuere facilisis.
+Nunc eget dignissim ex, sed lobortis leo.</description>
+    </item>
+    
+    <item>
+      <title>First post</title>
+      <link>https://futurelog.xyz/en/blog/first-post/</link>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/en/blog/first-post/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate, ante in luctus congue, leo risus semper justo, vel consequat sapien lectus quis ipsum. In imperdiet urna justo. Nulla vel pellentesque ipsum. Cras congue feugiat dolor ac aliquam. Pellentesque eget dui venenatis, ultrices urna ac, vehicula nibh. Curabitur est lectus, dapibus eu vehicula non, malesuada et dui. Nam enim nulla, egestas et nunc non, elementum aliquet justo. Mauris euismod mauris sapien, eget vestibulum odio dictum sit amet.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://futurelog.xyz/en/about/</link>
+      <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/en/about/</guid>
+      <description>Bootstrap framework Build fast, responsive sites with Bootstrap 5. Easily customize your site with the source Sass files.
+Full text search Search your site with FlexSearch, a full-text search library with zero dependencies.
+Development tools Use Node Package Manager to automate the build process and to keep track of dependencies.
+Additional features include:
+Switching between light mode and dark mode Support for multiple languages Reusable Bootstrap components through configurable shortcodes and partials Versioned documentation, including sidebar navigation and version switcher Embedded comments through light-weight integration with GitHub via utteranc.</description>
+    </item>
+    
+    <item>
+      <title>Another project</title>
+      <link>https://futurelog.xyz/en/projects/another-project/</link>
+      <pubDate>Thu, 15 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/en/projects/another-project/</guid>
+      <description>Vivamus iaculis metus sed magna porta tincidunt. Aliquam molestie eget orci eu elementum. Integer pellentesque dolor sit amet suscipit maximus. Duis consequat, massa vitae volutpat rhoncus, erat augue venenatis velit, a auctor leo nulla nec turpis. Nunc ut libero sapien. Vivamus aliquam ultrices vestibulum. Sed sit amet vestibulum dolor, ut vehicula diam. Sed felis purus, feugiat vitae vulputate quis, sodales vitae dui. Pellentesque volutpat fringilla sapien varius condimentum. Integer odio massa, pharetra at bibendum vitae, aliquam nec erat.</description>
+    </item>
+    
+    <item>
+      <title>Sample project</title>
+      <link>https://futurelog.xyz/en/projects/sample-project/</link>
+      <pubDate>Thu, 15 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/en/projects/sample-project/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://futurelog.xyz/en/browserconfig.xml</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/en/browserconfig.xml</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
