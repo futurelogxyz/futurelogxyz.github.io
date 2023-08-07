@@ -69,3 +69,91 @@
   url = "/projects/another-project/"
   parent = "Projects"
   weight = 2
+
+[[footer]]
+  name = "Links"
+  weight = 10
+
+[[footer]]
+  parent = "Links"
+  name = "Home"
+  pageRef = "/"
+  weight = 1
+
+[[footer]]
+  parent = "Links"
+  name = "About"
+  pageRef = "/about/"
+  weight = 10
+  [footer.params]
+    alias = true
+
+[[footer]]
+  parent = "Links"
+  name = "Docs"
+  pageRef = "/docs/"
+  weight = 20
+
+[[footer]]
+  parent = "Links"
+  name = "Components"
+  pageRef = "/components/"
+  weight = 30
+  [footer.params]
+    alias = true
+
+[[footer]]
+  parent = "Links"
+  name = "Releases"
+  pageRef = "/releases/"
+  weight = 40
+
+[[footer]]
+  name = "Guides"
+  weight = 20
+
+[[footer]]
+  parent = "Guides"
+  name = "Getting started"
+  pageRef = "/guides/editing"
+  weight = 10
+
+[[footer]]
+  parent = "Guides"
+  name = "Developing modules"
+  pageRef = "/guides/modules"
+  weight = 20
+
+[[footer]]
+  parent = "Guides"
+  name = "Optimization"
+  pageRef = "/guides/optimization"
+  weight = 30
+
+[[footer]]
+  parent = "Guides"
+  name = "Versioning"
+  pageRef = "/guides/versioning"
+  weight = 40
+
+[[footer]]
+  name = "Community"
+  weight = 30
+
+[[footer]]
+  parent = "Community"
+  name = "Issues"
+  url = "https://github.com/gethinode/hinode/issues"
+  weight = 10
+
+[[footer]]
+  parent = "Community"
+  name = "Discussions"
+  url = "https://github.com/gethinode/hinode/discussions"
+  weight = 20
+
+[[footer]]
+  parent = "Community"
+  name = "Contribute"
+  pageRef = "/contribute"
+  weight = 30
