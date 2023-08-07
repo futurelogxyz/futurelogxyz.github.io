@@ -1,6 +1,6 @@
 ---
-author: Mark Dumay
-title: Welcome to Hinode!
+author: wallezen
+title: Log for The Future
 ---
 
-A clean documentation and blog theme for your Hugo site based on Bootstrap 5.
+leave things better than you found them
