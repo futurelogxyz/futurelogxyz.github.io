@@ -4,9 +4,9 @@
     weight = 1
     [zh.params.head]
         tagline = "Log for the Future"
-    [zh.params.feature]
-        link = "about"
-        caption = "About"
+    # [zh.params.feature]
+    #     link = "about"
+    #     caption = "About"
     [zh.params.footer]
         license = "Licensed under Creative Commons (<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' class='link-secondary' target='_blank' rel='noopener noreferrer'>CC BY-NC-SA 4.0</a>)."
         # socialTitle = "Follow me"
@@ -18,9 +18,9 @@
     weight = 2
     [en.params.head]
         tagline = "Log for The Future"
-    [en.params.feature]
-        link = "about"
-        caption = "About"
+    # [en.params.feature]
+    #     link = "about"
+    #     caption = "About"
     [en.params.footer]
         license = "Licensed under Creative Commons (<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' class='link-secondary' target='_blank' rel='noopener noreferrer'>CC BY-NC-SA 4.0</a>)."
         # socialTitle = "Follow me"
