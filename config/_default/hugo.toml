@@ -1,6 +1,6 @@
-title = "Hinode"
-copyright = "Copyright © 2023 Mark Dumay."
-paginate = 9
+title = "FutureLog"
+copyright = "Copyright © 2023 Futurelog. Powered by hinode theme for Hugo."
+paginate = 6
 enableGitInfo = true
 
 # additional settings

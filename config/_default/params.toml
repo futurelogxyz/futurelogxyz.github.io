@@ -1,6 +1,6 @@
 [main]
     separator = "-"
-    description = "Hinode is a clean documentation and blog theme for your Hugo site based on Bootstrap 5."
+    description = "futurelog - log for the future."
     enableDarkMode = true
 
 [modules]
@@ -8,6 +8,10 @@
     optional = ["leaflet", "katex"]
     excludeSCSS = ["bootstrap"]
     disableTemplate = ["katex"]
+    [modules.fontawesome]
+        inline = true
+        debug = true
+        skipMissing = false
 
 [debugging]
     showJS = false
@@ -19,12 +23,12 @@
 
 [home]
     sections = ["blog", "projects"]
-    featurePhoto = "/img/sunrise.jpg" # source: https://unsplash.com/photos/ZX6BPboJrYk
+    featurePhoto = "/img/hero-right.jpg" # source: https://unsplash.com/photos/ZX6BPboJrYk
     fullCover = false
 
 [navigation]
     anchor = true
-    logo = "/img/logo_icon.svg"
+    logo = "/img/futurelog-red.svg"
     color = "body"
     style = "light"
     fixed = true
@@ -85,7 +89,7 @@
         footer = "none"
         orientation = "stacked"
         style = "border-0 card-zoom"
-        homepage = 3
+        homepage = 6
         separator = true
     [sections.projects]
         title = "Projects"
@@ -93,7 +97,7 @@
         sort = "title"
         reverse = false
         nested = true
-        cols = 1
+        cols = 3
         background = "body-tertiary"
         color = "body"
         padding = "3"
@@ -110,7 +114,7 @@
 
 # toml-docs-start theme-colors
 [style]
-    primary = "#2596be"
+    primary = "#D43900"
     secondary = "#6c757d"
     success = "#198754"
     info = "#0dcaf0"
@@ -119,34 +123,35 @@
     light = "#f8f9fa"
     dark = "#212529"
     themeOpacity = "10"
-    themeFont = "Inter"
-    themeFontPath = "/fonts"
+    themeFont = "Noto Serif SC"
+    # themeFontPath = "/fonts"
+    themeFontPath = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap"
 # toml-docs-end theme-colors
 
 [schema]
     type = "Organization"
-    name = "Hinode"
+    name = "Futurelog"
     locale = "en-US"
-    # twitter = "https://twitter.com/gethinode"
+    # twitter = "https://twitter.com/wallezen007"
     # linkedIn = ""
-    github = "https://github.com/gethinode/hinode"
+    github = "https://github.com/wallezen"
     section = "blog"
     [author]
-        name = "Mark Dumay"
-        # twitter = "https://twitter.com/markdumay"
-        linkedin = "https://www.linkedin.com/in/markdumay/"
-        github = "https://github.com/markdumay"
+        name = "wallezen"
+        twitter = "https://twitter.com/wallezen007"
+        # linkedin = "https://www.linkedin.com/in/markdumay/"
+        github = "https://github.com/wallezen"
     [logo]
-        url = "img/logo512x512.png"
+        url = "img/futurelog-logo.png"
         width = 512
         height = 512
     [image]
-        url = "img/logo1280x640.png"
+        url = "img/futurelog-logo.png"
         width = 1280
         height = 640
 
 [opengraph]
-    images = ["logo.png"]
+    images = ["futurelog-logo.png"]
     locale = "en_US"
 
 [comments]
