@@ -1,13 +1,27 @@
+[zh]
+    languageName = "中文"
+    contentDir = "content/zh"
+    weight = 1
+    [zh.params.head]
+        tagline = "Log for the Future"
+    [zh.params.feature]
+        link = "about"
+        caption = "About"
+    [zh.params.footer]
+        license = "Licensed under Creative Commons (<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' class='link-secondary' target='_blank' rel='noopener noreferrer'>CC BY-NC-SA 4.0</a>)."
+        # socialTitle = "Follow me"
+        # socialCaption = "leave things better than you found them"
+
 [en]
     languageName = "English"
     contentDir = "content/en"
-    weight = 1
+    weight = 2
     [en.params.head]
-        tagline = "A Hugo Theme"
+        tagline = "Log for The Future"
     [en.params.feature]
         link = "about"
         caption = "About"
     [en.params.footer]
         license = "Licensed under Creative Commons (<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' class='link-secondary' target='_blank' rel='noopener noreferrer'>CC BY-NC-SA 4.0</a>)."
-        socialTitle = "Follow me"
-        socialCaption = "I work on everything coding and tweet developer memes"
+        # socialTitle = "Follow me"
+        # socialCaption = "leave things better than you found them"

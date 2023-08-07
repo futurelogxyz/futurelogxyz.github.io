@@ -18,8 +18,8 @@ timeout = "120s"
 
 publishDir = "docs"
 
-languageCode = "en-us"
-defaultContentLanguage = "en"
+languageCode = "zh-cn"
+defaultContentLanguage = "zh"
 defaultContentLanguageInSubdir = true
 
 # uncomment to enable Google Analytics
