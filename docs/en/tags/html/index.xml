@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>html on Hinode</title>
+    <title>html on FutureLog</title>
     <link>https://futurelog.xyz/en/tags/html/</link>
-    <description>Recent content in html on Hinode</description>
+    <description>Recent content in html on FutureLog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>Copyright © 2023 Mark Dumay.</copyright>
+    <copyright>Copyright © 2023 Futurelog. Powered by hinode theme for Hugo.</copyright>
     <lastBuildDate>Thu, 15 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://futurelog.xyz/en/tags/html/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sample project</title>
