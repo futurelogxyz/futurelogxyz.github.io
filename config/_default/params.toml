@@ -131,7 +131,7 @@
 [schema]
     type = "Organization"
     name = "Futurelog"
-    locale = "zh_cn"
+    locale = "zh_CN"
     # twitter = "https://twitter.com/wallezen007"
     # linkedIn = ""
     github = "https://github.com/wallezen"
@@ -152,7 +152,7 @@
 
 [opengraph]
     images = ["futurelog-logo.png"]
-    locale = "zh_cn"
+    locale = "zh_CN"
 
 [comments]
     enabled = false

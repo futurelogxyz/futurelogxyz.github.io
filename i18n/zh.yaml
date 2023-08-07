@@ -68,7 +68,7 @@
 - id: toggleSidebar
   translation: "Toggle sidebar navigation"
 - id: colorMode
-  translation: "Toggle theme"
+  translation: "Theme"
 - id: colorLight
   translation: "浅色"
 - id: colorDark
@@ -110,7 +110,7 @@
 - id: toggleNavigation
   translation: "Toggle navigation"
 - id: languageSwitcherLabel
-  translation: "Language"
+  translation: " language"
 - id: gcseLabelShort
   translation: "Search"
 - id: gcseLabelLong
