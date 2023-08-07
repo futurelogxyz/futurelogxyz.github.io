@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+	<browserconfig>
+		<msapplication>
+			<tile>
+				 
+					 
+					 
+					 
+					
+					<square70x70logo src="/img/favicon_huc4964b0749b420dac9156df1c43fa94d_151514_70x70_resize_catmullrom_3.png" />
+					<square150x150logo src="/img/favicon_huc4964b0749b420dac9156df1c43fa94d_151514_150x150_resize_catmullrom_3.png" />
+					<wide310x150logo src="/img/favicon_huc4964b0749b420dac9156df1c43fa94d_151514_310x150_fill_catmullrom_smart1_3.png" />
+					<square310x310logo src="/img/favicon_huc4964b0749b420dac9156df1c43fa94d_151514_310x310_resize_catmullrom_3.png" />
+				
+				<TileColor>#000000</TileColor>
+			</tile>
+		</msapplication>
+	</browserconfig>

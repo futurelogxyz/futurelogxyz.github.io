@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>theme on FutureLog</title>
+    <link>https://futurelog.xyz/zh/tags/theme/</link>
+    <description>Recent content in theme on FutureLog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>Copyright © 2023 Futurelog. Powered by hinode theme for Hugo.</copyright>
+    <lastBuildDate>Fri, 17 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://futurelog.xyz/zh/tags/theme/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Template</title>
+      <link>https://futurelog.xyz/zh/blog/template/</link>
+      <pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/blog/template/</guid>
+      <description>Hinode is available as a template, and a main theme. The template uses npm to link to the latest available version of the Hinode theme. As such, it is less applicable if you plan to customize a lot. Vice versa, the main theme allows for heavy customization, but is not synchronized with the latest available Hinode theme automatically.</description>
+    </item>
+    
+  </channel>
+</rss>
