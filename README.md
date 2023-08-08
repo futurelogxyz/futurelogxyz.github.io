@@ -1,4 +1,5 @@
-# Hinode - Template
+# Futurelog
+Powered by Hinode Theme for Hugo
 
 <!-- Tagline -->
 <p align="center">
