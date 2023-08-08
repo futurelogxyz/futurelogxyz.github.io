@@ -1,7 +1,9 @@
+# toml-docs-start main
 title = "FutureLog"
 copyright = "Copyright © 2023 Futurelog. Powered by hinode theme for Hugo."
 paginate = 6
 enableGitInfo = true
+# toml-docs-end main
 
 # additional settings
 baseURL = "https://futurelog.xyz/"
