@@ -1,6 +1,6 @@
 [main]
     separator = "-"
-    description = "futurelog - log for the future."
+    description = "Futurelog - log for the future."
     enableDarkMode = true
 
 [modules]
