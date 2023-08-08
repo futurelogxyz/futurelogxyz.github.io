@@ -7,7 +7,7 @@ tags: ["组件", "示例"]
 thumbnail: https://futurelog-1251943639.cos.accelerate.myqcloud.com/img/FK6E7d-20230808.png
 photoCredits: <a href="https://twitter.com/wallezen007">wallezen</a>
 photoSource: <a href="/">Futurelog</a>
-draft: true
+draft: false
 modules:
     - leaflet
 ---

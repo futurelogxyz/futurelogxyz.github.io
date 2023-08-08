@@ -8,6 +8,32 @@
     <language>zh</language>
     <copyright>Copyright © 2023 Futurelog. Powered by hinode theme for Hugo.</copyright><atom:link href="https://futurelog.xyz/zh/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Markdown 示例</title>
+      <link>https://futurelog.xyz/zh/blog/markdown-example/</link>
+      <pubDate>Tue, 08 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/blog/markdown-example/</guid>
+      <description>Text 示例 basic text This line of text is meant to be treated as deleted text.
+This line of text renders as underlined.
+This line of text renders as bold text.
+This line of text renders as italicized text.
+lead text This is a lead paragraph. It stands out from regular paragraphs. emoji1 That is so funny! 😃
+abbreviation HTML
+List 示例 Fruit
+Apple Orange Banana Dairy
+Milk Cheese Write the press release</description>
+    </item>
+    
+    <item>
+      <title>组件示例</title>
+      <link>https://futurelog.xyz/zh/blog/elements-example/</link>
+      <pubDate>Tue, 08 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/blog/elements-example/</guid>
+      <description>1. Accordion Accordion Item #1 This is the first item&amp;rsquo;s accordion body. It supports HTML content. The item is shown by adding the value show to the class argument. Accordion Item #2 This is the second item&amp;rsquo;s accordion body. It too supports HTML content. Accordion Item #3 This is the third item&amp;rsquo;s accordion body. 2. Alert A simple info type alert—check it out! A simple danger type alert—check it out!</description>
+    </item>
+    
+    <item>
       <title>Bootstrap elements</title>
       <link>https://futurelog.xyz/zh/blog/bootstrap-elements/</link>
       <pubDate>Sat, 05 Aug 2023 00:00:00 +0000</pubDate>

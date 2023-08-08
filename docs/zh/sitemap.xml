@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://futurelog.xyz/zh/tags/markdown/</loc>
+    <lastmod>2023-08-08T20:40:20+08:00</lastmod>
+  </url><url>
+    <loc>https://futurelog.xyz/zh/blog/markdown-example/</loc>
+    <lastmod>2023-08-08T20:40:20+08:00</lastmod>
+  </url><url>
+    <loc>https://futurelog.xyz/zh/tags/</loc>
+    <lastmod>2023-08-08T20:40:20+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://futurelog.xyz/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://futurelog.xyz/zh/tags/"
+                />
+  </url><url>
+    <loc>https://futurelog.xyz/zh/tags/%E7%A4%BA%E4%BE%8B/</loc>
+    <lastmod>2023-08-08T20:40:20+08:00</lastmod>
+  </url><url>
+    <loc>https://futurelog.xyz/zh/tags/%E7%BB%84%E4%BB%B6/</loc>
+    <lastmod>2023-08-08T20:40:20+08:00</lastmod>
+  </url><url>
+    <loc>https://futurelog.xyz/zh/blog/elements-example/</loc>
+    <lastmod>2023-08-08T20:40:20+08:00</lastmod>
+  </url><url>
     <loc>https://futurelog.xyz/zh/tags/bootstrap/</loc>
     <lastmod>2023-08-07T17:29:07+08:00</lastmod>
     <xhtml:link
@@ -39,19 +67,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://futurelog.xyz/zh/tags/shortcode/"
-                />
-  </url><url>
-    <loc>https://futurelog.xyz/zh/tags/</loc>
-    <lastmod>2023-08-07T17:29:07+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://futurelog.xyz/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://futurelog.xyz/zh/tags/"
                 />
   </url><url>
     <loc>https://futurelog.xyz/zh/blog/components/</loc>
