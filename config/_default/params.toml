@@ -142,16 +142,16 @@
         # linkedin = "https://www.linkedin.com/in/markdumay/"
         github = "https://github.com/wallezen"
     [logo]
-        url = "img/futurelog-logo.png"
+        url = "/img/futurelog-logo.png"
         width = 512
         height = 512
     [image]
-        url = "img/futurelog-logo.png"
+        url = "/img/futurelog-logo.png"
         width = 1280
         height = 640
 
 [opengraph]
-    images = ["futurelog-logo.png"]
+    images = ["/img/futurelog-logo.png"]
     locale = "zh_CN"
 
 [comments]
