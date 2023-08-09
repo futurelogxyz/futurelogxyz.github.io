@@ -77,19 +77,19 @@
 [[footer]]
   parent = "Links"
   name = "Docs"
-  pageRef = "https://docs.futurelog.xyz"
+  url = "https://docs.futurelog.xyz"
   weight = 10
 
 [[footer]]
   parent = "Links"
   name = "Slides"
-  url = "https://futurelog.xyz/webslides"
+  url = "../webslides/"
   weight = 20
 
 [[footer]]
   parent = "Links"
   name = "Galleries"
-  url = "https://futurelog.xyz/galleries"
+  url = "../galleries/"
   weight = 30
 
 [[footer]]
