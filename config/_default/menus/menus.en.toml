@@ -76,22 +76,20 @@
 
 [[footer]]
   parent = "Links"
-  name = "Home"
-  pageRef = "/"
+  name = "Docs"
+  pageRef = "https://docs.futurelog.xyz"
   weight = 10
 
 [[footer]]
   parent = "Links"
-  name = "About"
-  pageRef = "/about/"
+  name = "Slides"
+  pageRef = "https://futurelog.xyz/webslides"
   weight = 20
-  [footer.params]
-    alias = true
 
 [[footer]]
   parent = "Links"
-  name = "Docs"
-  pageRef = "https://docs.futurelog.xyz"
+  name = "Galleries"
+  pageRef = "https://futurelog.xyz/galleries"
   weight = 30
 
 [[footer]]

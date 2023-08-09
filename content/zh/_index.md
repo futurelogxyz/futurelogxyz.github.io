@@ -3,7 +3,7 @@ author: wallezen
 title: Log for The Future
 ---
 
-leave things better than you found them
+Technology ✨ Engineering ✨ Tool ✨ Life
 
 <a href="mailto:wallezen@crowai.xyz" target="_blank" class="link-primary p-1">{{< fas envelope >}}</a>
 <a href="https://github.com/wallezen" target="_blank" class="link-primary p-1">{{< fab github >}}</a>
