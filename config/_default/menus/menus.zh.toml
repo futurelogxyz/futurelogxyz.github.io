@@ -95,7 +95,7 @@
 [[footer]]
   parent = "Links"
   name = "Slides"
-  url = "../webslides"
+  url = "../slides"
   weight = 20
 
 [[footer]]

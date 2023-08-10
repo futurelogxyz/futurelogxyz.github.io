@@ -83,13 +83,13 @@
 [[footer]]
   parent = "Links"
   name = "Slides"
-  url = "../webslides/"
+  url = "../slides"
   weight = 20
 
 [[footer]]
   parent = "Links"
   name = "Galleries"
-  url = "../galleries/"
+  url = "../galleries"
   weight = 30
 
 [[footer]]
