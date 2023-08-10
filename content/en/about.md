@@ -1,43 +1,43 @@
 ---
 title: About
-description: Hinode is a clean documentation and blog theme for your Hugo site based on Bootstrap 5.
+description:
 date: 2022-04-11
 updated: 2023-08-02
 showComments: false
 ---
 
-<p class="text-center"><svg class="img-fluid w-50"><use href="/img/logo_var.svg#logo"></use></svg></p>
+<!-- <p class="text-center"><svg class="img-fluid w-50"><use href="/img/futurelog-red.svg"></use></svg></p> -->
+<!-- <p class="text-center"><img src="/img/futurelog-red.svg" class="img-fluid w-50" /></p> -->
+
+## About me
+This person hasn't figured out how to introduce himself 🤔
+
+## About this site
+this is wallezen's blog, share writings about technology, engineering, programming, tools, life and more.
 
 <section class="section section-sm mt-5 mb-5">
     <div class="container-fluid">
         <div class="row justify-content-center text-center">
-            <div class="col-lg-4">
-                {{< icon fab bootstrap fa-2xl >}}
-                <h2 class="h4">Bootstrap framework</h2>
-                <p>Build fast, responsive sites with Bootstrap 5. Easily customize your site with the source Sass files.</p>
+            <div class="col-lg-3">
+                {{< icon fas microchip fa-2xl >}}
+                <h2 class="h4">Technology</h2>
+                <p></p>
             </div>
-            <div class="col-lg-4">
-                {{< icon fas magnifying-glass fa-2xl >}}
-                <h2 class="h4">Full text search</h2>
-                <p>Search your site with FlexSearch, a full-text search library with zero dependencies.</p>
+            <div class="col-lg-3">
+                {{< icon fas database fa-2xl >}}
+                <h2 class="h4">Engineering</h2>
+                <p></p>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 {{< icon fas code fa-2xl >}}
-                <h2 class="h4">Development tools</h2>
-                <p>Use Node Package Manager to automate the build process and to keep track of dependencies.</p>
+                <h2 class="h4">Programming</h2>
+                <p></p>
+            </div>
+            <div class="col-lg-3">
+                {{< icon fas screwdriver-wrench fa-2xl >}}
+                <h2 class="h4">Tools</h2>
+                <p></p>
             </div>
         </div>
     </div>
 </section>
-
-Additional features include:
-
-* Switching between light mode and dark mode
-* Support for multiple languages
-* Reusable Bootstrap components through configurable shortcodes and partials
-* Versioned documentation, including sidebar navigation and version switcher
-* Embedded comments through light-weight integration with GitHub via [utteranc.es]({{< param "links.utterances" >}})
-* Reponsive image handling for multiple screen sizes and resolutions
-* Optimized search results, scoring 100 points for SEO on [PageSpeed Insights]({{< param "links.pagespeed" >}})
-* Secure by default, scoring A+ on [Mozilla Observatory test]({{< param "links.observatory" >}})
-{.tickmark}
