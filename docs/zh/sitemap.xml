@@ -82,6 +82,35 @@
                 href="https://futurelog.xyz/zh/blog/components/"
                 />
   </url><url>
+    <loc>https://futurelog.xyz/zh/tags/golang/</loc>
+    <lastmod>2023-08-07T16:41:25+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://futurelog.xyz/en/tags/golang/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://futurelog.xyz/zh/tags/golang/"
+                />
+  </url><url>
+    <loc>https://futurelog.xyz/zh/tags/javascript/</loc>
+    <lastmod>2023-08-07T16:41:25+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://futurelog.xyz/en/tags/javascript/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://futurelog.xyz/zh/tags/javascript/"
+                />
+  </url><url>
+    <loc>https://futurelog.xyz/zh/projects/third-project/</loc>
+    <lastmod>2023-07-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://futurelog.xyz/zh/blog/template/</loc>
     <lastmod>2023-08-07T16:41:25+08:00</lastmod>
     <xhtml:link
@@ -212,19 +241,6 @@
                 href="https://futurelog.xyz/zh/tags/css/"
                 />
   </url><url>
-    <loc>https://futurelog.xyz/zh/tags/golang/</loc>
-    <lastmod>2023-08-07T16:41:25+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://futurelog.xyz/en/tags/golang/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://futurelog.xyz/zh/tags/golang/"
-                />
-  </url><url>
     <loc>https://futurelog.xyz/zh/tags/html/</loc>
     <lastmod>2023-08-07T16:41:25+08:00</lastmod>
     <xhtml:link
@@ -236,19 +252,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://futurelog.xyz/zh/tags/html/"
-                />
-  </url><url>
-    <loc>https://futurelog.xyz/zh/tags/javascript/</loc>
-    <lastmod>2023-08-07T16:41:25+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://futurelog.xyz/en/tags/javascript/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://futurelog.xyz/zh/tags/javascript/"
                 />
   </url><url>
     <loc>https://futurelog.xyz/zh/projects/sample-project/</loc>

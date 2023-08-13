@@ -15,4 +15,4 @@ nothing yet～🤔
 
 ## About this site
 
-Share writings about engineering, programming, tools, projects and more.
+wallezen's blog, share writings about engineering, programming, tools and more.

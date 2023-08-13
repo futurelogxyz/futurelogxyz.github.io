@@ -13,7 +13,7 @@ showComments: false
 This person hasn't figured out how to introduce himself 🤔
 
 ## About this site
-Share writings about engineering, programming, tools, projects and more.
+wallzen's blog, share writings about engineering, programming, tools and more.
 
 <section class="section section-sm mt-5 mb-5">
     <div class="container-fluid">
