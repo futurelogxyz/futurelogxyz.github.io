@@ -171,21 +171,24 @@ plt.show()
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/7EmboKQH8lM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### bilibili
-<iframe src="https://player.bilibili.com/player.html?aid=202816429&bvid=BV1Ea411w7zE&cid=258477979&page=1&high_quality=1" width="100%" height="420" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=361875495&bvid=BV1t94y1C7fp&cid=1227111557&page=1" width="100%" height="420" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 ## Presentation 示例
 
 - slidev
-<iframe src="https://futurelog.xyz/slides/slidev-demo/1" allow="fullscreen" allowfullscreen="" width="100%" height="420" style="border:0"></iframe>
+<iframe src="https://futurelog.xyz/slides/slidev-demo/" allow="fullscreen" allowfullscreen="" width="100%" height="420" style="border:0"></iframe>
 
 - webslides
-<iframe src="https://futurelog.xyz/slides/demos/why-webslides.html#slide=1" allow="fullscreen" allowfullscreen="" width="100%" height="520" style="border:0"></iframe>
+<iframe src="https://futurelog.xyz/slides/demos/why-webslides.html" allow="fullscreen" allowfullscreen="" width="100%" height="520" style="border:0"></iframe>
 
 ## Figma 示例
 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fkwig31ctYeZ7GOAiRidZNw%2FUntitled%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
 
 ## Image 示例
-![forest-x1920](https://futurelog.xyz/galleries/travel/forest-x1920.jpg)
+![hero-left-20230808](https://futurelog-1251943639.cos.accelerate.myqcloud.com/img/hero-left-20230808.jpg)
+
+{{< image src="https://futurelog.xyz/galleries/travel/forest-x1920.jpg" title="forest" caption="forest" >}}
+
 
 
 ## ProcessOn 示例
