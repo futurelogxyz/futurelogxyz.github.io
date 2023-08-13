@@ -3,13 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://futurelog.xyz/zh/tags/markdown/</loc>
-    <lastmod>2023-08-08T21:04:05+08:00</lastmod>
+    <lastmod>2023-08-13T17:29:47+08:00</lastmod>
   </url><url>
     <loc>https://futurelog.xyz/zh/blog/markdown-example/</loc>
-    <lastmod>2023-08-08T21:04:05+08:00</lastmod>
+    <lastmod>2023-08-13T17:29:47+08:00</lastmod>
   </url><url>
     <loc>https://futurelog.xyz/zh/tags/</loc>
-    <lastmod>2023-08-08T21:04:05+08:00</lastmod>
+    <lastmod>2023-08-13T17:29:47+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -22,7 +22,7 @@
                 />
   </url><url>
     <loc>https://futurelog.xyz/zh/tags/%E7%A4%BA%E4%BE%8B/</loc>
-    <lastmod>2023-08-08T21:04:05+08:00</lastmod>
+    <lastmod>2023-08-13T17:29:47+08:00</lastmod>
   </url><url>
     <loc>https://futurelog.xyz/zh/tags/%E7%BB%84%E4%BB%B6/</loc>
     <lastmod>2023-08-08T21:04:05+08:00</lastmod>
@@ -83,7 +83,7 @@
                 />
   </url><url>
     <loc>https://futurelog.xyz/zh/tags/golang/</loc>
-    <lastmod>2023-08-07T16:41:25+08:00</lastmod>
+    <lastmod>2023-08-13T17:29:47+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -96,7 +96,7 @@
                 />
   </url><url>
     <loc>https://futurelog.xyz/zh/tags/javascript/</loc>
-    <lastmod>2023-08-07T16:41:25+08:00</lastmod>
+    <lastmod>2023-08-13T17:29:47+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -109,7 +109,7 @@
                 />
   </url><url>
     <loc>https://futurelog.xyz/zh/projects/third-project/</loc>
-    <lastmod>2023-07-15T00:00:00+00:00</lastmod>
+    <lastmod>2023-08-13T17:29:47+08:00</lastmod>
   </url><url>
     <loc>https://futurelog.xyz/zh/blog/template/</loc>
     <lastmod>2023-08-07T16:41:25+08:00</lastmod>
@@ -203,7 +203,7 @@
                 />
   </url><url>
     <loc>https://futurelog.xyz/zh/about/</loc>
-    <lastmod>2023-08-11T10:11:03+08:00</lastmod>
+    <lastmod>2023-08-13T17:29:47+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -294,7 +294,7 @@
                 />
   </url><url>
     <loc>https://futurelog.xyz/zh/</loc>
-    <lastmod>2023-08-11T10:11:03+08:00</lastmod>
+    <lastmod>2023-08-13T17:29:47+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
