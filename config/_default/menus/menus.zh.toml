@@ -1,122 +1,123 @@
 [[main]]
-  name = "主页"
-  url = "/"
-  weight = 10
+name = "主页"
+url = "/"
+weight = 10
 
 [[main]]
-  name = "博客"
-  url = "/blog/"
-  weight = 20
+name = "博客"
+url = "/blog/"
+weight = 20
 
 [[main]]
-  name = "标签"
-  url = "/tags/"
-  weight = 30
+name = "标签"
+url = "/tags/"
+weight = 30
 
 [[main]]
-  name = "文档"
-  url = "https://docs.futurelog.xyz"
-  weight = 40
+name = "文档"
+url = "https://docs.futurelog.xyz"
+weight = 40
 
 [[main]]
-  name = "项目"
-  url = "/projects/"
-  weight = 50
+name = "项目"
+url = "/projects/"
+weight = 50
 
 [[main]]
-  name = "Sample project"
-  url = "/projects/sample-project/"
-  parent = "项目"
-  weight = 1
+name = "Sample project"
+url = "/projects/sample-project/"
+parent = "项目"
+weight = 1
 
 [[main]]
-  name = "Another project"
-  url = "/projects/another-project/"
-  parent = "项目"
-  weight = 2
+name = "Another project"
+url = "/projects/another-project/"
+parent = "项目"
+weight = 2
 
 [[main]]
-  name = "关于"
-  url = "/about/"
-  weight = 60
+name = "关于"
+url = "/about/"
+weight = 60
 
 
 [[social]]
-  name = "LinkedIn"
-  pre = "<i class=\"fab fa-linkedin \"></i>"
-  url = "https://linkedin.com/"
-  weight = 10
+name = "LinkedIn"
+pre = "<i class=\"fab fa-linkedin \"></i>"
+url = "https://linkedin.com/"
+weight = 10
 
 [[social]]
-  name = "GitHub"
-  pre = "<i class=\"fab fa-github fa-2x\"></i>"
-  url = "https://github.com/"
-  weight = 20
+name = "GitHub"
+pre = "<i class=\"fab fa-github fa-2x\"></i>"
+url = "https://github.com/"
+weight = 20
 
 [[social]]
-  name = "Medium"
-  pre = "<i class=\"fab fa-medium fa-2x\"></i>"
-  url = "https://medium.com/"
-  weight = 30
+name = "Medium"
+pre = "<i class=\"fab fa-medium fa-2x\"></i>"
+url = "https://medium.com/"
+weight = 30
 
 [[sample]]
-  name = "Blog"
-  url = "/blog/"
-  weight = 10
+name = "Blog"
+url = "/blog/"
+weight = 10
 
 [[sample]]
-  name = "Projects"
-  url = "/projects/"
-  weight = 20
+name = "Projects"
+url = "/projects/"
+weight = 20
 
 [[sample]]
-  name = "Sample project"
-  url = "/projects/sample-project/"
-  parent = "Projects"
-  weight = 1
+name = "Sample project"
+url = "/projects/sample-project/"
+parent = "Projects"
+weight = 1
 
 [[sample]]
-  name = "Another project"
-  url = "/projects/another-project/"
-  parent = "Projects"
-  weight = 2
-  
+name = "Another project"
+url = "/projects/another-project/"
+parent = "Projects"
+weight = 2
+
+# toml-docs-start menus-footer
+[[footer]]
+name = "Links"
+weight = 10
 
 [[footer]]
-  name = "Links"
-  weight = 10
+parent = "Links"
+name = "Docs"
+url = "https://docs.futurelog.xyz"
+weight = 10
 
 [[footer]]
-  parent = "Links"
-  name = "Docs"
-  url = "https://docs.futurelog.xyz"
-  weight = 10
+parent = "Links"
+name = "Slides"
+url = "../slides"
+weight = 20
 
 [[footer]]
-  parent = "Links"
-  name = "Slides"
-  url = "../slides"
-  weight = 20
-
-[[footer]]
-  parent = "Links"
-  name = "Galleries"
-  url = "../galleries"
-  weight = 30
+parent = "Links"
+name = "Galleries"
+url = "../galleries"
+weight = 30
 
 
 [[footer]]
-  name = "Community"
-  weight = 20
+name = "Community"
+weight = 20
 
 [[footer]]
-  parent = "Community"
-  name = "Github"
-  url = "https://github.com/wallezen"
-  weight = 10
+parent = "Community"
+name = "Github"
+url = "https://github.com/wallezen"
+weight = 10
 
 [[footer]]
-  parent = "Community"
-  name = "Twitter"
-  url = "https://twitter.com/wallezen007"
-  weight = 20
+parent = "Community"
+name = "Twitter"
+url = "https://twitter.com/wallezen007"
+weight = 20
+# toml-docs-end menus-footer

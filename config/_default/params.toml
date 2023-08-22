@@ -1,174 +1,174 @@
 [main]
-    separator = "-"
-    description = "Futurelog - log for the future."
-    enableDarkMode = true
+separator = "-"
+description = "Futurelog - log for the future."
+enableDarkMode = true
 
 [modules]
-    core = ["bootstrap", "flexsearch", "fontawesome"]
-    optional = ["leaflet", "katex"]
-    excludeSCSS = ["bootstrap"]
-    disableTemplate = ["katex"]
-    [modules.fontawesome]
-        inline = true
-        debug = true
-        skipMissing = false
+core = ["bootstrap", "flexsearch", "fontawesome"]
+optional = ["leaflet", "katex"]
+excludeSCSS = ["bootstrap"]
+disableTemplate = ["katex"]
+[modules.fontawesome]
+inline = true
+debug = true
+skipMissing = false
 
 [debugging]
-    showJS = false
-    showSCSS = false
+showJS = false
+showSCSS = false
 
 [docs]
-    version = "0.9"
-    basePath = "/"
+version = "0.9"
+basePath = "/"
 
 [home]
-    sections = ["blog", "projects"]
-    featurePhoto = "/img/hero-right.jpg" # source: https://unsplash.com/photos/ZX6BPboJrYk
-    fullCover = false
+sections = ["blog", "projects"]
+featurePhoto = "/img/hero-right.jpg" # source: https://unsplash.com/photos/ZX6BPboJrYk
+fullCover = false
 
 [navigation]
-    anchor = true
-    logo = "/img/futurelog-red.svg"
-    color = "body"
-    style = "light"
-    fixed = true
-    offset = "3.8em"
-    search = true
-    breadcrumb = false
-    toc = true
-    sidebar = true
+anchor = true
+logo = "/img/futurelog-red.svg"
+color = "body"
+style = "light"
+fixed = true
+offset = "3.8em"
+search = true
+breadcrumb = false
+toc = true
+sidebar = true
 
 [messages]
-    placement = "bottom-right"
+placement = "bottom-right"
 
 [sharing]
-    enabled = true
-    sort = "weight"
-    reverse = false
+enabled = true
+sort = "weight"
+reverse = false
 
 [[sharing.providers]]
-    name = "LinkedIn"
-    url = "https://www.linkedin.com/sharing/share-offsite/?url={url}"
-    icon = "fab linkedin"
-    weight = 10
+name = "LinkedIn"
+url = "https://www.linkedin.com/sharing/share-offsite/?url={url}"
+icon = "fab linkedin"
+weight = 10
 
 [[sharing.providers]]
-    name = "Twitter"
-    url = "https://twitter.com/home?status={url}"
-    icon = "fab x-twitter"
-    weight = 20
+name = "Twitter"
+url = "https://twitter.com/home?status={url}"
+icon = "fab x-twitter"
+weight = 20
 
 [[sharing.providers]]
-    name = "Facebook"
-    url = "https://www.facebook.com/sharer.php?u={url}"
-    icon = "fab facebook"
-    weight = 30
+name = "Facebook"
+url = "https://www.facebook.com/sharer.php?u={url}"
+icon = "fab facebook"
+weight = 30
 
 [[sharing.providers]]
-    name = "WhatsApp"
-    url = "whatsapp://send?text={title}%20{url}"
-    icon = "fab whatsapp"
-    weight = 40
+name = "WhatsApp"
+url = "whatsapp://send?text={title}%20{url}"
+icon = "fab whatsapp"
+weight = 40
 
 [[sharing.providers]]
-    name = "email"
-    url = "{url}"
-    icon = "fas link"
-    weight = 50
-    clipboard = true
+name = "email"
+url = "{url}"
+icon = "fas link"
+weight = 50
+clipboard = true
 
 [sections]
-    [sections.blog]
-        title = "Blog"
-        sort = "date"
-        reverse = true
-        cols = 3
-        color = ""
-        padding = "0"
-        header = "full"
-        footer = "none"
-        orientation = "stacked"
-        style = "border-0 card-zoom"
-        homepage = 6
-        separator = true
-    [sections.projects]
-        title = "Projects"
-        layout = "card"
-        sort = "title"
-        reverse = false
-        nested = true
-        cols = 3
-        background = "body-tertiary"
-        color = "body"
-        padding = "3"
-        header = "none"
-        footer = "tags"
-        orientation = "horizontal"
-        style = "border-1 card-emphasize"
-        homepage = 3
-        separator = false
+[sections.blog]
+title = "Blog"
+sort = "date"
+reverse = true
+cols = 3
+color = ""
+padding = "0"
+header = "full"
+footer = "none"
+orientation = "stacked"
+style = "border-0 card-zoom"
+homepage = 6
+separator = true
+[sections.projects]
+title = "Projects"
+layout = "card"
+sort = "title"
+reverse = false
+nested = true
+cols = 3
+background = "body-tertiary"
+color = "body"
+padding = "3"
+header = "none"
+footer = "tags"
+orientation = "horizontal"
+style = "border-1 card-emphasize"
+homepage = 3
+separator = false
 
 [favicon]
-    logo = "img/favicon.png"
-    sizes = [16, 32, 48]
+logo = "img/favicon.png"
+sizes = [16, 32, 48]
 
 # toml-docs-start theme-colors
 [style]
-    primary = "#D43900"
-    secondary = "#6c757d"
-    success = "#198754"
-    info = "#0dcaf0"
-    warning = "#ffc107"
-    danger = "#dc3545"
-    light = "#f8f9fa"
-    dark = "#212529"
-    themeOpacity = "10"
-    themeFont = "Noto Serif SC"
-    # themeFontPath = "/fonts"
-    themeFontPath = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap"
+primary = "#D43900"
+secondary = "#6c757d"
+success = "#198754"
+info = "#0dcaf0"
+warning = "#ffc107"
+danger = "#dc3545"
+light = "#f8f9fa"
+dark = "#212529"
+themeOpacity = "10"
+# themeFont = "Helvetica"
+# themeFontPath = "/fonts"
+themeFont = "Roboto"                                                                            # Noto Serif SC
+themeFontPath = "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
 # toml-docs-end theme-colors
 
 [schema]
-    type = "Organization"
-    name = "Futurelog"
-    locale = "zh_CN"
-    # twitter = "https://twitter.com/wallezen007"
-    # linkedIn = ""
-    github = "https://github.com/wallezen"
-    section = "blog"
-    [author]
-        name = "wallezen"
-        twitter = "https://twitter.com/wallezen007"
-        # linkedin = "https://www.linkedin.com/in/markdumay/"
-        github = "https://github.com/wallezen"
-    [logo]
-        url = "/img/futurelog-logo.png"
-        width = 512
-        height = 512
-    [image]
-        url = "/img/futurelog-logo.png"
-        width = 1280
-        height = 640
+type = "Organization"
+name = "Futurelog"
+locale = "zh_CN"
+# twitter = "https://twitter.com/wallezen007"
+# linkedIn = ""
+github = "https://github.com/wallezen"
+section = "blog"
+[author]
+name = "wallezen"
+twitter = "https://twitter.com/wallezen007"
+# linkedin = "https://www.linkedin.com/in/markdumay/"
+github = "https://github.com/wallezen"
+[logo]
+url = "/img/futurelog-logo.png"
+width = 512
+height = 512
+[image]
+url = "/img/futurelog-logo.png"
+width = 1280
+height = 640
 
 [opengraph]
-    images = ["/img/futurelog-logo.png"]
-    locale = "zh_CN"
+images = ["/img/futurelog-logo.png"]
+locale = "zh_CN"
 
 [comments]
-    enabled = false
-    repo = "" # Replace with your repository.
-    #issueTerm = "pathname" # pathname, url, title, og:title
-    #label = "comment"
-    # By default, light and dark mode correspond to github-light and github-dark, respectively.
-    # Optional values: github-light, github-dark, preferred-color-scheme, github-dark-orange, icy-dark, dark-blue, photon-dark.
-    #theme = "" 
+enabled = false
+repo = ""       # Replace with your repository.
+#issueTerm = "pathname" # pathname, url, title, og:title
+#label = "comment"
+# By default, light and dark mode correspond to github-light and github-dark, respectively.
+# Optional values: github-light, github-dark, preferred-color-scheme, github-dark-orange, icy-dark, dark-blue, photon-dark.
+#theme = "" 
 
 [links]
-    bs_badge_heading = "https://getbootstrap.com/docs/5.2/components/badge/#headings"
-    hinode_docs = "https://gethinode.com/docs"
-    hugo_imaging = "https://gohugo.io/content-management/image-processing/#imaging-configuration"
-    mozilla_image = "https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images"
-    observatory = "https://observatory.mozilla.org/analyze/demo.gethinode.com"
-    pagespeed = "https://pagespeed.web.dev/report?url=https%3A%2F%2Fdemo.gethinode.com%2F"
-    utterances = "https://utteranc.es"
- 
+bs_badge_heading = "https://getbootstrap.com/docs/5.2/components/badge/#headings"
+hinode_docs = "https://gethinode.com/docs"
+hugo_imaging = "https://gohugo.io/content-management/image-processing/#imaging-configuration"
+mozilla_image = "https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images"
+observatory = "https://observatory.mozilla.org/analyze/demo.gethinode.com"
+pagespeed = "https://pagespeed.web.dev/report?url=https%3A%2F%2Fdemo.gethinode.com%2F"
+utterances = "https://utteranc.es"
