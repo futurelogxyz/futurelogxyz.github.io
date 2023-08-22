@@ -153,8 +153,6 @@ order by last_name;
 
 - markdown image: only can display original size
 
-![hero-left-20230808](https://futurelog-1251943639.cos.accelerate.myqcloud.com/img/hero-left-20230808.jpg)
-
 ## 15. Link
 
 - {{< link hinode_docs >}}Named link with default settings{{< /link >}}

@@ -185,7 +185,7 @@ plt.show()
 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fkwig31ctYeZ7GOAiRidZNw%2FUntitled%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
 
 ## Image 示例
-![hero-left-20230808](https://futurelog-1251943639.cos.accelerate.myqcloud.com/img/hero-left-20230808.jpg)
+
 
 {{< image src="https://futurelog.xyz/galleries/travel/forest-x1920.jpg" title="forest" caption="forest" >}}
 
