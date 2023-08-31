@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>copilot on FutureLog</title>
+    <link>https://futurelog.xyz/zh/tags/copilot/</link>
+    <description>Recent content in copilot on FutureLog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>Copyright © 2023 Futurelog. Powered by hinode theme for Hugo.</copyright>
+    <lastBuildDate>Sat, 15 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://futurelog.xyz/zh/tags/copilot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CrawAI Copilot</title>
+      <link>https://futurelog.xyz/zh/projects/crowai-copilot/</link>
+      <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/projects/crowai-copilot/</guid>
+      <description>CrowAI Copilot
+由 @wallezen 基于 chatgpt-vercel 开发部署。 输入 [[/]] 或者 [[空格]] 将展示预设提示词(Prompt)，紧跟在提示词后输入你的问题或需求，可以得到更好的回答。 仅供个人测试使用，勿用于非正当场景。 </description>
+    </item>
+    
+  </channel>
+</rss>

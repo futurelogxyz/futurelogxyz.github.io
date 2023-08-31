@@ -173,29 +173,9 @@
   </url><url>
     <loc>https://futurelog.xyz/en/projects/another-project/</loc>
     <lastmod>2023-08-07T15:27:41+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://futurelog.xyz/zh/projects/another-project/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://futurelog.xyz/en/projects/another-project/"
-                />
   </url><url>
     <loc>https://futurelog.xyz/en/tags/css/</loc>
     <lastmod>2023-08-07T15:27:41+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://futurelog.xyz/zh/tags/css/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://futurelog.xyz/en/tags/css/"
-                />
   </url><url>
     <loc>https://futurelog.xyz/en/tags/golang/</loc>
     <lastmod>2023-08-07T15:27:41+08:00</lastmod>
@@ -212,16 +192,6 @@
   </url><url>
     <loc>https://futurelog.xyz/en/tags/html/</loc>
     <lastmod>2023-08-07T15:27:41+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://futurelog.xyz/zh/tags/html/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://futurelog.xyz/en/tags/html/"
-                />
   </url><url>
     <loc>https://futurelog.xyz/en/tags/javascript/</loc>
     <lastmod>2023-08-07T15:27:41+08:00</lastmod>
