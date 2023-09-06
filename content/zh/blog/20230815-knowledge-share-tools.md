@@ -7,7 +7,7 @@ tags: ["tools", "blog", "document", "API", "gallery", "slides"]
 thumbnail: https://futurelog-1251943639.cos.accelerate.myqcloud.com/img/iX8Eva-20230815.png
 photoCredits: <a href="https://twitter.com/wallezen007" target="_blank">wallezen</a>
 photoSource: <a href="https://www.imdb.com/title/tt0062622/" target="_blank">「2001:A Space Odyssey」</a>
-draft: true
+draft: false
 ---
 
 > 人创造工具，工具改变人。
@@ -117,14 +117,14 @@ Step 4. 启动 local server 即可预览定制的 footer 样式效果。
 
 ## 2. 文档
 文档相比于博客文章是一种更具结构化作为一名程序员，文档是必不可少的，不管是技术文档还是个人笔记，都需要一个好用的文档工具。文档
-
+TODO...
 
 ## 3. API
-
+TODO...
 
 ## 4. 图库
-
+TODO...
 
 ## 5. 幻灯片
-
+TODO...
 

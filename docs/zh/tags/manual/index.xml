@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>manual on FutureLog</title>
+    <link>https://futurelog.xyz/zh/tags/manual/</link>
+    <description>Recent content in manual on FutureLog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>Copyright © 2023 Futurelog. Powered by hinode theme for Hugo.</copyright>
+    <lastBuildDate>Mon, 04 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://futurelog.xyz/zh/tags/manual/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mojo 编程语言手册</title>
+      <link>https://futurelog.xyz/zh/blog/20230904-mojo-programming-manual/</link>
+      <pubDate>Mon, 04 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/blog/20230904-mojo-programming-manual/</guid>
+      <description>参考自 Mojo 官方文档：Mojo🔥 programming manual
+Mojo 编程语言的目标是在像 Python 一样易于使用的同时拥有类似 C++ 和 Rust 的性能。并且，还能利用整个 Python 生态的能力。
+为实现这些特性，Mojo 利用了下一代的编译器技术，如：集成缓存、多线程 和 云分发。此外，Mojo 的 autotuning 和 编译时元编程（compile-time metaprogramming）特性，使得编写的代码能够能够移植到各类硬件上。
+更重要的是， Mojo 被设计为 Python 的超集，通过集成整个 Python 生态的能力，让开发人员继续使用熟悉的工具和库，在保留 Python 动态特性的同时增加了系统编程能力。这些新增加的系统编程能力，让开发人员也能够使用 Mojo 编写那些目前需要依赖 C/C++/Rust/CUDA 等才能实现的高性能的代码和库。通过结合动态编程语言和系统编程语言的优势，Mojo 提供了一种统一的编程模型，对新手友好，并能扩展应用到从底层加速器（accelerators）到应用开发、脚本开发等诸多场景。
+本手册并不是完整的 Mojo 编程语言指南，我们假设读者已经熟悉 Python 语言和系统编程的相关概念，将介绍 Mojo 编程语言相关的基础知识。当前，Mojo 编程语言还处在开发中，本手册的主要目标读者是那些拥有系统编程经验的开发人员。随着 Mojo 编程语言的发展和普及，我们希望 Mojo 对所有人（甚至初学者）都友好且易于使用。
+1. Mojo 编译器 和运行 Python 代码一样，我们也可以在命令行中运行 Mojo 代码：
+cat hello.mojo def main(): print(&amp;#34;hello world&amp;#34;) for x in range(9, 0, -3): print(x) mojo hello.</description>
+    </item>
+    
+  </channel>
+</rss>

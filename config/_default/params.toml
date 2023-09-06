@@ -123,10 +123,10 @@ danger = "#dc3545"
 light = "#f8f9fa"
 dark = "#212529"
 themeOpacity = "10"
+themeFont = "Noto Serif SC"
 # themeFont = "Helvetica"
 # themeFontPath = "/fonts"
-themeFont = "Arimo"                                                                            # Noto Serif SC
-themeFontPath = "https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;700&display=swap"
+themeFontPath = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&display=swap"
 # toml-docs-end theme-colors
 
 [schema]

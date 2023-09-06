@@ -7,7 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright © 2023 Futurelog. Powered by hinode theme for Hugo.</copyright>
-    <lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://futurelog.xyz/zh/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://futurelog.xyz/zh/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>利器（一）</title>
+      <link>https://futurelog.xyz/zh/blog/20230815-knowledge-share-tools/</link>
+      <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/blog/20230815-knowledge-share-tools/</guid>
+      <description>人创造工具，工具改变人。
+1. 博客 搭建博客的工具较多，从经典的功能丰富的 WordPress 到简单易用主题丰富的 Hexo、Jekyll、Hugo 等等。 本博客使用的是 Hugo，Hugo 具备优异的性能，配置灵活、主题丰富、功能扩展方便。 关于 Hugo 的安装与使用，可以参考 Hugo 官方文档。
+下面重点介绍下本博客的安装部署过程，以及对博客主题的修改定制。
+1.1 博客安装 本博客使用了 Hinode 主题，推荐基于其 template 的方式进行安装。
+Step 1. 访问 Github Hinode template 仓库，点击仓库右上角的 Use this template -&amp;gt; Create a new repository。
+Step 2. 填写 Repository name 和 Description 等相关信息，然后点击 Create repository。 Step 1 Step 2 Previous Next Step 3. 在本地 clone 刚刚创建的仓库，并安装相关依赖。 git clone https://github.com/futurelogxyz/futurelogxyz.github.io.git Cloning into &amp;#39;futurelogxyz.github.io&amp;#39;... remote: Enumerating objects: 39, done.</description>
+    </item>
+    
     <item>
       <title>Fourth post</title>
       <link>https://futurelog.xyz/zh/blog/fourth-post/</link>

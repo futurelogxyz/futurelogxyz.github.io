@@ -1,0 +1,1365 @@
+<!doctype html>
+<html lang="zh" class="no-js">
+    <head>
+        
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.116.0">
+    <link rel="stylesheet" href="/css/main.af789d34c29797c571dda559ab8c569dbf08a9f12459a109dad90dbab604bbf2.css" integrity="sha256-r3idNMKXl8Vx3aVZq4xWnb8IqfEkWaEJ2tkNurYEu/I=" crossorigin="anonymous"><link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto&#43;Serif&#43;SC:wght@500;600;700;900&amp;display=swap">
+
+
+
+  <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <title>FutureLog - Mojo 编程语言手册</title>
+    <meta name="description" content="参考自 Mojo 官方文档：Mojo🔥 programming manual
+Mojo 编程语言的目标是在像 Python 一样易于使用的同时拥有类似 C&#43;&#43; 和 Rust 的性能。并且，还能利用整个 Python 生态的能力。
+为实现这些特性，Mojo 利用了下一代的编译器技术，如：集成缓存、多线程 和 云分发。此外，Mojo 的 autotuning 和 编译时元编程（compile-time metaprogramming）特性，使得编写的代码能够能够移植到各类硬件上。
+更重要的是， Mojo 被设计为 Python 的超集，通过集成整个 Python 生态的能力，让开发人员继续使用熟悉的工具和库，在保留 Python 动态特性的同时增加了系统编程能力。这些新增加的系统编程能力，让开发人员也能够使用 Mojo 编写那些目前需要依赖 C/C&#43;&#43;/Rust/CUDA 等才能实现的高性能的代码和库。通过结合动态编程语言和系统编程语言的优势，Mojo 提供了一种统一的编程模型，对新手友好，并能扩展应用到从底层加速器（accelerators）到应用开发、脚本开发等诸多场景。
+本手册并不是完整的 Mojo 编程语言指南，我们假设读者已经熟悉 Python 语言和系统编程的相关概念，将介绍 Mojo 编程语言相关的基础知识。当前，Mojo 编程语言还处在开发中，本手册的主要目标读者是那些拥有系统编程经验的开发人员。随着 Mojo 编程语言的发展和普及，我们希望 Mojo 对所有人（甚至初学者）都友好且易于使用。
+1. Mojo 编译器 和运行 Python 代码一样，我们也可以在命令行中运行 Mojo 代码：
+cat hello.mojo def main(): print(&amp;#34;hello world&amp;#34;) for x in range(9, 0, -3): print(x) mojo hello.">
+
+<link rel="canonical" href="https://futurelog.xyz/zh/blog/20230904-mojo-programming-manual/">
+
+<meta property="og:locale" content="zh_CN">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mojo 编程语言手册">
+<meta property="og:description" content="参考自 Mojo 官方文档：Mojo🔥 programming manual
+Mojo 编程语言的目标是在像 Python 一样易于使用的同时拥有类似 C&#43;&#43; 和 Rust 的性能。并且，还能利用整个 Python 生态的能力。
+为实现这些特性，Mojo 利用了下一代的编译器技术，如：集成缓存、多线程 和 云分发。此外，Mojo 的 autotuning 和 编译时元编程（compile-time metaprogramming）特性，使得编写的代码能够能够移植到各类硬件上。
+更重要的是， Mojo 被设计为 Python 的超集，通过集成整个 Python 生态的能力，让开发人员继续使用熟悉的工具和库，在保留 Python 动态特性的同时增加了系统编程能力。这些新增加的系统编程能力，让开发人员也能够使用 Mojo 编写那些目前需要依赖 C/C&#43;&#43;/Rust/CUDA 等才能实现的高性能的代码和库。通过结合动态编程语言和系统编程语言的优势，Mojo 提供了一种统一的编程模型，对新手友好，并能扩展应用到从底层加速器（accelerators）到应用开发、脚本开发等诸多场景。
+本手册并不是完整的 Mojo 编程语言指南，我们假设读者已经熟悉 Python 语言和系统编程的相关概念，将介绍 Mojo 编程语言相关的基础知识。当前，Mojo 编程语言还处在开发中，本手册的主要目标读者是那些拥有系统编程经验的开发人员。随着 Mojo 编程语言的发展和普及，我们希望 Mojo 对所有人（甚至初学者）都友好且易于使用。
+1. Mojo 编译器 和运行 Python 代码一样，我们也可以在命令行中运行 Mojo 代码：
+cat hello.mojo def main(): print(&amp;#34;hello world&amp;#34;) for x in range(9, 0, -3): print(x) mojo hello.">
+<meta property="og:url" content="https://futurelog.xyz/zh/blog/20230904-mojo-programming-manual/">
+<meta property="og:site_name" content="FutureLog">
+<meta property="article:published_time" content="2023-09-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-09-04T00:00:00+00:00">
+    <meta property="og:image" content="https://futurelog.xyz/img/imgAVxt8z-20230904.png">
+<meta property="og:image:alt" content="Mojo 编程语言手册">
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+
+
+<meta name="twitter:title" content="Mojo 编程语言手册">
+<meta name="twitter:description" content="参考自 Mojo 官方文档：Mojo🔥 programming manual
+Mojo 编程语言的目标是在像 Python 一样易于使用的同时拥有类似 C&#43;&#43; 和 Rust 的性能。并且，还能利用整个 Python 生态的能力。
+为实现这些特性，Mojo 利用了下一代的编译器技术，如：集成缓存、多线程 和 云分发。此外，Mojo 的 autotuning 和 编译时元编程（compile-time metaprogramming）特性，使得编写的代码能够能够移植到各类硬件上。
+更重要的是， Mojo 被设计为 Python 的超集，通过集成整个 Python 生态的能力，让开发人员继续使用熟悉的工具和库，在保留 Python 动态特性的同时增加了系统编程能力。这些新增加的系统编程能力，让开发人员也能够使用 Mojo 编写那些目前需要依赖 C/C&#43;&#43;/Rust/CUDA 等才能实现的高性能的代码和库。通过结合动态编程语言和系统编程语言的优势，Mojo 提供了一种统一的编程模型，对新手友好，并能扩展应用到从底层加速器（accelerators）到应用开发、脚本开发等诸多场景。
+本手册并不是完整的 Mojo 编程语言指南，我们假设读者已经熟悉 Python 语言和系统编程的相关概念，将介绍 Mojo 编程语言相关的基础知识。当前，Mojo 编程语言还处在开发中，本手册的主要目标读者是那些拥有系统编程经验的开发人员。随着 Mojo 编程语言的发展和普及，我们希望 Mojo 对所有人（甚至初学者）都友好且易于使用。
+1. Mojo 编译器 和运行 Python 代码一样，我们也可以在命令行中运行 Mojo 代码：
+cat hello.mojo def main(): print(&amp;#34;hello world&amp;#34;) for x in range(9, 0, -3): print(x) mojo hello.">
+<meta name="twitter:image" content="https://futurelog.xyz/img/imgAVxt8z-20230904.png">
+<meta name="twitter:image:alt" content="Mojo 编程语言手册">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+        "@id": "https://futurelog.xyz/#/schema/organization/1",
+      "name": "Futurelog",
+      "url": "https://futurelog.xyz/",
+      "sameAs": [
+        , "https://github.com/wallezen"
+        ],
+      "image": {
+          "@type": "ImageObject",
+          "@id": "https://futurelog.xyz/#/schema/image/1",
+          "url": "https://futurelog.xyz/\u003cnil\u003e",
+          "width": null ,
+          "height": null ,
+          "caption": "Futurelog"
+        }
+      },
+    {
+      "@type": "WebSite",
+      "@id": "https://futurelog.xyz/#/schema/website/1",
+      "url": "https://futurelog.xyz/",
+      "name": "FutureLog",
+      "description": "Futurelog - log for the future.",
+      "publisher": {
+          "@id": "https://futurelog.xyz/#/schema/organization/1"
+        }
+      },
+    {
+      "@type": "WebPage",
+      "@id": "https://futurelog.xyz/zh/blog/20230904-mojo-programming-manual/",
+      "url": "https://futurelog.xyz/zh/blog/20230904-mojo-programming-manual/",
+      "name": "Mojo 编程语言手册",
+      "description": "",
+      "isPartOf": {
+        "@id": "https://futurelog.xyz/#/schema/website/1"
+      },
+      "about": {
+          "@id": "https://futurelog.xyz/#/schema/organization/1"
+        },
+      "datePublished": "2023-09-04T00:00:00CET",
+      "dateModified": "2023-09-04T00:00:00CET",
+      "breadcrumb": {
+        "@id": "https://futurelog.xyz/zh/blog/20230904-mojo-programming-manual/#/schema/breadcrumb/1"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://futurelog.xyz/zh/blog/20230904-mojo-programming-manual/#/schema/image/2"
+      },
+      "inLanguage": "zh_CN",
+      "potentialAction": [{
+        "@type": "ReadAction", "target": ["https://futurelog.xyz/zh/blog/20230904-mojo-programming-manual/"]
+      }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://futurelog.xyz/zh/blog/20230904-mojo-programming-manual/#/schema/breadcrumb/1",
+      "name": "Breadcrumbs",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://futurelog.xyz/",
+          "url": "https://futurelog.xyz/",
+          "name": "Home"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  2 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://futurelog.xyz/zh/",
+          "url": "https://futurelog.xyz/zh/",
+          "name": "Zh"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://futurelog.xyz/zh/blog/",
+          "url": "https://futurelog.xyz/zh/blog/",
+          "name": "Blog"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "item": {
+          "@id": "https://futurelog.xyz/zh/blog/20230904-mojo-programming-manual/"
+          }
+        }]
+    },
+
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://futurelog.xyz/#/schema/article/1",
+          "headline": "Mojo 编程语言手册",
+          "description": "",
+          "isPartOf": {
+            "@id": "https://futurelog.xyz/zh/blog/20230904-mojo-programming-manual/"
+          },
+          "mainEntityOfPage": {
+            "@id": "https://futurelog.xyz/zh/blog/20230904-mojo-programming-manual/"
+          },
+          "datePublished": "2023-09-04T00:00:00CET",
+          "dateModified": "2023-09-04T00:00:00CET",
+          "author": {
+            "@id": "https://futurelog.xyz/#/schema/person/2"
+          },
+          "publisher": {
+              "@id": "https://futurelog.xyz/#/schema/organization/1"
+            },
+          "image": {
+            "@id": "https://futurelog.xyz/zh/blog/20230904-mojo-programming-manual/#/schema/image/2"
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://futurelog.xyz/#/schema/person/2",
+          "name":  null ,
+          "sameAs": [
+            ]
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ImageObject",
+          "@id": "https://futurelog.xyz/zh/blog/20230904-mojo-programming-manual/#/schema/image/2",
+          "url": "https://futurelog.xyz/img/imgAVxt8z-20230904.png",
+          "contentUrl": "https://futurelog.xyz/img/imgAVxt8z-20230904.png",
+          "caption": "Mojo 编程语言手册"
+        }
+      ]
+    }
+
+  ]
+}
+</script>
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon_huc4964b0749b420dac9156df1c43fa94d_151514_16x16_resize_catmullrom_3.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon_huc4964b0749b420dac9156df1c43fa94d_151514_32x32_resize_catmullrom_3.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/img/favicon_huc4964b0749b420dac9156df1c43fa94d_151514_48x48_resize_catmullrom_3.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon_huc4964b0749b420dac9156df1c43fa94d_151514_180x0_resize_catmullrom_3.png">
+
+    <meta name="lang" content="zh">
+    
+</head>
+
+    <body><script src="/js/critical.bundle.min.20b68e3669733dbdc53d6a7b75ac6ac2c2e74f0c1901d2dc070f09d6707fcce3.js" integrity="sha256-ILaONmlzPb3FPWp7daxqwsLnTwwZAdLcBw8J1nB/zOM=" crossorigin="anonymous"></script>
+    <div class="d-flex flex-column min-vh-100">
+            <div class="mb-4">
+
+
+<div class="container-fluid fixed-top p-0"><nav class="navbar navbar-expand-md bg-body p-4">
+        <div class="container-xxl p-0">
+            
+            <div class="d-flex">
+                    <button class="navbar-toggler fw-30 collapsed p-0 mx-auto invisible" type="button"><!-- <i class="fas fa-ellipsis fa-fw"></i> --><svg class="svg-inline--fa fas fa-ellipsis fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 448 512"><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z"/></svg></button></div>
+    
+            
+            <a class="navbar-brand mx-auto" href="/zh/"><img src="/img/futurelog-red.svg" alt="FutureLog logo" height="30"></a>
+    
+            
+            <div class="d-flex fw-30">
+                <button id="main-nav-toggler" class="navbar-toggler collapsed p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-0"
+                    aria-controls="navbar-collapse-0" aria-expanded="false" aria-label="Toggle main navigation">
+                    <span class="toggler-icon top-bar emphasis"></span>
+                    <span class="toggler-icon middle-bar emphasis"></span>
+                    <span class="toggler-icon bottom-bar emphasis"></span>
+                </button>
+            </div>
+    
+            <div class="navbar-collapse collapse" id="navbar-collapse-0">
+                <div class="d-flex ms-md-3">
+    <form class="search position-relative flex-grow-1 me-auto">
+        <input id="search" class="form-control is-search" type="search" placeholder="search the site..." aria-label="search the site..." autocomplete="off">
+        <div id="suggestions" class="shadow bg-body rounded d-none" data-no-results="No results for"></div>
+    </form>
+</div>
+
+                <ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link active" 
+    
+    data-nav="main" data-nav-main="%E4%B8%BB%E9%A1%B5" 
+    href="/zh/" ><span  class="active">主页</span>&nbsp;</a>
+</li><li class="nav-item"><a class="nav-link active" 
+    
+    data-nav="main" data-nav-main="%E5%8D%9A%E5%AE%A2" 
+    href="/zh/blog/" ><span  class="active">博客</span>&nbsp;</a>
+</li><li class="nav-item"><a class="nav-link" 
+    
+    data-nav="main" data-nav-main="%E6%A0%87%E7%AD%BE" 
+    href="/zh/tags/" ><span >标签</span>&nbsp;</a>
+</li><li class="nav-item"><a class="nav-link" 
+    
+    data-nav="main" data-nav-main="%E6%96%87%E6%A1%A3" 
+    href="https://docs.futurelog.xyz" ><span >文档</span>&nbsp;</a>
+</li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" 
+    
+    data-nav="main" data-nav-main="%E9%A1%B9%E7%9B%AE" 
+    href="/zh/projects/"  role="button" data-bs-toggle="dropdown" aria-expanded="false"><span >项目</span>&nbsp;</a>
+<ul class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" 
+    
+    data-nav="main" data-nav-main="%E9%A1%B9%E7%9B%AE" data-nav-child="sample-project" 
+    href="/zh/projects/sample-project/" ><span >Sample project</span>&nbsp;</a>
+<a class="dropdown-item" 
+    
+    data-nav="main" data-nav-main="%E9%A1%B9%E7%9B%AE" data-nav-child="another-project" 
+    href="/zh/projects/another-project/" ><span >Another project</span>&nbsp;</a>
+</ul></li><li class="nav-item"><a class="nav-link" 
+    
+    data-nav="main" data-nav-main="%E5%85%B3%E4%BA%8E" 
+    href="/zh/about/" ><span >关于</span>&nbsp;</a>
+</li><li class="nav-item py-2 py-md-1 col-12 col-md-auto d-none d-md-block">
+                            <div class="vr d-none d-md-flex h-100 mx-md-2"></div>
+                        </li>
+                        <li><hr class="dropdown-divider-bg"></li><li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle d-md-none" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false"><!-- <i class="fas fa-globe fa-fw"></i> --><svg class="svg-inline--fa fas fa-globe fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>  language
+                            </a>
+                            <a class="nav-link dropdown-toggle d-none d-md-block" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false"><!-- <i class="fas fa-globe fa-fw"></i> --><svg class="svg-inline--fa fas fa-globe fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/></svg>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end "><li><a class="dropdown-item" href="/zh">中文</a></li><li><a class="dropdown-item" href="/en">English</a></li></ul>
+                        </li>
+                        <li class="nav-item py-2 py-md-1 col-12 col-md-auto d-none d-md-block">
+                            <div class="vr d-none d-md-flex h-100 mx-md-2"></div>
+                        </li>
+                        <li><hr class="dropdown-divider-bg"></li><li class="nav-item dropdown d-md-none">
+        <a class="nav-link dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="navbar-color-theme-collapsed">
+            <span class="theme-icon-active"><!-- <i class="fas fa-sun fa-fw"></i> --><svg class="svg-inline--fa fas fa-sun fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 512 512"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg>  Theme </span>
+            <span class="d-md-none"></span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbar-color-theme-collapsed">
+            <li>
+                <a class="dropdown-item switch-mode-collapsed" data-bs-theme-value="light" href="#!">
+                    <span class="theme-icon"><!-- <i class="fas fa-sun fa-fw"></i> --><svg class="svg-inline--fa fas fa-sun fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 512 512"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg></span>&nbsp;
+                    浅色
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item switch-mode-collapsed" data-bs-theme-value="dark" href="#!">
+                    <span class="theme-icon"><!-- <i class="fas fa-moon fa-fw"></i> --><svg class="svg-inline--fa fas fa-moon fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 384 512"><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></svg></span>&nbsp;
+                    深色
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item switch-mode-collapsed" data-bs-theme-value="auto" href="#!">
+                    <span class="theme-icon"><!-- <i class="fas fa-circle-half-stroke fa-fw"></i> --><svg class="svg-inline--fa fas fa-circle-half-stroke fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 512 512"><path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg></span>&nbsp;
+                    自动
+                </a>
+            </li>
+        </ul>
+    </li><li class="nav-item dropdown d-none d-md-block">
+        <a class="nav-link dropdown-toggle" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="navbar-color-theme">
+            <span class="theme-icon-active"><!-- <i class="fas fa-sun fa-fw"></i> --><svg class="svg-inline--fa fas fa-sun fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 512 512"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg> </span>
+            <span class="d-md-none"></span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbar-color-theme">
+            <li>
+                <a class="dropdown-item" data-bs-theme-value="light" href="#!">
+                    <span class="theme-icon"><!-- <i class="fas fa-sun fa-fw"></i> --><svg class="svg-inline--fa fas fa-sun fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 512 512"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg></span>&nbsp;
+                    浅色
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" data-bs-theme-value="dark" href="#!">
+                    <span class="theme-icon"><!-- <i class="fas fa-moon fa-fw"></i> --><svg class="svg-inline--fa fas fa-moon fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 384 512"><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></svg></span>&nbsp;
+                    深色
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" data-bs-theme-value="auto" href="#!">
+                    <span class="theme-icon"><!-- <i class="fas fa-circle-half-stroke fa-fw"></i> --><svg class="svg-inline--fa fas fa-circle-half-stroke fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 512 512"><path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg></span>&nbsp;
+                    自动
+                </a>
+            </li>
+        </ul>
+    </li></ul>
+            </div>
+        </div>
+    </nav>
+</div>
+</div>
+            <div class="d-flex flex-column flex-fill mt-5">
+                    
+        <div class="container-xxl px-3 px-xxl-0">
+            <div class="row row-cols-1 row-cols-sm-3">
+                <div class="col col-md-2 d-none d-md-block"></div>
+                <div class="col col-sm-12 col-md-8">
+                    
+        <p class="display-4 mt-5">Mojo 编程语言手册</p>
+        <small class="text-body-secondary text-uppercase">
+            发布于 2023年9月4日 &bull;
+            8&nbsp;分钟 阅读时间 &bull;
+            1,555&nbsp;字
+        </small><div class="mt-3">
+                <div class="d-none-dark">
+                    <div class="hstack gap-3">
+                        
+<a aria-label="mojo" href="/zh/tags/mojo"
+    
+    
+    
+    
+    class="btn btn-light btn-sm position-relative  "
+    role="button" 
+    
+    
+    
+    
+    
+    
+    >
+
+    <div class="d-flex justify-content-center">
+        <div class="my-auto">mojo</div>
+    </div></a>
+
+                        
+<a aria-label="programming language" href="/zh/tags/programming-language"
+    
+    
+    
+    
+    class="btn btn-light btn-sm position-relative  "
+    role="button" 
+    
+    
+    
+    
+    
+    
+    >
+
+    <div class="d-flex justify-content-center">
+        <div class="my-auto">programming language</div>
+    </div></a>
+
+                        
+<a aria-label="manual" href="/zh/tags/manual"
+    
+    
+    
+    
+    class="btn btn-light btn-sm position-relative  "
+    role="button" 
+    
+    
+    
+    
+    
+    
+    >
+
+    <div class="d-flex justify-content-center">
+        <div class="my-auto">manual</div>
+    </div></a>
+
+                        </div>
+                </div>
+                
+                <div class="d-none-light">
+                    <div class="hstack gap-3">
+                        
+<a aria-label="mojo" href="/zh/tags/mojo"
+    
+    
+    
+    
+    class="btn btn-outline-secondary btn-sm position-relative  "
+    role="button" 
+    
+    
+    
+    
+    
+    
+    >
+
+    <div class="d-flex justify-content-center">
+        <div class="my-auto">mojo</div>
+    </div></a>
+
+                        
+<a aria-label="programming language" href="/zh/tags/programming-language"
+    
+    
+    
+    
+    class="btn btn-outline-secondary btn-sm position-relative  "
+    role="button" 
+    
+    
+    
+    
+    
+    
+    >
+
+    <div class="d-flex justify-content-center">
+        <div class="my-auto">programming language</div>
+    </div></a>
+
+                        
+<a aria-label="manual" href="/zh/tags/manual"
+    
+    
+    
+    
+    class="btn btn-outline-secondary btn-sm position-relative  "
+    role="button" 
+    
+    
+    
+    
+    
+    
+    >
+
+    <div class="d-flex justify-content-center">
+        <div class="my-auto">manual</div>
+    </div></a>
+
+                        </div>
+                </div>
+            </div><div class="py-3 text-body-secondary hstack gap-2">
+            分享到
+<a aria-label="" href="https://www.linkedin.com/sharing/share-offsite/?url=https://futurelog.xyz/zh/blog/20230904-mojo-programming-manual/"
+    
+    
+    
+    
+    class="btn btn-primary  position-relative  btn-social p-0"
+    role="button" 
+    
+    
+    
+    
+    
+    
+    >
+
+    <div class="d-flex justify-content-center">
+        <div class="my-auto"></div><div class="align-self-center"><!-- <i class="fab fa-linkedin fa-fw"></i> --><svg class="svg-inline--fa fab fa-linkedin fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></div>
+    </div></a>
+
+<a aria-label="" href="https://twitter.com/home?status=https://futurelog.xyz/zh/blog/20230904-mojo-programming-manual/"
+    
+    
+    
+    
+    class="btn btn-primary  position-relative  btn-social p-0"
+    role="button" 
+    
+    
+    
+    
+    
+    
+    >
+
+    <div class="d-flex justify-content-center">
+        <div class="my-auto"></div><div class="align-self-center"><!-- <i class="fab fa-x-twitter fa-fw"></i> --><svg class="svg-inline--fa fab fa-x-twitter fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></div>
+    </div></a>
+
+<a aria-label="" href="https://www.facebook.com/sharer.php?u=https://futurelog.xyz/zh/blog/20230904-mojo-programming-manual/"
+    
+    
+    
+    
+    class="btn btn-primary  position-relative  btn-social p-0"
+    role="button" 
+    
+    
+    
+    
+    
+    
+    >
+
+    <div class="d-flex justify-content-center">
+        <div class="my-auto"></div><div class="align-self-center"><!-- <i class="fab fa-facebook fa-fw"></i> --><svg class="svg-inline--fa fab fa-facebook fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 512 512"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></div>
+    </div></a>
+
+<a aria-label="" href="whatsapp://send?text=Mojo&#43;%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%89%8B%E5%86%8C%20https://futurelog.xyz/zh/blog/20230904-mojo-programming-manual/"
+    
+    
+    
+    
+    class="btn btn-primary  position-relative  btn-social p-0"
+    role="button" 
+    
+    
+    
+    
+    
+    
+    >
+
+    <div class="d-flex justify-content-center">
+        <div class="my-auto"></div><div class="align-self-center"><!-- <i class="fab fa-whatsapp fa-fw"></i> --><svg class="svg-inline--fa fab fa-whatsapp fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></div>
+    </div></a>
+
+    
+
+
+<div id="toast-message-email-4" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+        <strong class="me-auto">FutureLog</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">Link copied to clipboard</div>
+</div>
+
+<a aria-label="" href="#!"
+    
+    
+    data-toast-target="toast-message-email-4"
+    data-clipboard="https://futurelog.xyz/zh/blog/20230904-mojo-programming-manual/"
+    class="btn btn-primary  position-relative  btn-social p-0"
+    role="button" 
+    
+    
+    
+    
+    
+    
+    >
+
+    <div class="d-flex justify-content-center">
+        <div class="my-auto"></div><div class="align-self-center"><!-- <i class="fas fa-link fa-fw"></i> --><svg class="svg-inline--fa fas fa-link fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></div>
+    </div></a>
+
+                
+                
+<a aria-label="" href="#!"
+    id="btn-webshare"
+    
+    
+    
+    class="btn btn-primary  position-relative  btn-social p-0"
+    role="button" 
+    
+    
+    
+    
+    
+    
+        data-sharing-description=""
+    
+        data-sharing-title="Mojo 编程语言手册"
+    
+        data-sharing-url="https://futurelog.xyz/zh/blog/20230904-mojo-programming-manual/"
+    
+    >
+
+    <div class="d-flex justify-content-center">
+        <div class="my-auto"></div><div class="align-self-center"><!-- <i class="fas fa-share-nodes fa-fw"></i> --><svg class="svg-inline--fa fas fa-share-nodes fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 448 512"><path d="M352 224c53 0 96-43 96-96s-43-96-96-96s-96 43-96 96c0 4 .2 8 .7 11.9l-94.1 47C145.4 170.2 121.9 160 96 160c-53 0-96 43-96 96s43 96 96 96c25.9 0 49.4-10.2 66.6-26.9l94.1 47c-.5 3.9-.7 7.8-.7 11.9c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-25.9 0-49.4 10.2-66.6 26.9l-94.1-47c.5-3.9 .7-7.8 .7-11.9s-.2-8-.7-11.9l94.1-47C302.6 213.8 326.1 224 352 224z"/></svg></div>
+    </div></a>
+</div>
+        <p class="lead mb-5 mt-3"></p>
+    
+
+                    <div class="d-md-none pb-5"><div class="d-grid gap-2 mx-auto">
+        
+<a aria-label="目录" href="#toc-collapse"
+    
+    
+    
+    
+    class="btn btn-outline-secondary  position-relative  toc-button"
+    role="button" 
+    
+    
+    data-bs-toggle="collapse" aria-expanded="false" aria-controls="toc-collapse"
+    
+    
+    
+    >
+
+    <div class="d-flex justify-content-between">
+        <div class="my-auto">目录</div><div class="align-self-center ps-1"><!-- <i class="fas fa-sort "></i> --><svg class="svg-inline--fa fas fa-sort " fill="currentColor" aria-hidden role="img" viewBox="0 0 320 512"><path d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"/></svg></div>
+    </div></a>
+</div>
+
+    <p>
+        <div class="collapse border bg-body-tertiary rounded p-1 navbar-nav-scroll" id="toc-collapse">
+            <div class="toc toc-panel text-body-secondary p-2">
+                <small><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-mojo-编译器">1. Mojo 编译器</a></li>
+    <li><a href="#2-系统编程基础支持">2. 系统编程基础支持</a>
+      <ul>
+        <li><a href="#21-let-和-var-变量声明">2.1 <code>let</code> 和 <code>var</code> 变量声明</a></li>
+        <li><a href="#22-struct-结构体类型">2.2 <code>struct</code> 结构体类型</a></li>
+        <li><a href="#23-int-与-int">2.3 <code>Int</code> 与 <code>int</code></a></li>
+        <li><a href="#24-强类型检查">2.4 强类型检查</a></li>
+        <li><a href="#25-函数重载和方法重载">2.5 函数重载和方法重载</a></li>
+        <li><a href="#26-fn-函数">2.6 <code>fn</code> 函数</a></li>
+        <li><a href="#27-__copyinit__-方法-和-__moveinit__-方法">2.7 <code>__copyinit__</code> 方法 和 <code>__moveinit__</code> 方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-参数传递与所有权">3. 参数传递与所有权</a>
+      <ul>
+        <li><a href="#31-参数传递约定的重要性">3.1 参数传递约定的重要性</a></li>
+        <li><a href="#32-不可变参数borrowed-arguments">3.2 不可变参数(<code>borrowed</code> arguments)</a></li>
+        <li><a href="#33-可变参数inout-arguments">3.3 可变参数(<code>inout</code> arguments)</a></li>
+        <li><a href="#34-所有权转移owned-和-">3.4 所有权转移(<code>owned</code> 和 <code>^</code>)</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-集成-python">4. 集成 Python</a>
+      <ul>
+        <li><a href="#41-导入-python-模块">4.1 导入 Python 模块</a></li>
+        <li><a href="#42-python-中使用-mojo-类型">4.2 Python 中使用 Mojo 类型</a></li>
+        <li><a href="#43-导入本地-python-模块">4.3 导入本地 Python 模块</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-参数化编译时的元编程">5. 参数化：编译时的元编程</a></li>
+    <li><a href="#6-生命周期值的诞生存在与消亡">6. 生命周期：值的诞生、存在与消亡</a></li>
+    <li><a href="#7-析构函数">7. 析构函数</a></li>
+    <li><a href="#8-lifetimes">8. lifetimes</a></li>
+    <li><a href="#9-type-traits">9. Type traits</a></li>
+    <li><a href="#10-advancedobscure-mojo-features">10. Advanced/Obscure Mojo features</a></li>
+  </ul>
+</nav></small>
+            </div>
+        </div>
+    </p>
+</div>
+        
+        <div class="ratio ratio-21x9 img-wrap">
+            <img class="img-fluid rounded"
+                srcset="/img/imgAVxt8z-20230904-576x247.webp 576w, /img/imgAVxt8z-20230904-768x329.webp 768w, /img/imgAVxt8z-20230904-992x425.webp 992w, /img/imgAVxt8z-20230904-1200x514.webp 1200w, /img/imgAVxt8z-20230904-1400x600.webp 1400w"
+                sizes="100vw"
+                src="/img/imgAVxt8z-20230904-1400x600.png"
+                alt="Mojo 编程语言手册">
+        </div>
+    <p><em>参考自 Mojo 官方文档：<a href="https://docs.modular.com/mojo/programming-manual.html">Mojo🔥 programming manual</a></em></p>
+<p>Mojo 编程语言的目标是在像 Python 一样易于使用的同时拥有类似 C++ 和 Rust 的性能。并且，还能利用整个 Python 生态的能力。</p>
+<p>为实现这些特性，Mojo 利用了下一代的编译器技术，如：集成缓存、多线程 和 云分发。此外，Mojo 的 autotuning 和 编译时元编程（compile-time metaprogramming）特性，使得编写的代码能够能够移植到各类硬件上。</p>
+<p>更重要的是， Mojo 被设计为 Python 的超集，通过集成整个 Python 生态的能力，让开发人员继续使用熟悉的工具和库，在保留 Python 动态特性的同时增加了系统编程能力。这些新增加的系统编程能力，让开发人员也能够使用 Mojo 编写那些目前需要依赖 C/C++/Rust/CUDA 等才能实现的高性能的代码和库。通过结合动态编程语言和系统编程语言的优势，Mojo 提供了一种统一的编程模型，对新手友好，并能扩展应用到从底层加速器（accelerators）到应用开发、脚本开发等诸多场景。</p>
+<p>本手册并不是完整的 Mojo 编程语言指南，我们假设读者已经熟悉 Python 语言和系统编程的相关概念，将介绍 Mojo 编程语言相关的基础知识。当前，Mojo 编程语言还处在开发中，本手册的主要目标读者是那些拥有系统编程经验的开发人员。随着 Mojo 编程语言的发展和普及，我们希望 Mojo 对所有人（甚至初学者）都友好且易于使用。</p>
+
+<h2 id="1-mojo-编译器" class="heading">1. Mojo 编译器 <a href="#1-mojo-%e7%bc%96%e8%af%91%e5%99%a8"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h2>
+<p>和运行 Python 代码一样，我们也可以在命令行中运行 Mojo 代码：</p>
+<p><div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="command-line-prompt"><span data-prompt="[wallezen@localhost] $"></span><span></span><span></span><span></span><span></span><span></span><span data-prompt="[wallezen@localhost] $"></span><span></span><span></span><span></span><span></span><span></span></span><span class="line"><span class="cl">cat hello.mojo
+</span></span><span class="line"><span class="cl"><span class="c1">def main():</span>
+</span></span><span class="line"><span class="cl"><span class="c1">    print(&#34;hello world&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">    for x in range(9, 0, -3):</span>
+</span></span><span class="line"><span class="cl"><span class="c1">        print(x)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">mojo hello.mojo
+</span></span><span class="line"><span class="cl"><span class="c1">hello world</span>
+</span></span><span class="line"><span class="cl"><span class="c1">9</span>
+</span></span><span class="line"><span class="cl"><span class="c1">6</span>
+</span></span><span class="line"><span class="cl"><span class="c1">3</span>
+</span></span><span class="line"><span class="cl"><span class="c1"></span></span></span></code></pre></div></div>
+<em>文件名后缀可以是 <code>.mojo</code> 或 <code>.🔥</code>。</em></p>
+<p>Mojo SDK 预计在 2023 年 09 月初开放下载，可以在官网 <a href="https://www.modular.com/mojo">登记预约</a>。</p>
+
+<h2 id="2-系统编程基础支持" class="heading">2. 系统编程基础支持 <a href="#2-%e7%b3%bb%e7%bb%9f%e7%bc%96%e7%a8%8b%e5%9f%ba%e7%a1%80%e6%94%af%e6%8c%81"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h2>
+<p>Python 对系统编程的支持需要依赖于 C。在 Mojo 中，我们希望提供一个统一的编程模型。本节将详细介绍 Mojo 的主要组件和功能特性，并通过示例描述如何使用它们。</p>
+
+<h3 id="21-let-和-var-变量声明" class="heading">2.1 <code>let</code> 和 <code>var</code> 变量声明 <a href="#21-let-%e5%92%8c-var-%e5%8f%98%e9%87%8f%e5%a3%b0%e6%98%8e"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h3>
+<p>与 Python 类似，在 Mojo 的 <code>def</code> 函数内部，我们也可以直接为一个变量名赋值，从而隐式创建一个函数作用域内的变量。这种动态且简单的代码编写方式对于系统编程存在以下问题：</p>
+<ol>
+<li>系统编程开发人员为保证类型安全和性能，通常希望值是不可变的；</li>
+<li>如果输错了变量名称，他们也希望得到相应的错误提示。</li>
+</ol>
+<p>为了解决这些问题，Mojo 引入了 <code>let</code> 和 <code>var</code> 关键字，用于显式声明变量。</p>
+<p><strong><code>let</code> 表示不可变，<code>var</code> 表示可变。</strong></p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">your_function</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">let</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span>
+</span></span><span class="line hl"><span class="cl">    <span class="c1"># Uncomment to see an error:</span>
+</span></span><span class="line hl"><span class="cl">    <span class="c1"># c = b  # error: c is immutable</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">c</span> <span class="o">!=</span> <span class="n">b</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">let</span> <span class="n">d</span> <span class="o">=</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">your_function</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span></span></span></code></pre></div></div><p><code>let</code> 和 <code>var</code> 声明也支持类型说明符，后期初始化(late initialization) 和 变量遮蔽(variable shadowing)。</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">your_function</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">let</span> <span class="n">x</span><span class="p">:</span> <span class="n">Int</span> <span class="o">=</span> <span class="mi">42</span>  <span class="c1"># type annotation</span>
+</span></span><span class="line"><span class="cl">    <span class="n">let</span> <span class="n">y</span><span class="p">:</span> <span class="n">Float64</span> <span class="o">=</span> <span class="mf">17.0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">var</span> <span class="n">one</span><span class="p">:</span> <span class="n">Float32</span> <span class="o">=</span> <span class="mf">1.0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">let</span> <span class="n">z</span><span class="p">:</span> <span class="n">Float32</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">one</span> <span class="o">=</span> <span class="mf">2.0</span>  <span class="c1"># variable shadowing</span>
+</span></span><span class="line"><span class="cl">        <span class="n">z</span> <span class="o">=</span> <span class="n">one</span>  <span class="c1"># late initialization</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">z</span> <span class="o">=</span> <span class="n">foo</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">foo</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Float32</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mf">3.14</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">your_function</span><span class="p">()</span></span></span></code></pre></div></div>
+
+    
+        
+        
+    
+
+    
+
+
+<div class="d-flex alert alert-info " role="alert">
+        <div class="pt-1 pe-2"><!-- <i class="fa fa-lightbulb fa-2x fa-fw"></i> --><svg class="svg-inline--fa fa fa-lightbulb fa-2x fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 384 512"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"/></svg></div>
+        <div class="flex-grow-1 my-auto">
+            注意：在 <code>def</code> 函数中， <code>let</code> 和 <code>var</code> 完全是可选的，但在 <code>fn</code> 函数中，它们是必须的。另外，在 REPL（Read Eval Print Loop，交互式解释器）环境中， 对位于函数和结构体之外的全局变量声明，不需要 <code>let</code> 和 <code>var</code>，也不需要类型说明符，这与 Python 在 REPL 中的行为是一致的。
+        </div>
+    </div>
+
+<h3 id="22-struct-结构体类型" class="heading">2.2 <code>struct</code> 结构体类型 <a href="#22-struct-%e7%bb%93%e6%9e%84%e4%bd%93%e7%b1%bb%e5%9e%8b"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h3>
+<p>Mojo 基于 <a href="https://mlir.llvm.org/">MLIR</a> 和 <a href="https://llvm.org/">LLVM</a> 这两个编译器基础设施，它们同时也是很多其他编程语言的基石。现代系统编程语言的一个重要特征是能够在复杂的低级操作之上构建高级安全的抽象，并且不会造成任何性能损失。在 Mojo 中，我们通过 <code>struct</code> 结构体类型来实现这一目标。</p>
+<p>Mojo 的 <code>struct</code> 类似于 Python 中的 <code>class</code>，它们都支持 方法、属性、运算符重载、元编程装饰器 等。但也有如下区别：</p>
+<ul>
+<li>Python 的 <code>class</code> 是动态的。它允许动态调度（dynamic dispatch），monkey-patching，以及在运行时动态绑定示例属性 等。</li>
+<li>Mojo 的 <code>struct</code> 是静态的。它在编译时绑定，不能在运行时添加方法等，牺牲灵活性换取性能，安全且易于使用。</li>
+</ul>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">struct</span> <span class="n">MyPair</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">var</span> <span class="n">first</span><span class="p">:</span> <span class="n">Int</span>
+</span></span><span class="line"><span class="cl">    <span class="n">var</span> <span class="n">second</span><span class="p">:</span> <span class="n">Int</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># We use &#39;fn&#39; instead of &#39;def&#39; here - we&#39;ll explain that soon</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fn</span> <span class="fm">__init__</span><span class="p">(</span><span class="n">inout</span> <span class="bp">self</span><span class="p">,</span> <span class="n">first</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">second</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">first</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">second</span> <span class="o">=</span> <span class="n">second</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">fn</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rhs</span><span class="p">:</span> <span class="n">MyPair</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Bool</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">&lt;</span> <span class="n">rhs</span><span class="o">.</span><span class="n">first</span> <span class="ow">or</span>
+</span></span><span class="line"><span class="cl">              <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">==</span> <span class="n">rhs</span><span class="o">.</span><span class="n">first</span> <span class="ow">and</span>
+</span></span><span class="line"><span class="cl">               <span class="bp">self</span><span class="o">.</span><span class="n">second</span> <span class="o">&lt;</span> <span class="n">rhs</span><span class="o">.</span><span class="n">second</span><span class="p">)</span></span></span></code></pre></div></div><p>从语法上讲，上述的 <code>struct</code> 定义和 Python 中的 <code>class</code> 最大的区别是所有属性都必须使用 <code>var</code> 或 <code>let</code> 声明。</p>
+<p>在 Mojo 中，<code>struct</code> 的结构和内容是预先设置好的，是静态的，在程序运行时无法更改。这样做的好处是，编译器可以在编译时就知道结构体的大小和布局，确切地知道在哪里可以找到结构体的信息以及如何使用它，无需任何额外的步骤或延迟，使得 Mojo 可以更快地运行代码。</p>
+<p>Mojo 中的标准类型，如 <code>Int</code>、<code>Bool</code>、<code>String</code> 和 <code>Tuple</code> 等都是使用 <code>struct</code> 结构体创建的。</p>
+
+<h3 id="23-int-与-int" class="heading">2.3 <code>Int</code> 与 <code>int</code> <a href="#23-int-%e4%b8%8e-int"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h3>
+<p>在 Mojo 中我们使用的 <code>Int</code> 类型是一个结构体，它与 Python 中的 <code>int</code> 不同。这种差异是我们特意设计的。在 Python 中， <code>int</code> 类型可以处理非常大的数字，并且具有一些额外的功能，例如检查两个数字是否是同一个对象。但这带来了一些额外的负担，可能会减慢速度。 Mojo 的 <code>Int</code> 设计简单、快速，并针对您的计算机硬件进行了调整，以便快速处理。</p>
+<p>我们如此设计，主要有两个原因：</p>
+<ol>
+<li>我们希望为需要与计算机硬件密切合作的程序员（系统程序员）提供一种透明且可靠的与硬件交互的方式。我们不想依靠花哨的技巧（比如 JIT 编译器）来让事情变得更快；</li>
+<li>我们希望 Mojo 能够与 Python 很好地配合，而不会引起任何问题。通过使用不同的名称（<code>Int</code> 而不是 <code>int</code>），我们可以在 Mojo 中保留这两种类型，而无需更改 Python <code>int</code> 的工作方式。</li>
+</ol>
+
+<h3 id="24-强类型检查" class="heading">2.4 强类型检查 <a href="#24-%e5%bc%ba%e7%b1%bb%e5%9e%8b%e6%a3%80%e6%9f%a5"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h3>
+<p>尽管您仍然可以像在 Python 中一样使用灵活的类型，但 Mojo 允许使用严格的类型检查。类型检查可以使您的代码更可预测、更易于管理且更安全。</p>
+<p>Mojo 主要是通过 <code>struct</code> 来应用强类型检查的。如以下关于 <code>MyPair</code> 结构体的示例：</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">pair_test</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Bool</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">let</span> <span class="n">p</span> <span class="o">=</span> <span class="n">MyPair</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line hl"><span class="cl">    <span class="c1"># Uncomment to see an error:</span>
+</span></span><span class="line hl"><span class="cl">    <span class="c1"># return p &lt; 4 # gives a compile time error</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">True</span></span></span></code></pre></div></div><p>在上述示例中，<code>p</code> 是一个 <code>MyPair</code> 类型的变量，它不能与 <code>Int</code> 类型的 <code>4</code> 相比较，因为 <code>MyPair</code> 类型没有定义 <code>&lt;</code> 运算符。如果取消注释 <code>return p &lt; 4</code> 这一行，编译器将会报错。</p>
+<p>在系统编程语言中，强类型检查是常见且熟悉的惯例。但 Python 并非如此，虽然 Python 可以使用 <a href="https://mypy.readthedocs.io/en/stable/">MyPy</a> 类型标注能力来进行类型检查，但这只是静态分析提示，并不是编译器强制执行的，我们甚至可以忽略这类错误提示继续运行代码。在 Mojo 中，通过将类型绑定到特定声明，Mojo 可以处理经典类型注释提示和强类型规范，而不会破坏兼容性。</p>
+<p>类型检查并不是强类型的唯一用途。由于知道准确的类型，因此我们可以根据这些类型优化代码，在寄存器中传递值，并在参数传递和其他低级细节处理方面与 C 一样高效。这是 Mojo 为系统程序员提供安全性和可预测性保证的基础。</p>
+
+<h3 id="25-函数重载和方法重载" class="heading">2.5 函数重载和方法重载 <a href="#25-%e5%87%bd%e6%95%b0%e9%87%8d%e8%bd%bd%e5%92%8c%e6%96%b9%e6%b3%95%e9%87%8d%e8%bd%bd"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h3>
+<p>函数重载和方法重载在 C++ 和 Java 等编程语言中是常见的特性。得益于上文提到的类型安全特性，Mojo 也为函数重载和方法重载提供了全面的支持。</p>
+<p>所谓 <em>重载</em> 是指在同一个作用域中，可以定义多个同名的函数或方法，但它们的参数类型或参数个数不同。在调用时，编译器会根据参数类型或参数个数的不同，自动选择合适的函数或方法。</p>
+<p>以下是一个函数重载的示例：</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">struct</span> <span class="n">Complex</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">var</span> <span class="n">re</span><span class="p">:</span> <span class="n">Float32</span>
+</span></span><span class="line"><span class="cl">    <span class="n">var</span> <span class="n">im</span><span class="p">:</span> <span class="n">Float32</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">fn</span> <span class="fm">__init__</span><span class="p">(</span><span class="n">inout</span> <span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">Float32</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;Construct a complex number given a real number.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">re</span> <span class="o">=</span> <span class="n">x</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">im</span> <span class="o">=</span> <span class="mf">0.0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">fn</span> <span class="fm">__init__</span><span class="p">(</span><span class="n">inout</span> <span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="n">Float32</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="n">Float32</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;Construct a complex number given its real and imaginary components.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">re</span> <span class="o">=</span> <span class="n">r</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">im</span> <span class="o">=</span> <span class="n">i</span></span></span></code></pre></div></div>
+
+    
+        
+        
+    
+
+    
+
+
+<div class="d-flex alert alert-danger " role="alert">
+        <div class="pt-1 pe-2"><!-- <i class="fas fa-triangle-exclamation fa-2x fa-fw"></i> --><svg class="svg-inline--fa fas fa-triangle-exclamation fa-2x fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 512 512"><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24V296c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg></div>
+        <div class="flex-grow-1 my-auto">
+            注意：Mojo 不支持仅在结果类型上重载，并且不使用结果类型或上下文类型信息进行类型推断，从而使事情保持简单、快速和可预测。同样，如果您的参数名称不带类型定义，则该函数的行为就像具有动态类型的 Python 一样。一旦定义了单个参数类型，Mojo 将查找重载候选者并解析函数调用。
+        </div>
+    </div>
+
+<h3 id="26-fn-函数" class="heading">2.6 <code>fn</code> 函数 <a href="#26-fn-%e5%87%bd%e6%95%b0"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h3>
+<p><code>def</code> 函数的定义是动态的，灵活的，并且与 Python 兼容（参数可变，局部变量在首次使用时隐式声明 等）。这对于系统编程来说不是一个好的特性，因此，Mojo 引入了 <code>fn</code> 函数，类似于严格模式的 <code>def</code>。</p>
+<p><code>fn</code> 函数有更多的规范限制，主要有以下几点：</p>
+<ol>
+<li>函数内的参数(argument)默认是不可变的，包括传入参数；</li>
+<li>所有参数都需要明确指定类型，缺少返回类型说明符会被解释为返回 None 而不是未知的返回类型；</li>
+<li>所有局部变量都需要使用 <code>let</code> 或 <code>var</code> 显式声明；</li>
+<li>触发异常需要显式使用 <code>raise</code> 关键字；</li>
+</ol>
+
+
+    
+        
+        
+    
+
+    
+
+
+<div class="d-flex alert alert-info " role="alert">
+        <div class="pt-1 pe-2"><!-- <i class="fa fa-lightbulb fa-2x fa-fw"></i> --><svg class="svg-inline--fa fa fa-lightbulb fa-2x fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 384 512"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"/></svg></div>
+        <div class="flex-grow-1 my-auto">
+            不同团队的编程模式会有很大差异，这种严格程度并不适合所有人。我们希望习惯 C++ 并已在 Python 中使用 MyPy 样式类型注释的人们更喜欢使用 fn ，但更高级别的程序员和 ML 研究人员会继续使用 def . Mojo 允许您自由混合 def 和 fn 声明，例如使用一种方法实现某些方法，使用另一种方法实现另一些方法，并允许每个团队或程序员决定什么最适合他们的用例。
+        </div>
+    </div>
+
+<h3 id="27-__copyinit__-方法-和-__moveinit__-方法" class="heading">2.7 <code>__copyinit__</code> 方法 和 <code>__moveinit__</code> 方法 <a href="#27-__copyinit__-%e6%96%b9%e6%b3%95-%e5%92%8c-__moveinit__-%e6%96%b9%e6%b3%95"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h3>
+<p>Mojo 允许自定义构造函数（<code>__init__</code> 方法），析构函数（<code>__del__</code> 方法），拷贝构造函数（<code>__copyinit__</code> 方法）和移动构造函数（<code>__moveinit__</code> 方法）。这些特性在进行实现底层系统编程时非常有用，如手动内存管理等。</p>
+<p>以下是一个动态字符串类型，它在构造时为字符串数据分配内存，并在销毁实例时释放内存：</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">memory.unsafe</span> <span class="kn">import</span> <span class="n">Pointer</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">struct</span> <span class="n">HeapArray</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">var</span> <span class="n">data</span><span class="p">:</span> <span class="n">Pointer</span><span class="p">[</span><span class="n">Int</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">var</span> <span class="n">size</span><span class="p">:</span> <span class="n">Int</span>
+</span></span><span class="line"><span class="cl">    <span class="n">var</span> <span class="n">cap</span><span class="p">:</span> <span class="n">Int</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">fn</span> <span class="fm">__init__</span><span class="p">(</span><span class="n">inout</span> <span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cap</span> <span class="o">=</span> <span class="mi">16</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">Pointer</span><span class="p">[</span><span class="n">Int</span><span class="p">]</span><span class="o">.</span><span class="n">alloc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cap</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">fn</span> <span class="fm">__init__</span><span class="p">(</span><span class="n">inout</span> <span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cap</span> <span class="o">=</span> <span class="n">size</span> <span class="o">*</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">Pointer</span><span class="p">[</span><span class="n">Int</span><span class="p">]</span><span class="o">.</span><span class="n">alloc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cap</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">fn</span> <span class="fm">__del__</span><span class="p">(</span><span class="n">owned</span> <span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">free</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">fn</span> <span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">print_no_newline</span><span class="p">(</span><span class="s2">&#34;[&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">print_no_newline</span><span class="p">(</span><span class="s2">&#34;, &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">print_no_newline</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;]&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="n">HeapArray</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">.</span><span class="n">dump</span><span class="p">()</span>   <span class="c1"># Should print [1, 1, 1]</span>
+</span></span><span class="line hl"><span class="cl"><span class="c1"># Uncomment to see an error:</span>
+</span></span><span class="line hl"><span class="cl"><span class="c1"># var b = a  # ERROR: Vector doesn&#39;t implement __copyinit__</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">var</span> <span class="n">b</span> <span class="o">=</span> <span class="n">HeapArray</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span><span class="o">.</span><span class="n">dump</span><span class="p">()</span>   <span class="c1"># Should print [2, 2, 2, 2]</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">.</span><span class="n">dump</span><span class="p">()</span>   <span class="c1"># Should print [1, 1, 1]</span></span></span></code></pre></div></div><p>在上述例子中，如果您尝试使用 <code>=</code> 运算符复制 HeapArray 的实例，Mojo 不允许我们复制： HeapArray 包含 Pointer 的实例（相当于低级 C 指针），Mojo 不知道它指向什么类型的数据或如何复制它。</p>
+<p>为了实现数组的可复制，我们必须实现 <code>__copyinit__</code> 方法，它将在复制 HeapArray 实例时被调用。以下是实现 <code>__copyinit__</code> 方法的示例：</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">struct</span> <span class="n">HeapArray</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">var</span> <span class="n">data</span><span class="p">:</span> <span class="n">Pointer</span><span class="p">[</span><span class="n">Int</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">var</span> <span class="n">size</span><span class="p">:</span> <span class="n">Int</span>
+</span></span><span class="line"><span class="cl">    <span class="n">var</span> <span class="n">cap</span><span class="p">:</span> <span class="n">Int</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">fn</span> <span class="fm">__init__</span><span class="p">(</span><span class="n">inout</span> <span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cap</span> <span class="o">=</span> <span class="mi">16</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">Pointer</span><span class="p">[</span><span class="n">Int</span><span class="p">]</span><span class="o">.</span><span class="n">alloc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cap</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">fn</span> <span class="fm">__init__</span><span class="p">(</span><span class="n">inout</span> <span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cap</span> <span class="o">=</span> <span class="n">size</span> <span class="o">*</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">Pointer</span><span class="p">[</span><span class="n">Int</span><span class="p">]</span><span class="o">.</span><span class="n">alloc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cap</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line hl"><span class="cl">    <span class="n">fn</span> <span class="n">__copyinit__</span><span class="p">(</span><span class="n">inout</span> <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Self</span><span class="p">):</span>
+</span></span><span class="line hl"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cap</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">cap</span>
+</span></span><span class="line hl"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">size</span>
+</span></span><span class="line hl"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">Pointer</span><span class="p">[</span><span class="n">Int</span><span class="p">]</span><span class="o">.</span><span class="n">alloc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cap</span><span class="p">)</span>
+</span></span><span class="line hl"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+</span></span><span class="line hl"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">    <span class="n">fn</span> <span class="fm">__del__</span><span class="p">(</span><span class="n">owned</span> <span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">free</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">fn</span> <span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">print_no_newline</span><span class="p">(</span><span class="s2">&#34;[&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">print_no_newline</span><span class="p">(</span><span class="s2">&#34;, &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">print_no_newline</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;]&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="n">HeapArray</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">.</span><span class="n">dump</span><span class="p">()</span>   <span class="c1"># Should print [1, 1, 1]</span>
+</span></span><span class="line hl"><span class="cl"><span class="c1"># This is no longer an error:</span>
+</span></span><span class="line hl"><span class="cl"><span class="n">var</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">b</span><span class="o">.</span><span class="n">dump</span><span class="p">()</span>   <span class="c1"># Should print [1, 1, 1]</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">.</span><span class="n">dump</span><span class="p">()</span>   <span class="c1"># Should print [1, 1, 1]</span></span></span></code></pre></div></div><p>上述代码可以正常工作，并且 <code>var b = a</code> 会生成不同的数组实例 <code>b</code>，它具有自己的生命周期和数据：</p>
+<p>Mojo 还支持 <code>__moveinit__</code> 方法，该方法允许 Rust 风格的移动（在生命周期结束时获取一个值）和 C++ 风格的移动（其中值的内容被删除，但析构函数仍然运行），并允许定义自定义移动逻辑。详细信息请参阅下文的 <a href="#6. 生命周期：值的诞生、存在与消亡">6. 生命周期</a> 部分。</p>
+
+<h2 id="3-参数传递与所有权" class="heading">3. 参数传递与所有权 <a href="#3-%e5%8f%82%e6%95%b0%e4%bc%a0%e9%80%92%e4%b8%8e%e6%89%80%e6%9c%89%e6%9d%83"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h2>
+<p>让我们回顾一下有关 Python 和 Mojo 如何传递函数参数（argument）的一些细节：</p>
+<ul>
+<li>在 Python 中， <code>def</code> 函数的所有参数都是 <strong>引用语义</strong>。这意味着该函数可以修改传递给它的可变对象，并且这些更改在函数外部可见。</li>
+<li>在 Mojo 中， 默认情况下，<code>def</code> 函数的所有参数都是 <strong>值语义</strong>。与 Python 相比，这是一个重要的区别：Mojo <code>def</code> 函数接收所有参数的副本 - 它可以修改函数内部的参数，但更改在函数外部不可见。</li>
+<li>在 Mojo 中，默认情况下，<code>fn</code> 函数的所有值都是不可变引用。这意味着该函数可以读取原始对象（它不是副本），但它根本无法修改该对象。这种在 Mojo fn 中传递不可变参数的约定称为 <strong>“借用（borrowing）”</strong>。</li>
+</ul>
+
+<h3 id="31-参数传递约定的重要性" class="heading">3.1 参数传递约定的重要性 <a href="#31-%e5%8f%82%e6%95%b0%e4%bc%a0%e9%80%92%e7%ba%a6%e5%ae%9a%e7%9a%84%e9%87%8d%e8%a6%81%e6%80%a7"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h3>
+<p>TODO&hellip;</p>
+
+<h3 id="32-不可变参数borrowed-arguments" class="heading">3.2 不可变参数(<code>borrowed</code> arguments) <a href="#32-%e4%b8%8d%e5%8f%af%e5%8f%98%e5%8f%82%e6%95%b0borrowed-arguments"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h3>
+<p><code>borrowed</code> 参数是对函数接收的参数的不可变引用，因此，被调用函数具有对该对象的完全读取和执行访问权限，但无法修改它（调用者仍然拥有该对象的独占“所有权”）。</p>
+<p>我们来看看以下示例：</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Don&#39;t worry about this code yet. It&#39;s just needed for the function below.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># It&#39;s a type so expensive to copy around so it does not have a</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># __copyinit__ method.</span>
+</span></span><span class="line"><span class="cl"><span class="n">struct</span> <span class="n">SomethingBig</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">var</span> <span class="n">id_number</span><span class="p">:</span> <span class="n">Int</span>
+</span></span><span class="line"><span class="cl">    <span class="n">var</span> <span class="n">huge</span><span class="p">:</span> <span class="n">HeapArray</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fn</span> <span class="fm">__init__</span><span class="p">(</span><span class="n">inout</span> <span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">huge</span> <span class="o">=</span> <span class="n">HeapArray</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">id_number</span> <span class="o">=</span> <span class="nb">id</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># self is passed by-reference for mutation as described above.</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fn</span> <span class="n">set_id</span><span class="p">(</span><span class="n">inout</span> <span class="bp">self</span><span class="p">,</span> <span class="n">number</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">id_number</span> <span class="o">=</span> <span class="n">number</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Arguments like self are passed as borrowed by default.</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fn</span> <span class="n">print_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># Same as: fn print_id(borrowed self):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id_number</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fn</span> <span class="n">use_something_big</span><span class="p">(</span><span class="n">borrowed</span> <span class="n">a</span><span class="p">:</span> <span class="n">SomethingBig</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">SomethingBig</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;&#39;a&#39; and &#39;b&#39; are both immutable, because &#39;borrowed&#39; is the default.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span><span class="o">.</span><span class="n">print_id</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">b</span><span class="o">.</span><span class="n">print_id</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">let</span> <span class="n">a</span> <span class="o">=</span> <span class="n">SomethingBig</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">let</span> <span class="n">b</span> <span class="o">=</span> <span class="n">SomethingBig</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">use_something_big</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span></span></span></code></pre></div></div><p>将 SomethingBig 的实例传递给函数时，需要传递引用，因为 SomethingBig 无法复制（它没有 <strong>copyinit</strong> 方法）。并且，如上文所述，<code>fn</code> 函数的默认参数约定就是 <code>borrowed</code>，当然您也可以使用 <code>borrowed</code> 关键字显式定义。</p>
+<p>Mojo 的这种参数借用约定在某些方面类似于 C++ 中通过 <code>const&amp;</code> 传递参数，这避免了值的拷贝并禁止被修改。然而，Mojo 的参数借用约定在两个重要方面与 C++ 中的 <code>const&amp;</code> 不同：</p>
+<ol>
+<li>Mojo 编译器实现了一个借用检查器（类似于 Rust），该检查器可以防止代码在存在未完成的不可变引用时动态形成对某个值的可变引用，并且它可以防止对同一值有多个可变引用。您可以进行多次借用（如上面对 use_something_big 的调用一样），但不能通过可变引用传递某些内容并同时借用。</li>
+<li>像 <code>Int</code> 、 <code>Float</code> 和 <code>SIMD</code> 这样的小值直接在机器寄存器中传递，而不是通过额外的间接传递（因为它们使用了 <code>@register_passable</code> 装饰器）。与 C++ 和 Rust 等语言相比，这是一个显着的性能增强。</li>
+</ol>
+<p>与 Rust 类似，Mojo 的借用检查器强制执行不变量的排他性。 Rust 和 Mojo 之间的主要区别在于，Mojo 不需要调用方有一个印记来传递借用。此外，Mojo 在传递小值时效率更高，而 Rust 默认移动值而不是通过借用传递它们。这些策略和语法决策使 Mojo 能够提供更易于使用的编程模型。</p>
+
+<h3 id="33-可变参数inout-arguments" class="heading">3.3 可变参数(<code>inout</code> arguments) <a href="#33-%e5%8f%af%e5%8f%98%e5%8f%82%e6%95%b0inout-arguments"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h3>
+<p>如果您定义 <code>fn</code> 函数并希望参数可变，则必须使用 <code>inout</code> 关键字将参数声明为可变。</p>
+
+
+    
+        
+        
+    
+
+    
+
+
+<div class="d-flex alert alert-info " role="alert">
+        <div class="pt-1 pe-2"><!-- <i class="fa fa-lightbulb fa-2x fa-fw"></i> --><svg class="svg-inline--fa fa fa-lightbulb fa-2x fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 384 512"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"/></svg></div>
+        <div class="flex-grow-1 my-auto">
+            Tips：当您看到 inout 时，这意味着对函数内部参数所做的任何更改在函数外部都是可见的。
+        </div>
+    </div>
+<p>以下是一个使用 <code>inout</code> 参数的示例，其中 <code>__iadd__</code> 函数（实现就地添加操作，例如 x += 2 ）尝试修改 self ：</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">struct</span> <span class="n">MyInt</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">var</span> <span class="n">value</span><span class="p">:</span> <span class="n">Int</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">fn</span> <span class="fm">__init__</span><span class="p">(</span><span class="n">inout</span> <span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">v</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="n">fn</span> <span class="n">__copyinit__</span><span class="p">(</span><span class="n">inout</span> <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">MyInt</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">value</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="c1"># self and rhs are both immutable in __add__.</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fn</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rhs</span><span class="p">:</span> <span class="n">MyInt</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MyInt</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">MyInt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="n">rhs</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line hl"><span class="cl">    <span class="c1"># delete `inout` to see the error:</span>
+</span></span><span class="line hl"><span class="cl">    <span class="n">fn</span> <span class="fm">__iadd__</span><span class="p">(</span><span class="n">inout</span> <span class="bp">self</span><span class="p">,</span> <span class="n">rhs</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span>
+</span></span><span class="line hl"><span class="cl">        <span class="bp">self</span> <span class="o">=</span> <span class="bp">self</span> <span class="o">+</span> <span class="n">rhs</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">var</span> <span class="n">x</span><span class="p">:</span> <span class="n">MyInt</span> <span class="o">=</span> <span class="mi">42</span>
+</span></span><span class="line hl"><span class="cl"><span class="c1"># if delete `inout` before `self` argument of `__iadd__` method, will get an error</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">)</span> <span class="c1"># prints 43 as expected</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># However...</span>
+</span></span><span class="line hl"><span class="cl"><span class="n">let</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+</span></span><span class="line hl"><span class="cl"><span class="c1"># Uncomment to see the error:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># y += 1       # ERROR: Cannot mutate &#39;let&#39; value</span></span></span></code></pre></div></div>
+
+    
+        
+        
+    
+
+    
+
+
+<div class="d-flex alert alert-info " role="alert">
+        <div class="pt-1 pe-2"><!-- <i class="fa fa-lightbulb fa-2x fa-fw"></i> --><svg class="svg-inline--fa fa fa-lightbulb fa-2x fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 384 512"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"/></svg></div>
+        <div class="flex-grow-1 my-auto">
+            注意，我们不将此参数称为“通过引用”传递。尽管 <code>inout</code> 约定在概念上是相同的，但我们不将其称为按引用传递，因为实现实际上可能使用指针传递值。
+        </div>
+    </div>
+
+<h3 id="34-所有权转移owned-和-" class="heading">3.4 所有权转移(<code>owned</code> 和 <code>^</code>) <a href="#34-%e6%89%80%e6%9c%89%e6%9d%83%e8%bd%ac%e7%a7%bbowned-%e5%92%8c-"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h3>
+<p><code>owned</code> 参数约定用于想要获得值的独占所有权的函数，并且通常与后缀 <code>^</code> 运算符一起使用。</p>
+<p>以下是一个使用 <code>owned</code> 和 <code>^</code> 进行所有权转移的示例：</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># This is not really a unique pointer, we just model its behavior here</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># to serve the examples below.</span>
+</span></span><span class="line"><span class="cl"><span class="n">struct</span> <span class="n">UniquePointer</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">var</span> <span class="n">ptr</span><span class="p">:</span> <span class="n">Int</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">fn</span> <span class="fm">__init__</span><span class="p">(</span><span class="n">inout</span> <span class="bp">self</span><span class="p">,</span> <span class="n">ptr</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">ptr</span> <span class="o">=</span> <span class="n">ptr</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">fn</span> <span class="n">__moveinit__</span><span class="p">(</span><span class="n">inout</span> <span class="bp">self</span><span class="p">,</span> <span class="n">owned</span> <span class="n">existing</span><span class="p">:</span> <span class="n">Self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">ptr</span> <span class="o">=</span> <span class="n">existing</span><span class="o">.</span><span class="n">ptr</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="n">fn</span> <span class="fm">__del__</span><span class="p">(</span><span class="n">owned</span> <span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">ptr</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line hl"><span class="cl"><span class="n">fn</span> <span class="n">take_ptr</span><span class="p">(</span><span class="n">owned</span> <span class="n">p</span><span class="p">:</span> <span class="n">UniquePointer</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;take_ptr&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">ptr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fn</span> <span class="n">use_ptr</span><span class="p">(</span><span class="n">borrowed</span> <span class="n">p</span><span class="p">:</span> <span class="n">UniquePointer</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;use_ptr&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">ptr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="n">fn</span> <span class="n">work_with_unique_ptrs</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">let</span> <span class="n">p</span> <span class="o">=</span> <span class="n">UniquePointer</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">use_ptr</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>    <span class="c1"># Pass to borrowing function.</span>
+</span></span><span class="line hl"><span class="cl">    <span class="n">take_ptr</span><span class="p">(</span><span class="n">p</span><span class="o">^</span><span class="p">)</span>  <span class="c1"># Pass ownership of the `p` value to another function.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line hl"><span class="cl">    <span class="c1"># Uncomment to see an error:</span>
+</span></span><span class="line hl"><span class="cl">    <span class="c1"># use_ptr(p) # ERROR: p is no longer valid here!</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">work_with_unique_ptrs</span><span class="p">()</span></span></span></code></pre></div></div><p><code>^</code> 运算符结束值绑定的生命周期，并将值所有权转移给其他对象（在上述示例中，所有权转移给 <code>take_ptr()</code> 函数）。为了支持这一点，<code>take_ptr()</code> 函数定义为采用 <code>owned</code> 参数。
+在上述示例中,如果第二次调用 <code>use_ptr()</code> ，则会报错，因为 <code>p</code> 值所有权已经转移到 <code>take_ptr()</code> 函数。</p>
+
+<h2 id="4-集成-python" class="heading">4. 集成 Python <a href="#4-%e9%9b%86%e6%88%90-python"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h2>
+<p>在 Mojo 中使用现在的 Python 模块非常简单，您可以将任何 Python 模块导入到 Mojo 程序中。</p>
+
+<h3 id="41-导入-python-模块" class="heading">4.1 导入 Python 模块 <a href="#41-%e5%af%bc%e5%85%a5-python-%e6%a8%a1%e5%9d%97"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h3>
+<p>要在 Mojo 中导入 Python 模块，只需使用模块名称调用 Python.import_module() 即可：</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line hl"><span class="cl"><span class="kn">from</span> <span class="nn">python</span> <span class="kn">import</span> <span class="n">Python</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># This is equivalent to Python&#39;s `import numpy as np`</span>
+</span></span><span class="line hl"><span class="cl"><span class="n">let</span> <span class="n">np</span> <span class="o">=</span> <span class="n">Python</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">&#34;numpy&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Now use numpy as if writing in Python</span>
+</span></span><span class="line"><span class="cl"><span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">array</span><span class="p">)</span></span></span></code></pre></div></div>
+
+    
+        
+        
+    
+
+    
+
+
+<div class="d-flex alert alert-info " role="alert">
+        <div class="pt-1 pe-2"><!-- <i class="fa fa-lightbulb fa-2x fa-fw"></i> --><svg class="svg-inline--fa fa fa-lightbulb fa-2x fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 384 512"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"/></svg></div>
+        <div class="flex-grow-1 my-auto">
+            注意：目前无法导入单个成员（例如单个 Python 类或函数），您必须导入整个 Python 模块，然后通过模块名称访问成员。
+        </div>
+    </div>
+
+<h3 id="42-python-中使用-mojo-类型" class="heading">4.2 Python 中使用 Mojo 类型 <a href="#42-python-%e4%b8%ad%e4%bd%bf%e7%94%a8-mojo-%e7%b1%bb%e5%9e%8b"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h3>
+<p>Mojo 的原始类型（如 列表、元组、整数、浮点数、布尔值和字符串 等）可以隐式转换为 Python 对象。</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">type_printer</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> <span class="n">my_tuple</span><span class="p">,</span> <span class="n">my_int</span><span class="p">,</span> <span class="n">my_string</span><span class="p">,</span> <span class="n">my_float</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">my_list</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">my_tuple</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">my_int</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">my_string</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">my_float</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">type_printer</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&#34;orange&#34;</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">)</span></span></span></code></pre></div></div><p>Mojo 目前还不支持字典类型，因此还无法从 Mojo 字典创建 Python 字典。不过，您可以在 Mojo 中使用 Python 字典！要创建 Python 字典，请使用 <code>dict</code> 方法：</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">python</span> <span class="kn">import</span> <span class="n">Python</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">python.object</span> <span class="kn">import</span> <span class="n">PythonObject</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line hl"><span class="cl"><span class="n">var</span> <span class="n">dictionary</span> <span class="o">=</span> <span class="n">Python</span><span class="o">.</span><span class="n">dict</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">dictionary</span><span class="p">[</span><span class="s2">&#34;fruit&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;apple&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">dictionary</span><span class="p">[</span><span class="s2">&#34;starch&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;potato&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">var</span> <span class="n">keys</span><span class="p">:</span> <span class="n">PythonObject</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;fruit&#34;</span><span class="p">,</span> <span class="s2">&#34;starch&#34;</span><span class="p">,</span> <span class="s2">&#34;protein&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">var</span> <span class="n">N</span><span class="p">:</span> <span class="n">Int</span> <span class="o">=</span> <span class="n">keys</span><span class="o">.</span><span class="fm">__len__</span><span class="p">()</span><span class="o">.</span><span class="fm">__index__</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="s2">&#34;items&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">Python</span><span class="o">.</span><span class="n">is_type</span><span class="p">(</span><span class="n">dictionary</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">keys</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">Python</span><span class="o">.</span><span class="n">none</span><span class="p">()):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">keys</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&#34;is not in dictionary&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">keys</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&#34;is included&#34;</span><span class="p">)</span></span></span></code></pre></div></div>
+<h3 id="43-导入本地-python-模块" class="heading">4.3 导入本地 Python 模块 <a href="#43-%e5%af%bc%e5%85%a5%e6%9c%ac%e5%9c%b0-python-%e6%a8%a1%e5%9d%97"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h3>
+<p>如果您想在 Mojo 中使用一些本地 Python 代码，只需将目录添加到 Python 路径，然后导入模块即可。</p>
+<p>例如，假设您有一个名为 <code>mypython.py</code> 的 Python 文件：</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">my_algorithm</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">array_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">array_a</span> <span class="o">+</span> <span class="n">b</span></span></span></code></pre></div></div><p>导入它并在 Mojo 文件中使用它的方法：</p>
+<div class="mb-3 syntax-highlight"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">python</span> <span class="kn">import</span> <span class="n">Python</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line hl"><span class="cl"><span class="n">Python</span><span class="o">.</span><span class="n">add_to_path</span><span class="p">(</span><span class="s2">&#34;path/to/module&#34;</span><span class="p">)</span>
+</span></span><span class="line hl"><span class="cl"><span class="n">let</span> <span class="n">mypython</span> <span class="o">=</span> <span class="n">Python</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">&#34;mypython&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">let</span> <span class="n">c</span> <span class="o">=</span> <span class="n">mypython</span><span class="o">.</span><span class="n">my_algorithm</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span></span></span></code></pre></div></div>
+
+    
+        
+        
+    
+
+    
+
+
+<div class="d-flex alert alert-info " role="alert">
+        <div class="pt-1 pe-2"><!-- <i class="fa fa-lightbulb fa-2x fa-fw"></i> --><svg class="svg-inline--fa fa fa-lightbulb fa-2x fa-fw" fill="currentColor" aria-hidden role="img" viewBox="0 0 384 512"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"/></svg></div>
+        <div class="flex-grow-1 my-auto">
+            Tips: 在 Mojo 中使用 Python 时无需担心内存管理问题,因为 Mojo 从一开始就是为 Python 设计的。
+        </div>
+    </div>
+
+<h2 id="5-参数化编译时的元编程" class="heading">5. 参数化：编译时的元编程 <a href="#5-%e5%8f%82%e6%95%b0%e5%8c%96%e7%bc%96%e8%af%91%e6%97%b6%e7%9a%84%e5%85%83%e7%bc%96%e7%a8%8b"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h2>
+<p>TODO&hellip;</p>
+
+<h2 id="6-生命周期值的诞生存在与消亡" class="heading">6. 生命周期：值的诞生、存在与消亡 <a href="#6-%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f%e5%80%bc%e7%9a%84%e8%af%9e%e7%94%9f%e5%ad%98%e5%9c%a8%e4%b8%8e%e6%b6%88%e4%ba%a1"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h2>
+<p>TODO&hellip;</p>
+
+<h2 id="7-析构函数" class="heading">7. 析构函数 <a href="#7-%e6%9e%90%e6%9e%84%e5%87%bd%e6%95%b0"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h2>
+<p>TODO&hellip;</p>
+
+<h2 id="8-lifetimes" class="heading">8. lifetimes <a href="#8-lifetimes"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h2>
+<p>TODO&hellip;</p>
+
+<h2 id="9-type-traits" class="heading">9. Type traits <a href="#9-type-traits"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h2>
+<p>TODO&hellip;</p>
+
+<h2 id="10-advancedobscure-mojo-features" class="heading">10. Advanced/Obscure Mojo features <a href="#10-advancedobscure-mojo-features"><!-- <i class="fas fa-link anchor"></i> --><svg class="svg-inline--fa fas fa-link anchor" fill="currentColor" aria-hidden role="img" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg></a></h2>
+<p>TODO&hellip;</p>
+
+
+                    
+        <div class="row row-cols-2 mt-5 mb-3">
+            <div class="col">
+                </div>
+            <div class="col text-end">
+                <a class="previous" href="/zh/blog/20230815-knowledge-share-tools/">利器（一）&nbsp;<!-- <i class="fas fa-arrow-right "></i> --><svg class="svg-inline--fa fas fa-arrow-right " fill="currentColor" aria-hidden role="img" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></a></div>
+        </div>
+    
+                </div>
+                <div class="col col-md-2 d-none d-md-block"><div class="toc toc-sidebar mb-5 my-md-0 ps-xl-3 mb-lg-5 p-3 text-body-secondary sticky-top">
+        <strong class="d-block h6 my-2 pb-2 border-bottom">目录</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-mojo-编译器">1. Mojo 编译器</a></li>
+    <li><a href="#2-系统编程基础支持">2. 系统编程基础支持</a>
+      <ul>
+        <li><a href="#21-let-和-var-变量声明">2.1 <code>let</code> 和 <code>var</code> 变量声明</a></li>
+        <li><a href="#22-struct-结构体类型">2.2 <code>struct</code> 结构体类型</a></li>
+        <li><a href="#23-int-与-int">2.3 <code>Int</code> 与 <code>int</code></a></li>
+        <li><a href="#24-强类型检查">2.4 强类型检查</a></li>
+        <li><a href="#25-函数重载和方法重载">2.5 函数重载和方法重载</a></li>
+        <li><a href="#26-fn-函数">2.6 <code>fn</code> 函数</a></li>
+        <li><a href="#27-__copyinit__-方法-和-__moveinit__-方法">2.7 <code>__copyinit__</code> 方法 和 <code>__moveinit__</code> 方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-参数传递与所有权">3. 参数传递与所有权</a>
+      <ul>
+        <li><a href="#31-参数传递约定的重要性">3.1 参数传递约定的重要性</a></li>
+        <li><a href="#32-不可变参数borrowed-arguments">3.2 不可变参数(<code>borrowed</code> arguments)</a></li>
+        <li><a href="#33-可变参数inout-arguments">3.3 可变参数(<code>inout</code> arguments)</a></li>
+        <li><a href="#34-所有权转移owned-和-">3.4 所有权转移(<code>owned</code> 和 <code>^</code>)</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-集成-python">4. 集成 Python</a>
+      <ul>
+        <li><a href="#41-导入-python-模块">4.1 导入 Python 模块</a></li>
+        <li><a href="#42-python-中使用-mojo-类型">4.2 Python 中使用 Mojo 类型</a></li>
+        <li><a href="#43-导入本地-python-模块">4.3 导入本地 Python 模块</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-参数化编译时的元编程">5. 参数化：编译时的元编程</a></li>
+    <li><a href="#6-生命周期值的诞生存在与消亡">6. 生命周期：值的诞生、存在与消亡</a></li>
+    <li><a href="#7-析构函数">7. 析构函数</a></li>
+    <li><a href="#8-lifetimes">8. lifetimes</a></li>
+    <li><a href="#9-type-traits">9. Type traits</a></li>
+    <li><a href="#10-advancedobscure-mojo-features">10. Advanced/Obscure Mojo features</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+            </div>    
+        </div>
+    </div>
+                
+                    <div class=""><footer class="container-fluid footer p-0 border-top">
+    <div class="container-xxl px-3 px-xxl-0 py-5">
+        <div class="row">
+            <div class="col-md-4 small">
+                <a href="/zh/">
+        <div class=" w-25 d-none-dark">
+            <img class="img-fluid "
+                
+                src="/img/futurelog-light.svg"
+                alt="Mojo 编程语言手册">
+        </div>
+        <div class=" w-25 d-none-light">
+            <img class="img-fluid "
+                
+                src="/img/futurelog-dark.svg"
+                alt="Mojo 编程语言手册">
+        </div></a>
+                <div class="pt-3">Futurelog - log for the future.</div>
+                <div class="pt-2">Licensed under Creative Commons (<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' class='link-secondary' target='_blank' rel='noopener noreferrer'>CC BY-NC-SA 4.0</a>).</div>
+                
+                
+                
+                <div class="pt-3">
+                    <a href="mailto:wallezen@crowai.xyz" target="_blank" class="link-primary p-1"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc.<path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg></a>
+                    <a href="https://github.com/wallezen" target="_blank" class="link-primary p-1"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></a>
+                    <a href="https://twitter.com/wallezen007" target="_blank" class="link-primary p-1"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></a>
+                    <a href="https://futurelog-1251943639.cos.accelerate.myqcloud.com/img/E5ViZ2-20230813.png" target="_blank" class="link-primary p-1"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><path d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154zm-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4zm-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2zM563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4zm-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6zm107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6z"/></svg></a>
+                </div>
+            </div>
+            <div class="col-md-2 small">&nbsp</div><div class="col-md-2 col-4 pt-5 pt-md-0">
+                    <div class="fs-md-5 fs-6 fw-bold footer-muted">Links</div><div class="py-1"><a class="nav-link link-bg-footer" 
+    
+    data-nav="main" data-nav-main="docs" 
+    href="https://docs.futurelog.xyz" ><span >Docs</span>&nbsp;</a>
+</div><div class="py-1"><a class="nav-link link-bg-footer" 
+    
+    data-nav="main" data-nav-main="slides" 
+    href="/slides" ><span >Slides</span>&nbsp;</a>
+</div><div class="py-1"><a class="nav-link link-bg-footer" 
+    
+    data-nav="main" data-nav-main="galleries" 
+    href="/galleries" ><span >Galleries</span>&nbsp;</a>
+</div></div><div class="col-md-2 col-4 pt-5 pt-md-0">
+                    <div class="fs-md-5 fs-6 fw-bold footer-muted">Community</div><div class="py-1"><a class="nav-link link-bg-footer" 
+    
+    data-nav="main" data-nav-main="github" 
+    href="https://github.com/wallezen" ><span >Github</span>&nbsp;</a>
+</div><div class="py-1"><a class="nav-link link-bg-footer" 
+    
+    data-nav="main" data-nav-main="twitter" 
+    href="https://twitter.com/wallezen007" ><span >Twitter</span>&nbsp;</a>
+</div></div></div>
+    </div>
+</footer>
+
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ad70d5975542ee0bc6415468b7e4b74c";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+</div>
+                
+            </div>
+
+        <div id="toast-container" class="toast-container position-fixed bottom-0 end-0 p-3">
+    
+
+
+<div id="toast-copied-code-message" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+        <strong class="me-auto">FutureLog</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">Code copied to clipboard</div>
+</div>
+</div>
+<script src="/js/main.bundle.min.e89f4dc97c0a82cfdc142579b1b4c317b73ca61fc9cab112faa6c15935ce3bc0.js" integrity="sha256-6J9NyXwKgs/cFCV5sbTDF7c8ph/JyrES&#43;qbBWTXOO8A=" crossorigin="anonymous"></script>
+    </body>
+</html>
