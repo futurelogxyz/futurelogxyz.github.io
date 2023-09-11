@@ -104,6 +104,12 @@ name = "Galleries"
 url = "../galleries"
 weight = 30
 
+[[footer]]
+parent = "Links"
+name = "Stats"
+url = "https://analytics.umami.is/share/pVLP0xsDCYYzqe3k/Futurelog"
+weight = 40
+
 
 [[footer]]
 name = "Community"
