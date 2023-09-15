@@ -13,7 +13,7 @@
       <pubDate>Mon, 04 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://futurelog.xyz/zh/blog/20230904-mojo-programming-manual/</guid>
-      <description>参考自 Mojo 官方文档：Mojo🔥 programming manual
+      <description>参考自 Mojo 官方文档： Mojo🔥 programming manual
 Mojo 编程语言的目标是在像 Python 一样易于使用的同时拥有类似 C++ 和 Rust 的性能。并且，还能利用整个 Python 生态的能力。
 为实现这些特性，Mojo 利用了下一代的编译器技术，如：集成缓存、多线程 和 云分发。此外，Mojo 的 autotuning 和 编译时元编程（compile-time metaprogramming）特性，使得编写的代码能够能够移植到各类硬件上。
 更重要的是， Mojo 被设计为 Python 的超集，通过集成整个 Python 生态的能力，让开发人员继续使用熟悉的工具和库，在保留 Python 动态特性的同时增加了系统编程能力。这些新增加的系统编程能力，让开发人员也能够使用 Mojo 编写那些目前需要依赖 C/C++/Rust/CUDA 等才能实现的高性能的代码和库。通过结合动态编程语言和系统编程语言的优势，Mojo 提供了一种统一的编程模型，对新手友好，并能扩展应用到从底层加速器（accelerators）到应用开发、脚本开发等诸多场景。
@@ -102,7 +102,7 @@ $$\forall x \in X, \quad \exists y \leq \epsilon$$</description>
       <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
       
       <guid>https://futurelog.xyz/zh/projects/crowai-copilot/</guid>
-      <description>CrowAI Copilot
+      <description> CrowAI Copilot
 由 @wallezen 基于 chatgpt-vercel 开发部署。 输入 [[/]] 或者 [[空格]] 将展示预设提示词(Prompt)，紧跟在提示词后输入你的问题或需求，可以得到更好的回答。 仅供个人测试使用，勿用于非正当场景。 </description>
     </item>
     

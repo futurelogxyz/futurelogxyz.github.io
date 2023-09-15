@@ -22,7 +22,7 @@
       <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
       
       <guid>https://futurelog.xyz/zh/projects/crowai-copilot/</guid>
-      <description>CrowAI Copilot
+      <description> CrowAI Copilot
 由 @wallezen 基于 chatgpt-vercel 开发部署。 输入 [[/]] 或者 [[空格]] 将展示预设提示词(Prompt)，紧跟在提示词后输入你的问题或需求，可以得到更好的回答。 仅供个人测试使用，勿用于非正当场景。 </description>
     </item>
     
