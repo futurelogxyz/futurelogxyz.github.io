@@ -51,7 +51,7 @@
     "markdownlint-cli2": "^0.10.0",
     "postcss-cli": "^10.1.0",
     "purgecss-whitelister": "^2.4.0",
-    "stylelint": "^15.10.3",
+    "stylelint": "^15.11.0",
     "stylelint-config-standard-scss": "^11.0.0"
   },
   "hugo-bin": {
