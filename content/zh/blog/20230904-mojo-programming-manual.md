@@ -4,7 +4,7 @@ title: Mojo 编程语言手册
 date: 2023-09-04
 description:  
 tags: ["mojo", "programming language", "manual"]
-thumbnail: https://futurelog-1251943639.cos.accelerate.myqcloud.com/img/AVxt8z-20230904.png
+thumbnail: https://futurelog-1251943639.cos.accelerate.myqcloud.com/img/Mojo-750x422_clipdrop-enhance-20231107.jpeg
 photoCredits: 
 photoSource: 
 draft: false
