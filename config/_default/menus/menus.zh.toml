@@ -18,22 +18,28 @@ name = "文档"
 url = "https://docs.futurelog.xyz"
 weight = 40
 
+# [[main]]
+# name = "项目"
+# url = "/projects/"
+# weight = 50
+
+# [[main]]
+# name = "Sample project"
+# url = "/projects/sample-project/"
+# parent = "项目"
+# weight = 1
+
+# [[main]]
+# name = "Another project"
+# url = "/projects/another-project/"
+# parent = "项目"
+# weight = 2
+
 [[main]]
-name = "项目"
-url = "/projects/"
+name = "周刊"
+url = "https://newsletter.futurelog.xyz"
 weight = 50
 
-[[main]]
-name = "Sample project"
-url = "/projects/sample-project/"
-parent = "项目"
-weight = 1
-
-[[main]]
-name = "Another project"
-url = "/projects/another-project/"
-parent = "项目"
-weight = 2
 
 [[main]]
 name = "关于"
@@ -88,27 +94,39 @@ weight = 10
 
 [[footer]]
 parent = "Links"
+name = "Newsletter"
+url = "https://newsletter.futurelog.xyz"
+weight = 10
+
+[[footer]]
+parent = "Links"
 name = "Docs"
 url = "https://docs.futurelog.xyz"
-weight = 10
+weight = 20
 
 [[footer]]
 parent = "Links"
 name = "Slides"
 url = "../slides"
-weight = 20
+weight = 30
 
 [[footer]]
 parent = "Links"
 name = "Galleries"
 url = "../galleries"
-weight = 30
+weight = 40
 
 [[footer]]
 parent = "Links"
-name = "Stats"
-url = "https://analytics.umami.is/share/pVLP0xsDCYYzqe3k/Futurelog"
-weight = 40
+name = "Blog Stats"
+url = "https://analytics.eu.umami.is/share/pVLP0xsDCYYzqe3k/Futurelog%20Blog"
+weight = 50
+
+[[footer]]
+parent = "Links"
+name = "Newsletter Stats"
+url = "https://analytics.eu.umami.is/share/zR6xVNuL0PjH6SIp/Futurelog%20Newsletter"
+weight = 60
 
 
 [[footer]]
@@ -118,12 +136,7 @@ weight = 20
 [[footer]]
 parent = "Community"
 name = "Github"
-url = "https://github.com/wallezen"
+url = "https://github.com/futurelogxyz"
 weight = 10
 
-[[footer]]
-parent = "Community"
-name = "Twitter"
-url = "https://twitter.com/wallezen007"
-weight = 20
 # toml-docs-end menus-footer
