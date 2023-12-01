@@ -42,7 +42,7 @@ weight = 50
 
 [[main]]
 name = "别院"
-url = "https://futurelog.xyz/courtyard"
+url = "../courtyard"
 weight = 60
 
 [[main]]
