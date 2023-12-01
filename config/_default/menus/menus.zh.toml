@@ -129,14 +129,20 @@ weight = 20
 [[footer]]
 parent = "Stats"
 name = "Blog Stats"
-url = "https://analytics.eu.umami.is/share/pVLP0xsDCYYzqe3k/Futurelog%20Blog"
+url = "https://eu.umami.is/share/pVLP0xsDCYYzqe3k/Futurelog%20Blog"
 weight = 10
 
 [[footer]]
 parent = "Stats"
 name = "Newsletter Stats"
-url = "https://analytics.eu.umami.is/share/zR6xVNuL0PjH6SIp/Futurelog%20Newsletter"
+url = "https://eu.umami.is/share/zR6xVNuL0PjH6SIp/Futurelog%20Newsletter"
 weight = 20
+
+[[footer]]
+parent = "Stats"
+name = "Courtyard Stats"
+url = "https://eu.umami.is/share/Q9zwxbCD0wasb41u/Futurelog%20Courtyard"
+weight = 30
 
 
 [[footer]]
