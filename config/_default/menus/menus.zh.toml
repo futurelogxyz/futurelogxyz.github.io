@@ -40,11 +40,15 @@ name = "周刊"
 url = "https://newsletter.futurelog.xyz"
 weight = 50
 
+[[main]]
+name = "别院"
+url = "https://futurelog.xyz/courtyard"
+weight = 60
 
 [[main]]
 name = "关于"
 url = "/about/"
-weight = 60
+weight = 70
 
 
 [[social]]
