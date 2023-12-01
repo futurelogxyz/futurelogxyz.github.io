@@ -41,14 +41,9 @@ url = "https://newsletter.futurelog.xyz"
 weight = 50
 
 [[main]]
-name = "别院"
-url = "../courtyard"
-weight = 60
-
-[[main]]
 name = "关于"
 url = "/about/"
-weight = 70
+weight = 60
 
 
 [[social]]
@@ -104,38 +99,49 @@ weight = 10
 
 [[footer]]
 parent = "Links"
+name = "Courtyard"
+url = "../courtyard"
+weight = 20
+
+[[footer]]
+parent = "Links"
 name = "Docs"
 url = "https://docs.futurelog.xyz"
-weight = 20
+weight = 30
 
 [[footer]]
 parent = "Links"
 name = "Slides"
 url = "../slides"
-weight = 30
+weight = 40
 
 [[footer]]
 parent = "Links"
 name = "Galleries"
 url = "../galleries"
-weight = 40
-
-[[footer]]
-parent = "Links"
-name = "Blog Stats"
-url = "https://analytics.eu.umami.is/share/pVLP0xsDCYYzqe3k/Futurelog%20Blog"
 weight = 50
 
+
 [[footer]]
-parent = "Links"
+name = "Stats"
+weight = 20
+
+[[footer]]
+parent = "Stats"
+name = "Blog Stats"
+url = "https://analytics.eu.umami.is/share/pVLP0xsDCYYzqe3k/Futurelog%20Blog"
+weight = 10
+
+[[footer]]
+parent = "Stats"
 name = "Newsletter Stats"
 url = "https://analytics.eu.umami.is/share/zR6xVNuL0PjH6SIp/Futurelog%20Newsletter"
-weight = 60
+weight = 20
 
 
 [[footer]]
 name = "Community"
-weight = 20
+weight = 30
 
 [[footer]]
 parent = "Community"
