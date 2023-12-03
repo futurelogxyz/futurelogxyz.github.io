@@ -87,5 +87,14 @@ defaultContentLanguageInSubdir = true
   [[module.mounts]]
     source = "static/fonts"
     target = "static/fonts"
+  [[module.mounts]]
+    source = "content/zh/docs/latest"
+    target = "content/docs"
+    lang = 'zh'
+  [[module.mounts]]
+    source = "content/zh"
+    target = "content"
+    lang = 'zh'
+    excludeFiles = 'docs/latest/*'
   [[module.imports]]
     path = "github.com/gethinode/hinode"

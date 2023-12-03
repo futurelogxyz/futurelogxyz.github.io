@@ -1,0 +1,40 @@
+# This file holds all menu entries for the docs sidebar
+
+
+- title: LLM Prompt Engineering
+  pages:
+    - title: I. Introduction
+    - title: II. Tools and Techniques
+      pages:
+        - title: 2.1 Overview
+        - title: 2.2 Techniques
+          pages: 
+            - title: 2.2.1 Zero-Shot
+            - title: 2.2.2 Few-Shot
+            - title: 2.2.3 Chain-of-Thought
+            - title: 2.2.4 Generated Knowledge
+            - title: 2.2.5 Tree-of-Thought
+        - title: 2.3 Principles
+        - title: 2.4 Templates
+        - title: 2.5 Tools
+    - title: III. Case Studies
+      pages:
+        - title: 3.1 Text
+          pages:
+            - title: 3.1.1 AI Story Book
+        - title: 3.2 Code
+          pages:
+            - title: 3.2.1 KOL Data Analysis
+    - title: IV. The Future
+
+
+- title: Text2Img Prompt Engineering
+  pages:
+    - title: I. Introduction
+    - title: II. Guides
+      pages:
+        - title: 2.1 Overview
+        - title: 2.2 Guides
+        - title: 2.3 Templates
+        - title: 2.4 Parameters
+        - title: 2.5 Tools

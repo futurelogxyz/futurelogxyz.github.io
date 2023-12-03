@@ -18,8 +18,7 @@ showJS = false
 showSCSS = false
 
 [docs]
-version = "0.9"
-basePath = "/"
+
 
 [home]
 sections = ["blog", "projects"]
@@ -46,29 +45,12 @@ enabled = true
 sort = "weight"
 reverse = false
 
-[[sharing.providers]]
-name = "LinkedIn"
-url = "https://www.linkedin.com/sharing/share-offsite/?url={url}"
-icon = "fab linkedin"
-weight = 10
 
 [[sharing.providers]]
 name = "Twitter"
 url = "https://twitter.com/home?status={url}"
 icon = "fab x-twitter"
-weight = 20
-
-[[sharing.providers]]
-name = "Facebook"
-url = "https://www.facebook.com/sharer.php?u={url}"
-icon = "fab facebook"
-weight = 30
-
-[[sharing.providers]]
-name = "WhatsApp"
-url = "whatsapp://send?text={title}%20{url}"
-icon = "fab whatsapp"
-weight = 40
+weight = 10
 
 [[sharing.providers]]
 name = "email"

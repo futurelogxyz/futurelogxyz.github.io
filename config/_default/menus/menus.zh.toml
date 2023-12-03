@@ -15,7 +15,7 @@ weight = 30
 
 [[main]]
 name = "文档"
-url = "https://docs.futurelog.xyz"
+url = "/docs/llm-prompt-engineering/I. Introduction/"
 weight = 40
 
 # [[main]]
