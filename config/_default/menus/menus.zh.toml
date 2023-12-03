@@ -106,7 +106,7 @@ weight = 20
 [[footer]]
 parent = "Links"
 name = "Docs"
-url = "https://docs.futurelog.xyz"
+url = "/docs/llm-prompt-engineering/I. Introduction/"
 weight = 30
 
 [[footer]]
