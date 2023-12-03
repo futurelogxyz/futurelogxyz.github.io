@@ -74,6 +74,204 @@ Accordion Item #1 This is the first item&amp;rsquo;s accordion body. It supports
     </item>
     
     <item>
+      <title>2.1 Overview</title>
+      <link>https://futurelog.xyz/zh/docs/llm-prompt-engineering/ii.-tools-and-techniques/2.1-overview/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/docs/llm-prompt-engineering/ii.-tools-and-techniques/2.1-overview/</guid>
+      <description>本章主要总结了 LLM Prompt Engineering 相关的技术、原则、模版 和 工具。 参考资料：
+Prompt Engineering Guide Learn Prompting Prompt Engineering Institute 1. Techniques Technique description Zero-Shot Prompting Few-Shot Prompting Chain-of-Thought (COT) Prompting Tree of Thoughts (ToT) Prompting Generated Knowledge Prompting 2. Principles Principle description start simple and gradually interative Write clear and specific instructions Give the model time to “think” 3. Templates 3.1 Basic Template components description nessesary? Instruction a specific task or instruction you want the model to perform.</description>
+    </item>
+    
+    <item>
+      <title>2.1 Overview</title>
+      <link>https://futurelog.xyz/zh/docs/text2img-prompt-engineering/ii.-guides/2.1-overview/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/docs/text2img-prompt-engineering/ii.-guides/2.1-overview/</guid>
+      <description>我们先看几个 Text-to-Image Prompt 示例。
+Prompt Image A cute dog with a bowtie Oil painting portrait of (Joe Biden:1.5) and (Donald Trump: 0.5) Oil painting portrait of [Joe Biden: Donald Trump: 0.5] a realistic photography of Himalayan peaks, very detailed Renaissance-style portrait of an astronaut in space, detailed starry background, reflective helmet. Surrealist painting of a floating island with giant clock gears, populated with mythical creatures. High-fashion photography of Emma Watson in an abandoned industrial warehouse, with dramatic lighting and edgy outfits.</description>
+    </item>
+    
+    <item>
+      <title>2.2 Guides</title>
+      <link>https://futurelog.xyz/zh/docs/text2img-prompt-engineering/ii.-guides/2.2-guides/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/docs/text2img-prompt-engineering/ii.-guides/2.2-guides/</guid>
+      <description>本节主要参考资料：
+Stable Diffusion prompt: a definitive guide OpenArt Prompt Book DALL.E 2 Prompt Book Troubleshooting Midjourney Text Prompts 2.2.1 Prompt 编写指引 编写 Text-to-Image 模型的 Prompt 时，我们可以从 5 个问题入手：
+想要生成什么类型（format）的图片？ - a photo or a oil painting, &amp;hellip; ? 图片的主体（subject）是什么？ - a man or a women ? a dog or a cat ? or a landscape ? &amp;hellip; 想要添加哪些细节？ 环境（environment） - indoor, outdoor, underwater, city street, supermarket, sky, &amp;hellip; 背景（background） - sky, clouds, mountains, trees, buildings, solid color, nebula, forest, &amp;hellip; 灯光（lighting） - ring light, neon, cinematic lighting, &amp;hellip; 配色方案（color scheme） - monochrome, pastel, vibrant, dark, &amp;hellip; 视角（Point of view） - front, overhead, side, &amp;hellip; 图片的风格或艺术类型是什么？ - realistic, 3D render, studio ghibli, movie poster, &amp;hellip; 图片质量要求是怎样的？ - high resolution, high quality, detailed, &amp;hellip; :::tip 上述问题并不是一个完整的列表，在很多 Prompt 中还会有额外的构成的元素。 另外，对上述问题中例举的概念和词汇不理解也没关系，我们将在在后面的章节中介绍。 :::</description>
+    </item>
+    
+    <item>
+      <title>2.2.1 Zero-Shot</title>
+      <link>https://futurelog.xyz/zh/docs/llm-prompt-engineering/ii.-tools-and-techniques/2.2-techniques/2.2.1-zero-shot/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/docs/llm-prompt-engineering/ii.-tools-and-techniques/2.2-techniques/2.2.1-zero-shot/</guid>
+      <description>zero-shot prompting 是指由于目前的大语言模型足够强大，对于大部分任务，我们都可以直接指示模型生成我们想要的结果，而不需要给出示例或过多的引导。
+示例 1：总结 输入提示 请总结以下内容。 Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass one-thousandth that of the Sun, but two-and-a-half times that of all the other planets in the Solar System combined. Jupiter is one of the brightest objects visible to the naked eye in the night sky, and has been known to ancient civilizations since before recorded history.</description>
+    </item>
+    
+    <item>
+      <title>2.2.2 Few-Shot</title>
+      <link>https://futurelog.xyz/zh/docs/llm-prompt-engineering/ii.-tools-and-techniques/2.2-techniques/2.2.2-few-shot/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/docs/llm-prompt-engineering/ii.-tools-and-techniques/2.2-techniques/2.2.2-few-shot/</guid>
+      <description>few-shot prompting 是指我们可以通过给出少量的示例或引导(也就是所谓的 shots)，来指示模型生成我们想要的结果。这在任务复杂度相对较高 或者 希望生成的结果和示例类似，zero-shot prompting 无法满足需求的情况下比较有用。
+示例 1 输入提示 补充以下评论的分类。 这部电影太棒了！ -- 积极 这部电影太糟糕了！ -- 消极 这部电影一般般。 -- 中性 这部电影还行。 -- 输出结果 中性 示例 2 输入提示 请根据以下内容写一份工作周报。 完成了 Pompt Engineering 文档的撰写，并准备在下周分享。 以下是一份工作周报示例： 【本周工作】：本周完成的工作 【下周计划】：下周计划完成的工作 【总结思考】：本周工作总结与思考 输出结果 【本周工作】： 完成了Pompt Engineering文档的撰写。文档内容包括了该工程的目标、技术需求、设计架构以及开发计划等方面的内容。在编写文档的过程中，我仔细研究了相关文献资料，并与项目团队成员进行了多次讨论和协作，以确保文档的准确性和完整性。 【下周计划】： 下周计划将准备一次分享会，向项目团队成员和其他相关利益相关者介绍Pompt Engineering文档。在分享会上，我将重点讲解文档中的关键要点，并解答大家可能有的问题。此外，我还计划准备一些示例演示，以帮助大家更好地理解该工程的实施细节。 【总结思考】： 本周的工作主要集中在Pompt Engineering文档的撰写上。这个过程中，我深入研究了相关技术和领域知识，并与团队成员进行了积极的合作。通过编写文档，我更好地理解了整个工程的目标和实施计划，也为将来的工作打下了坚实的基础。 在下周的分享会中，我期待与团队成员和其他利益相关者进行深入的交流。我相信这次分享会将帮助大家更好地理解和支持Pompt Engineering项目，并为项目的顺利推进提供更好的支持和反馈。我也会通过分享会收集参与者的意见和建议，以进一步完善和优化该工程的实施计划。 总的来说，本周的工作使我对Pompt Engineering项目有了更全面的了解，并为下周的分享会做好了准备。我期待能够继续为项目的成功推进做出贡献，并与团队一起实现我们的目标。 示例 3 输入提示 Stable Diffusion is an AI art generation model similar to DALLE-2. Below is a list of prompts that can be used to generate images with Stable Diffusion: - portait of a homer simpson archer shooting arrow at forest monster, front game card, drark, marvel comics, dark, intricate, highly detailed, smooth, artstation, digital illustration by ruan jia and mandy jurgens and artgerm and wayne barlowe and greg rutkowski and zdislav beksinski - pirate, concept art, deep focus, fantasy, intricate, highly detailed, digital painting, artstation, matte, sharp focus, illustration, art by magali villeneuve, chippy, ryan yee, rk post, clint cearley, daniel ljunggren, zoltan boros, gabor szikszai, howard lyon, steve argyle, winona nelson - ghost inside a hunted room, art by lois van baarle and loish and ross tran and rossdraws and sam yang and samdoesarts and artgerm, digital art, highly detailed, intricate, sharp focus, Trending on Artstation HQ, deviantart, unreal engine 5, 4K UHD image Your task is to write me a detailed prompts exactly about the idea written after IDEA.</description>
+    </item>
+    
+    <item>
+      <title>2.2.3 Chain-of-Thought</title>
+      <link>https://futurelog.xyz/zh/docs/llm-prompt-engineering/ii.-tools-and-techniques/2.2-techniques/2.2.3-chain-of-thought/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/docs/llm-prompt-engineering/ii.-tools-and-techniques/2.2-techniques/2.2.3-chain-of-thought/</guid>
+      <description>Chain-Of-Thought 是指通过给出中间推理或计算步骤，引导 LLM 完成任务。这种提示方式可以帮助 LLM 理解问题的解决过程，从而提高 LLM 解决复杂推理或计算任务的能力。
+示例 1: Few-Shot COT Prompting 输入提示 Which is a faster way to get home? Option 1: Take an 10 minutes bus, then an 40 minute bus, and finally a 10 minute train. Option 2: Take a 90 minutes train, then a 45 minute bike ride, and finally a 10 minute bus. Option 1 will take 10+40+10 = 60 minutes. Option 2 will take 90+45+10=145 minutes.</description>
+    </item>
+    
+    <item>
+      <title>2.2.4 Generated Knowledge</title>
+      <link>https://futurelog.xyz/zh/docs/llm-prompt-engineering/ii.-tools-and-techniques/2.2-techniques/2.2.4-generated-knowledge/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/docs/llm-prompt-engineering/ii.-tools-and-techniques/2.2-techniques/2.2.4-generated-knowledge/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2.2.5 Tree-of-Thought</title>
+      <link>https://futurelog.xyz/zh/docs/llm-prompt-engineering/ii.-tools-and-techniques/2.2-techniques/2.2.5-tree-of-thought/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/docs/llm-prompt-engineering/ii.-tools-and-techniques/2.2-techniques/2.2.5-tree-of-thought/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2.3 Principles</title>
+      <link>https://futurelog.xyz/zh/docs/llm-prompt-engineering/ii.-tools-and-techniques/2.3-principles/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/docs/llm-prompt-engineering/ii.-tools-and-techniques/2.3-principles/</guid>
+      <description>本节主要介绍了编写 Prompt 常用的指导原则和策略。
+参考资料：
+OpenAI GPT Best Practices ChatGPT Prompt Engineering for Developers Course ChatGPT Prompt Engineering for Developers Github Best practices for prompt engineering with OpenAI API 2.3.1 Write clear and specific instructions 策略 1：使用分隔符（如 ```, ### 或 &amp;quot;&amp;quot;&amp;quot; 等）分隔 Prompt 的不同部分。 ❌ Not good:
+Summarize the text below. {text input here}✅ Better:
+Summarize the text delimited by triple quotes. &amp;#34;&amp;#34;&amp;#34;{text input here}&amp;#34;&amp;#34;&amp;#34; 策略 2： Instruction 要具体，尽量不要使用模糊的词语。 ❌ Not good:</description>
+    </item>
+    
+    <item>
+      <title>2.3 Templates</title>
+      <link>https://futurelog.xyz/zh/docs/text2img-prompt-engineering/ii.-guides/2.3-templates/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/docs/text2img-prompt-engineering/ii.-guides/2.3-templates/</guid>
+      <description>本节主要参考资料：
+Visual Prompt Builder: Prompt Engineering Template Troubleshooting Midjourney Text Prompts Midjourney 教程 2.3.1 Basic Template 通过上一节的示例，我们可以总结出一个简单的 Prompt 模板：
+[format] of [subject] [environment], [background], [lighting], [color scheme], by [artist] / in the style of [style], [image quality].这个模板中只有 format, subject 是必须的，其他都是可选的，我们可以根据需要自由组合，内容越详细，越能得到我们预期的图片。
+2.3.2 Advanced Template 1 《Prompt Engineering for Generative AI》 的作者之一 Mike Taylor 总结了一套 Prompt 模板：
+[format] of [subject term], a [solidifier], [perspective], by [artist:75] | by [artist:25] / in the style of [style], [vibes],[booster] component description format type of image (i.</description>
+    </item>
+    
+    <item>
+      <title>2.4 Parameters</title>
+      <link>https://futurelog.xyz/zh/docs/text2img-prompt-engineering/ii.-guides/2.4-parameters/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/docs/text2img-prompt-engineering/ii.-guides/2.4-parameters/</guid>
+      <description> 2.4.1 keyword weight Prompt Image a photo of cats and dogs a photo of (dogs:1.5) and cats 2.4.2 keyword blending Prompt Image photo portrait of [tiger: lion: 0.2] photo portrait of [tiger: lion: 0.5] photo portrait of [tiger: lion: 0.8] 2.4.2 Seed Prompt Seed Image a photograph of an eastern girl 4035355907 a photograph of an eastern girl in citystreet 4035355907 High-fashion photography of an eastern girl in city street 4035355907 </description>
+    </item>
+    
+    <item>
+      <title>2.4 Templates</title>
+      <link>https://futurelog.xyz/zh/docs/llm-prompt-engineering/ii.-tools-and-techniques/2.4-templates/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/docs/llm-prompt-engineering/ii.-tools-and-techniques/2.4-templates/</guid>
+      <description>本节介绍了笔者常用的两类 Prompt 模板。但这里所谓的模板并不是需要强制遵循的格式，而是一种编写时的思路。模板中的各个部分也并不都是必须的，可以根据实际情况进行组合使用。就像在 2.3 Principles 中说的，我们编写 Prompt 时，应该从最简单的开始，逐步迭代优化，直至满足我们的需求。
+2.4.1 Basic Template: Instruction, Context, Input, Outcome components description nessesary? Instruction a specific task or instruction you want the model to perform. Yes Context external information or additional context that can steer the model to better responses. Optional Input the input or question that we are interested to find a response for Optional Outcome the type or format of the output. Optional 示例 1： 2.</description>
+    </item>
+    
+    <item>
+      <title>2.5 Tools</title>
+      <link>https://futurelog.xyz/zh/docs/llm-prompt-engineering/ii.-tools-and-techniques/2.5-tools/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/docs/llm-prompt-engineering/ii.-tools-and-techniques/2.5-tools/</guid>
+      <description> Tool Description OpenAI Playground Google Bard Anthropic Claude Microsoft Guidance Langchain Prompt </description>
+    </item>
+    
+    <item>
+      <title>2.5 Tools</title>
+      <link>https://futurelog.xyz/zh/docs/text2img-prompt-engineering/ii.-guides/2.5-tools/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/docs/text2img-prompt-engineering/ii.-guides/2.5-tools/</guid>
+      <description> Tool Description Stable Diffusion XL Playground Stable Diffusion Prompt Modifier Visual Prompt Builder Adobe Firely </description>
+    </item>
+    
+    <item>
+      <title>3.1.1 AI Story Book</title>
+      <link>https://futurelog.xyz/zh/docs/llm-prompt-engineering/iii.-case-studies/3.1-text/3.1.1-ai_story_book/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/docs/llm-prompt-engineering/iii.-case-studies/3.1-text/3.1.1-ai_story_book/</guid>
+      <description>1. Prompt 通过 AI 工具来生成绘本故事的主要流程如下图所示： step 1. 调用 GPT 3.5 生成绘本故事的文本的 Prompt: You are a children‘s picture story book writer. You need to {write a story about a prince named Arthur who lives in a floating castle}. The story should be suitable for children under 6 years old. The Story should only has 3 pages, every page should not exceed 50 words. output content should be JSON format, only return JSON content, include following fields: story_title, story_content.</description>
+    </item>
+    
+    <item>
+      <title>3.2.1 KOL Data Analysis</title>
+      <link>https://futurelog.xyz/zh/docs/llm-prompt-engineering/iii.-case-studies/3.2-code/3.2.1-kol_data_analysis/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/docs/llm-prompt-engineering/iii.-case-studies/3.2-code/3.2.1-kol_data_analysis/</guid>
+      <description>kol_role = &amp;#34;&amp;#34;&amp;#34; 你现在是一个数据分析专家，可以实现的任务有 1. 素材分析。 2. KOL分析。 3. 应用画像分析。 4. 人群包画像分析。 5. 买量成本分析。 6. 社媒分析。 请你根据用户提出的需求选择需要使用的分析方法。 KOL分析主要分析以下数据： 1. KOL发布的视频数和观看数。 2. KOL视频的互动率数据。 3. KOL的受众所分布的国家和地区。 4. KOL的订阅数。 5. 受众的年龄和性别分布。 6. 非结构化标签的权重。 以上数据均以KOL频道名称为主键进行统计。 &amp;#34;&amp;#34;&amp;#34;kol_restrict = &amp;#34;&amp;#34;&amp;#34; KOL分析包括以下限定条件： 1. KOL所在媒体； 2. 国家地区； 3. 时间范围； 4. 粉丝量级； 5. 受众年龄； 6. 游戏品类。 请识别提问中的限定条件体现在数据收集阶段，请准确描述限定条件的范围，不要用“等”来省略，如限定条件无提及则认为没有相对应的限制。 &amp;#34;&amp;#34;&amp;#34;kol_fields = &amp;#34;&amp;#34;&amp;#34; 为了获取支持上述分析的数据，需要从数据库表获取以下字段： 1. 字段名：title 字段类型：string 字段含义：频道标题。 2. 字段名：subscribers 字段类型：bigint 字段含义：订阅数。 3. 字段名：total_views 字段类型：bigint 字段含义：频道观看量。 4. 字段名：country_code 字段类型：string 字段含义：国家。 5. 字段名：latest_10_video_engagement_rate 字段类型：double 字段含义：近10个视频平均互动率。 表中的tags字段和nox_category字段是记录了游戏的分类，可以使用这两个字段模糊匹配去筛选分类，不要使用categories字段。 请根据以上库表结构，生成sql获取能解答用户问题的字段，用户的问题是： %s 注意：使用CURDATE()函数获取当前日期，只输出json格式内容：{&amp;#34;sql&amp;#34;: 具体的sql} &amp;#34;&amp;#34;&amp;#34;prompt_sql = &amp;#34;&amp;#34;&amp;#34; 根据要求查询的字段得到的sql语句如下： \``` {} \``` &amp;#34;&amp;#34;&amp;#34;上述sql查询的数据如下，多行数据以list形式展示： \``` {} \``` &amp;#34;&amp;#34;&amp;#34;prompt_question = &amp;#34;&amp;#34;&amp;#34; ####\n用户的问题或需求是： \``` {} \``` 所有的返回内容请用markdown格式输出，输出的markdown表格内容中不要用&amp;#39;.</description>
+    </item>
+    
+    <item>
+      <title>I. Introduction</title>
+      <link>https://futurelog.xyz/zh/docs/llm-prompt-engineering/i.-introduction/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/docs/llm-prompt-engineering/i.-introduction/</guid>
+      <description>1.1 什么是 Prompt Engineering? 要理解 Prompt Engineering，首先要理解什么是 Prompt。
+Prompt 简单来说就是给模型的指令。它可以是一个问题，一段描述，目的是说明我们想让模型完成我们的任务。
+那么 Prompt Engineering 又是什么呢？ Software engineering 这个词可能大家都不陌生，它指的是软件工程，是一种通过系统化、规范化、可量化的方法进行软件设计、开发、测试、运行和维护的工程化方法。
+Prompt Engineering 也是类似的含义，只不过它的对象是 Prompt 而已。
+因此我们可以对 Prompt Engineering 下个类似的定义：
+Prompt Engineering 是一种随着大语言模型而新兴的技术，它指的是 Prompt 工程。是一种通过设计和优化 Prompt，帮助我们更好地发掘和利用 GPT 等大型语言模型的能力，让模型更好地完成我们想要的任务。
+1.2 为什么需要 Prompt Engineering? 简单来说是因为人类语言的表达方式是多样的，甚至有时是含义不明确的。
+受限于 LLM 模型的实现原理，目前的模型不一定很好地理解人类语言的含义，因此我们需要通过 Prompt 来指导模型完成我们的任务。
+特别是对于一些复杂的逻辑运算或推理任务，需要对 Prompt 进行更加精细的设计，给于模型更多的提示，才能让模型较好地完成任务。
+1.3 Prompt Engineering 的应用场景 Prompt Engineering 的应用场景非常广泛，几乎可以应用在所有需要使用 LLM 模型的场景。比如：翻译，总结，问答，推理，评判，内容生成/改写 等。</description>
+    </item>
+    
+    <item>
+      <title>I. Introduction</title>
+      <link>https://futurelog.xyz/zh/docs/text2img-prompt-engineering/i.-introduction/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/docs/text2img-prompt-engineering/i.-introduction/</guid>
+      <description>1 什么是 Text2Img Prompt Engineering? 借用 OpenArt Prompt Book 中的定义：
+Text2Img Prompt engineering is the process of structuring words that can be interpreted and understood by a text-to-image model. Think of it as the language you need to speak in order to tell an AI model what to draw.
+Prompt engineering is a great way to stretch the limitations of Text2IM models. Good prompts can make images go from good to great.</description>
+    </item>
+    
+    <item>
+      <title>IV. The Future</title>
+      <link>https://futurelog.xyz/zh/docs/llm-prompt-engineering/iv.-the-future/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/docs/llm-prompt-engineering/iv.-the-future/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Components</title>
       <link>https://futurelog.xyz/zh/blog/components/</link>
       <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
