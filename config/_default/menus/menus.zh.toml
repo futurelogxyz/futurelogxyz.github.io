@@ -166,7 +166,7 @@ weight = 10
 [[footer]]
 parent = "Community"
 name = "RSS"
-url = "https://futurelog.xyz/zh/index.xml"
+url = "/index.xml"
 weight = 20
 
 # toml-docs-end menus-footer
