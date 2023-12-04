@@ -41,9 +41,15 @@ url = "https://newsletter.futurelog.xyz"
 weight = 50
 
 [[main]]
+name = "图库"
+url = "/galleries/"
+weight = 60
+
+
+[[main]]
 name = "关于"
 url = "/about/"
-weight = 60
+weight = 70
 
 
 [[social]]
@@ -97,29 +103,31 @@ name = "Newsletter"
 url = "https://newsletter.futurelog.xyz"
 weight = 10
 
-[[footer]]
-parent = "Links"
-name = "Courtyard"
-url = "../courtyard"
-weight = 20
 
 [[footer]]
 parent = "Links"
 name = "Docs"
 url = "/docs/llm-prompt-engineering/I. Introduction/"
-weight = 30
-
-[[footer]]
-parent = "Links"
-name = "Slides"
-url = "../slides"
-weight = 40
+weight = 20
 
 [[footer]]
 parent = "Links"
 name = "Galleries"
-url = "../galleries"
+url = "/galleries/"
+weight = 30
+
+# [[footer]]
+# parent = "Links"
+# name = "Slides"
+# url = "../slides"
+# weight = 40
+
+[[footer]]
+parent = "Links"
+name = "Courtyard"
+url = "../courtyard"
 weight = 50
+
 
 
 [[footer]]

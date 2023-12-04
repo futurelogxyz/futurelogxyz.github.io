@@ -37,6 +37,15 @@ Step 2. 填写 Repository name 和 Description 等相关信息，然后点击 Cr
     </item>
     
     <item>
+      <title>图库</title>
+      <link>https://futurelog.xyz/zh/galleries/</link>
+      <pubDate>Mon, 14 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://futurelog.xyz/zh/galleries/</guid>
+      <description> 2023-12-01 forest hero left hero right Previous Next </description>
+    </item>
+    
+    <item>
       <title>Markdown 示例</title>
       <link>https://futurelog.xyz/zh/blog/markdown-example/</link>
       <pubDate>Tue, 08 Aug 2023 00:00:00 +0000</pubDate>
