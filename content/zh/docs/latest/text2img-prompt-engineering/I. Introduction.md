@@ -20,7 +20,7 @@ layout: docs
 ## 2. Text2Img Prompt Engineering 有什么不同?
 Text-to-Image 模型的 Prompt 也是一段文本，描述了你想要生成的图片的内容。比如，你可以输入 `a dog on the grass ground`，然后 Text-to-Image 模型就会生成一张狗在草地上的图片。
 
-![a dog on the grass ground](https://bytememo-1251943639.file.myqcloud.com/img/20230713/image_D2xkxEWe_1689237854709_raw.jpg)
+{{< image src="https://bytememo-1251943639.file.myqcloud.com/img/20230713/image_D2xkxEWe_1689237854709_raw.jpg" caption="" ratio="1x1" class="rounded" >}}
 
 但需要注意的是，适用于 Stable Diffusion 等 Text-to-Image 模型（如 DALLE，Midjourney 等）的 Prompt 与 LLM 模型的 Prompt 存在较大的不同。 
 

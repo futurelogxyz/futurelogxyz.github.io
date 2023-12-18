@@ -76,7 +76,7 @@ separator = true
 [sections.projects]
 title = "Projects"
 layout = "card"
-sort = "title"
+sort = "date"
 reverse = false
 nested = true
 cols = 3
