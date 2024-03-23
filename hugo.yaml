@@ -85,6 +85,11 @@ menu:
       url: "https://x.com/wallezen007"
       params:
         icon: twitter
+    - name: RSS
+      weight: 9
+      pageRef: /blog/index.xml
+      params:
+        icon: rss
 
   sidebar:
     - identifier: links
@@ -169,7 +174,7 @@ params:
 
   editURL:
     enable: true
-    base: "https://github.com/futurelogxyz/futurelog.github.io/edit/main"
+    base: "https://github.com/futurelogxyz/futurelogxyz.github.io/tree/main/content"
 
   blog:
     list:

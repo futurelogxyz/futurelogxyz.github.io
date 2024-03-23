@@ -7,7 +7,7 @@ layout: hextra-home
 <!-- <div class="hx-mt-6 hx-mb-60" style="background-image: url('https://futurelog-1251943639.cos.accelerate.myqcloud.com/img/202403231447772.jpg'); height: 720px; width: 100%;">
 </div> -->
 
-{{< card link="/blog/markdown" title="" image="https://futurelog-1251943639.cos.accelerate.myqcloud.com/img/202403231447772.jpg" subtitle="" >}}
+{{< card link="/" title="" image="https://futurelog-1251943639.cos.accelerate.myqcloud.com/img/202403231447772.jpg" subtitle="" >}}
 
 
 <div class="hx-mt-6 hx-mb-60" style="font-size: 2em; width: 100%; text-align: center; margin-top:10px;">
