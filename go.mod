@@ -1,4 +1,4 @@
-module github.com/imfing/hextra-starter-template
+module github.com/futurelogxyz/futurelogxyz.github.io
 
 go 1.21
 
