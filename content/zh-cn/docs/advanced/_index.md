@@ -1,5 +1,5 @@
 ---
-linkTitle: Advanced
+linkTitle: 高级特性
 title: Advanced Topics
 prev: /docs/guide/shortcodes/tabs
 next: /docs/advanced/multi-language

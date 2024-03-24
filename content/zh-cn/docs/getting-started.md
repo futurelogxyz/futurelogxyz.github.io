@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: 快速开始
 weight: 1
 next: /docs/guide
 prev: /docs

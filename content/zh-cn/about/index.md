@@ -3,6 +3,10 @@ title: 关于
 toc: false
 ---
 
+> log for the future, shape the future.
+>
+> *- wallezen*
+
 Hextra 是一款简洁、快速、灵活的主题，适用于构建现代化静态站点。Hextra 特别适用于文档网站，但也可用于构建博客、个人网站等各种类型的网站。
 
 Hugo 和 Jekyll 类似，是一个静态网站生成器。但与其他生成器不同，Hugo 只有单个可执行文件，这使得它可以轻松地在各种平台上安装和运行。Hugo 的运行速度非常快且可靠性高，能够在几毫秒内渲染数千页的网站。

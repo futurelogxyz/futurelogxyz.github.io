@@ -1,10 +1,10 @@
 ---
-title: Guide
+title: 使用指南
 weight: 2
 prev: /docs/getting-started
 next: /docs/guide/organize-files
 sidebar:
-  open: true
+  open: false
 ---
 
 Explore the following sections to learn how to use Hextra:

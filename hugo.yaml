@@ -101,30 +101,26 @@ menu:
     #   name: "About"
     #   pageRef: "/about"
     #   weight: 2
+    - identifier: newsletter
+      name: "Newsletter ↗"
+      url: "https://newsletter.futurelog.xyz"
+      weight: 2
     - identifier: cloudbrain
       name: "CloudBrain ↗"
       url: "https://futurelog.xyz/cloudbrain"
       weight: 3
-    - identifier: newsletter
-      name: "Newsletter ↗"
-      url: "https://newsletter.futurelog.xyz"
-      weight: 3
-    - identifier: stats
-      name: Stats
-      params:
-        type: separator
-      weight: 4
     - identifier: blogStats
       name: "Blog Stats ↗"
       url: "https://eu.umami.is/share/pVLP0xsDCYYzqe3k/futurelog.xyz"
-      weight: 5
+      weight: 4
     - identifier: newsletterStats
       name: "Newsletter Stats ↗"
       url: "https://eu.umami.is/share/zR6xVNuL0PjH6SIp/newsletter.futurelog.xyz"
-      weight: 6
+      weight: 5
     - identifier: cloudbrainStats
       name: "CloudBrain Stats ↗"
       url: "https://eu.umami.is/share/osj0QcmVXL20jiR2/futurelog.xyz"
+      weight: 6
     
 
 params:
