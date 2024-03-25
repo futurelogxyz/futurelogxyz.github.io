@@ -2,7 +2,7 @@
     font-family: "Noto Serif SC", "Times New Roman", Times, serif;
 }
 
-article {
+article, p {
     font-size: 1.15em;
 }
 

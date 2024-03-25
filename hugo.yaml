@@ -2,6 +2,10 @@
 baseURL: "https://futurelog.xyz/"
 title: "Futurelog"
 
+author:
+  name: "wallezen"
+  email: "wallezen@crowai.xyz"
+
 enableRobotsTXT: true
 enableGitInfo: true
 enableEmoji: true
