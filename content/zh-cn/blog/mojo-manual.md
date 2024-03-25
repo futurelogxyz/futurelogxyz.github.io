@@ -9,7 +9,7 @@ excludeSearch: false
 toc: true
 ---
 
-![](https://futurelog.xyz/img/imgMojo-750x422_clipdrop-enhance-20231107-1400x600.webp)
+![](https://futurelog-1251943639.cos.accelerate.myqcloud.com/img/Mojo-750x422_clipdrop-enhance-20231107.jpeg)
 
 > Mojo 编程语言的目标是在像 Python 一样易于使用的同时拥有类似 C++ 和 Rust 的性能。并且，还能利用整个 Python 生态的能力。
 > 
