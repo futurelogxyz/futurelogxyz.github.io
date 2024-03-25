@@ -131,14 +131,14 @@ params:
   description: log for the future, shape the future.
 
   navbar:
-    displayTitle: true
+    displayTitle: false
     displayLogo: true
     logo:
-      path: images/logo.svg
-      dark: images/logo-dark.svg
-      # width: 40
-      # height: 20
-      # link: /
+      path: images/logo/future-logo.svg
+      dark: images/logo/future-logo-dark.svg
+      width: 100
+      height: 50
+      link: /
     width: wide
 
   page:

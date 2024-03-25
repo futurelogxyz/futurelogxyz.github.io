@@ -276,7 +276,7 @@ graph TD;
 
 
 ## figure
-{{< figure link="/" src="https://source.unsplash.com/featured/800x600?landscape" caption="A sample digit from the MNIST database." caption-position="center" caption-effect="slide" >}}
+{{< figure link="/" src="https://source.unsplash.com/featured/800x600?landscape" caption="A sample digit from the MNIST database." caption-position="center" caption-effect="slide" class="no-photoswipe" >}}
 
 ## Gallery
 *引入 [hugo-easy-gallery](https://github.com/liwenyip/hugo-easy-gallery) 提供支持*
