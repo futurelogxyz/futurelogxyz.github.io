@@ -253,7 +253,7 @@ This is the second step.
 <iframe src="https://xmind.ai/embed/GATuQsR4?sheet-id=b6a2b210-e0a2-4ce9-a062-bc4387716f33" width="100%" height="540px" frameborder="0" scrolling="no" allow="fullscreen"></iframe>
 
 - youtube
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jvqFAi7vkBc?si=-OyoTTt_ubNdk8Be" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/jvqFAi7vkBc?si=-OyoTTt_ubNdk8Be" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Diagrams
 
@@ -276,7 +276,7 @@ graph TD;
 
 
 ## figure
-{{< figure src="diagrams/test.excalidraw.png" class="floatright" width="100%" caption="A sample digit from the MNIST database." >}}
+{{< figure link="/" src="/images/card-image-unprocessed.jpg" class="floatright" width="50%" caption="A sample digit from the MNIST database." caption-position="center" caption-effect="slide" >}}
 更重要的是， Mojo 被设计为 Python 的超集，通过集成整个 Python 生态的能力，让开发人员继续使用熟悉的工具和库，在保留 Python 动态特性的同时增加了系统编程能力。这些新增加的系统编程能力，让开发人员也能够使用 Mojo 编写那些目前需要依赖 C/C++/Rust/CUDA 等才能实现的高性能的代码和库。通过结合动态编程语言和系统编程语言的优势，Mojo 提供了一种统一的编程模型，对新手友好，并能扩展应用到从底层加速器（accelerators）到应用开发、脚本开发等诸多场景。
 
 ## Gallery
