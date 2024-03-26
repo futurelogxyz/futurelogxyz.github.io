@@ -1,5 +1,5 @@
 ---
-linkTitle: "Documentation"
+linkTitle: "文档"
 title: Introduction
 ---
 
