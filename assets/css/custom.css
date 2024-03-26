@@ -1,11 +1,11 @@
 .content, .text-center, .sidebar-container {
-    font-family: "Noto Serif SC", "Times New Roman", Times, serif;
+    font-family: helvetica, "Noto Serif SC", "Noto Sans", Roboto, "Times New Roman", Times, serif;
 }
 
 article, p {
-    font-size: 1.15em;
+    font-size: 1.1em;
 }
 
 h1, h2, h3, h4, h5, h6, p {
-    font-family: "Noto Serif SC", "Times New Roman", Times, serif;
+    font-family: helvetica, "Noto Serif SC", "Noto Sans", Roboto, "Times New Roman", Times, serif;
 }
