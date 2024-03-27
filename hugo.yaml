@@ -28,12 +28,12 @@ languages:
     languageCode: zh-cn
     weight: 1
     title: Futurelog
-  en:
-    contentDir: content/en
-    languageName: English
-    languageCode: en
-    weight: 2
-    title: Futurelog
+  # en:
+  #   contentDir: content/en
+  #   languageName: English
+  #   languageCode: en
+  #   weight: 2
+  #   title: Futurelog
 
 module:
   hugoVersion:
