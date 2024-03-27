@@ -8,14 +8,16 @@ width: wide
 
 ![](https://futurelog-1251943639.cos.accelerate.myqcloud.com/img/202403270017551.png)
 
-欢迎来到 wallezen 的个人博客，我是一名 AI Engineer，热爱技术，热爱生活，热爱分享。
-这里是记录我的生活、学习、工作的地方，希望能通过这些文字与你也与我自己交流。
+欢迎来到 *wallezen* 的个人博客(内容搬迁中...)，我是一名 *AI Engineer*，也在努力成为一名 *indie hacker*，热爱技术，热爱生活，热爱分享。
+这里是记录我的生活和工作中所知所想的地方，思绪无影无形，希望能通过这些文字与你也与我自己交流。
 
-思绪无影无形，偶尔还在别处停留：[CloudBrain](https://futurelog.xyz/cloudbrain)，[AIGC Things](https://newsletter.futurelog.xyz)
+除了这个博客，你还可以通过 数字花园 *[CloudBrain](https://futurelog.xyz/cloudbrain)* 和 *[AIGC Things](https://newsletter.futurelog.xyz) Newsletter* 发现和关注我。
+在 *CloudBrain* 中主要保存了我的阅读笔记、偶发灵感、以及一些零零碎碎的想法；
+在 *AIGC Things* 中主要会定期分享观察了解到的 *AI/AIGC* 相关的技术、动态和应用。
 
 <br />
 
-> log for the future, shape the future.
+> futurelog means "log for the future, shape the future".
 >
 > *- wallezen*
 >
