@@ -9,7 +9,7 @@ width: wide
 ![](https://futurelog-1251943639.cos.accelerate.myqcloud.com/img/202403270017551.png)
 
 欢迎来到 wallezen 的个人博客，我是一名 AI Engineer，热爱技术，热爱生活，热爱分享。
-这里是记录我的生活、学习、工作的地方，希望能给你带来一些帮助，也希望能和你一起交流。
+这里是记录我的生活、学习、工作的地方，希望能通过这些文字与你与他与我交流。
 
 思绪无影无形，偶尔还在别处停留：[CloudBrain](https://futurelog.xyz/cloudbrain)，[AIGC Things](https://newsletter.futurelog.xyz)
 
