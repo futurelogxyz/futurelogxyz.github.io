@@ -1,9 +1,12 @@
 ---
 title: 技术
 weight: 1
-prev: /docs/getting-started
-next: /docs/guide/organize-files
+# prev: 
+# next: /docs/engineering/pompt-engineering
 sidebar:
-  open: false
+  open: true
 ---
 
+{{< cards >}}
+  {{< card link="prompt-engineering" title="提示工程" icon="card" >}}
+{{< /cards >}}
