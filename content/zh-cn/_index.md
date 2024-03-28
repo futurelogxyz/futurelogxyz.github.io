@@ -6,7 +6,7 @@ width: wide
 ---
 
 
-![](https://futurelog-1251943639.cos.accelerate.myqcloud.com/img/202403270017551.png)
+![](https://futurelog-1251943639.cos.accelerate.myqcloud.com/img/202403281138406.webp)
 
 欢迎来到 *wallezen* 的个人博客(内容搬迁中...)，我是一名 *AI Engineer*，也在努力成为一名 *indie hacker*，热爱技术，热爱生活，热爱分享。
 这里是记录我的生活和工作中所知所想的地方，思绪无影无形，希望能通过这些文字与你也与我自己交流。
