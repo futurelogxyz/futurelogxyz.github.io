@@ -8,7 +8,7 @@ width: wide
 
 ![](https://futurelog-1251943639.cos.accelerate.myqcloud.com/img/202403281138406.webp)
 
-欢迎来到 *wallezen* 的个人博客(内容搬迁中...)，我是一名 *AI Engineer*，正在努力成为一名 *indie hacker*，技术信仰派，实用主义，爱看美剧，喜欢折腾工具，着迷于推理小说。
+欢迎来到 *wallezen* 的个人博客(内容搬迁中...)，我是一名 *AI Engineer*，正在努力成为一名 *indie hacker*，技术信仰派，实用主义，崇尚简洁，喜欢折腾工具类产品，着迷于科幻和推理小说。
 这里是记录我在生活和工作中的所知所想的地方，思绪无影无形，希望能通过这些文字与你也与我自己交流。
 
 除了这个博客，你还可以通过 *[CloudBrain Digital Garden](https://futurelog.xyz/cloudbrain)* 和 *[AIGC Things Newsletter](https://newsletter.futurelog.xyz)* 发现和关注我。
