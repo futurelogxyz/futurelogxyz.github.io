@@ -181,18 +181,19 @@ params:
       displayTags: true
 
   comments:
-    enable: false
+    enable: true
     type: giscus
 
     # https://giscus.app/
     giscus:
-      repo: imfing/hextra
-      repoId: R_kgDOJ9fJag
-      category: General
-      categoryId: DIC_kwDOJ9fJas4CY7gW
-      # mapping: pathname
-      # strict: 0
-      # reactionsEnabled: 1
-      # emitMetadata: 0
-      # inputPosition: top
-      # lang: en
+      repo: futurelogxyz/futurelogxyz.github.io
+      repoId: R_kgDOLkZifw
+      category: Announcements
+      categoryId: DIC_kwDOLkZif84CeVow
+      mapping: pathname
+      strict: 1
+      reactionsEnabled: 1
+      emitMetadata: 0
+      inputPosition: top
+      lang: zh-CN
+      loading: lazy
