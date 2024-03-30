@@ -3,6 +3,7 @@ title: 2.2 技巧
 weight: 2
 sidebar:
   open: false
+comments: false
 ---
 
 

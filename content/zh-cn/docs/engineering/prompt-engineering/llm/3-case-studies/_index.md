@@ -3,6 +3,7 @@ title: 3. 案例
 weight: 3
 sidebar:
   open: false
+comments: false
 ---
 
 

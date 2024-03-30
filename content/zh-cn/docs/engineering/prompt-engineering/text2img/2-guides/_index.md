@@ -3,6 +3,7 @@ title: 2. 指南
 weight: 2
 sidebar:
   open: false
+comments: false
 ---
 
 {{< cards >}}

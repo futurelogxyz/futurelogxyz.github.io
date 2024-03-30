@@ -5,6 +5,7 @@ weight: 1
 # next: /docs/engineering/pompt-engineering
 sidebar:
   open: true
+comments: false
 ---
 
 {{< cards >}}

@@ -3,6 +3,7 @@ title: 文生图
 weight: 2
 sidebar:
   open: false
+comments: false
 ---
 
 

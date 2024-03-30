@@ -3,6 +3,7 @@ title: 提示工程
 weight: 1
 sidebar:
   open: false
+comments: false
 ---
 
 {{< cards >}}

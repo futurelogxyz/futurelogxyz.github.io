@@ -3,6 +3,7 @@ title: 大语言模型 LLM
 weight: 1
 sidebar:
   open: false
+comments: false
 ---
 
 {{< cards >}}
