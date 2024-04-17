@@ -13,8 +13,8 @@ width: wide
 这里是记录我生活和工作中所知所想的地方，思绪无影无形，希望能通过这些文字与你也与我自己交流。
 
 除了这个博客，你还可以通过 *[AIGC Things Newsletter](https://aigcthings.futurelog.xyz)*， *[Architecture Things Newsletter](https://archthings.futurelog.xyz)* 和 *[CloudBrain Digital Garden](https://futurelog.xyz/cloudbrain)* 发现和关注我。
-在 *AIGC Things* 中主要会定期分享观察了解到的 *AI/AIGC* 相关的技术、动态和应用。
-在 *Architecture Things* 中主要会定期分享观察了解到的系统架构和软件工程相关的技术、动态和应用。
+在 *AIGC Things* 中主要会定期分享观察了解到的 *AI/AIGC* 相关的技术、动态和应用;
+在 *Architecture Things* 中主要会定期分享观察了解到的系统架构和软件工程相关的技术、动态和应用;
 在 *CloudBrain* 中主要保存了一些未成文的草稿、笔记、资料和想法。
 
 <br />
