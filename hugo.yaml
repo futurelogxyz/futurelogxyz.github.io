@@ -79,18 +79,23 @@ menu:
       weight: 6
       params:
         type: search
-    - name: GitHub
-      weight: 7
-      url: "https://github.com/wallezen"
-      params:
-        icon: github
-    - name: Twitter
-      weight: 8
-      url: "https://x.com/wallezen007"
-      params:
-        icon: twitter
-    - name: RSS
+    # - name: GitHub
+    #   weight: 7
+    #   url: "https://github.com/wallezen"
+    #   params:
+    #     icon: github
+    # - name: Twitter
+    #   weight: 8
+    #   url: "https://x.com/wallezen007"
+    #   params:
+    #     icon: twitter
+    - name: Follow
       weight: 9
+      url: https://bento.me/wallezen
+      params:
+        icon: cards
+    - name: RSS
+      weight: 10
       pageRef: /blog/index.xml
       params:
         icon: rss
