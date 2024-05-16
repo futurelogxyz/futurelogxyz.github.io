@@ -122,8 +122,8 @@ menu:
       name: "CloudBrain ↗"
       url: "https://futurelog.xyz/cloudbrain"
       weight: 4
-    - identifier: presentations
-      name: "Presentations ↗"
+    - identifier: presentation
+      name: "Presentation ↗"
       url: "https://futurelog.xyz/slides"
       weight: 5
     - identifier: blogStats
