@@ -122,18 +122,22 @@ menu:
       name: "CloudBrain ↗"
       url: "https://futurelog.xyz/cloudbrain"
       weight: 4
+    - identifier: presentations
+      name: "Presentations ↗"
+      url: "https://futurelog.xyz/slides"
+      weight: 5
     - identifier: blogStats
       name: "Blog Stats ↗"
       url: "https://eu.umami.is/share/pVLP0xsDCYYzqe3k/futurelog.xyz"
-      weight: 5
+      weight: 6
     - identifier: newsletterStats
       name: "Newsletter Stats ↗"
       url: "https://eu.umami.is/share/zR6xVNuL0PjH6SIp/aigcthings.futurelog.xyz"
-      weight: 6
+      weight: 7
     - identifier: cloudbrainStats
       name: "CloudBrain Stats ↗"
       url: "https://eu.umami.is/share/osj0QcmVXL20jiR2/futurelog.xyz"
-      weight: 7
+      weight: 8
     
 
 params:
