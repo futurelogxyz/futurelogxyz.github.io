@@ -124,7 +124,7 @@ menu:
       weight: 4
     - identifier: presentation
       name: "Presentation ↗"
-      url: "https://futurelog.xyz/slides"
+      url: "https://futurelog.xyz/presentations"
       weight: 5
     - identifier: blogStats
       name: "Blog Stats ↗"

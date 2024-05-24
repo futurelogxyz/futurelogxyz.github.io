@@ -1,5 +1,5 @@
 ---
-title: 大语言模型 LLM
+title: LLM
 weight: 1
 sidebar:
   open: false
