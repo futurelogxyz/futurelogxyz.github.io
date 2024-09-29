@@ -91,7 +91,7 @@ menu:
     #     icon: twitter
     - name: Follow
       weight: 9
-      url: https://bento.me/wallezen
+      url: https://linktr.ee/wallezen
       params:
         icon: cards
     - name: RSS
@@ -138,7 +138,7 @@ menu:
       name: "CloudBrain Stats ↗"
       url: "https://eu.umami.is/share/osj0QcmVXL20jiR2/futurelog.xyz"
       weight: 8
-    
+
 
 params:
   description: log for the future, shape the future.
@@ -181,7 +181,7 @@ params:
     flexsearch:
       # index page by: content | summary | heading | title
       index: content
-      # full | forward | reverse | strict 
+      # full | forward | reverse | strict
       # https://github.com/nextapps-de/flexsearch/#tokenizer-prefix-search
       tokenize: forward
 

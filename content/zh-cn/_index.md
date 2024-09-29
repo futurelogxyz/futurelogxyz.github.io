@@ -1,5 +1,5 @@
 ---
-title: 
+title:
 # layout: hextra-home
 toc: false
 width: wide
@@ -8,27 +8,20 @@ width: wide
 
 ![](https://futurelog-1251943639.cos.accelerate.myqcloud.com/img/202403281138406.webp)
 
-欢迎来到 *wallezen* 的个人博客(内容搬迁中...)，我是一名 *AI Engineer*，正在努力成为一名 *indie hacker*。
-生活理想主义，技术实用主义，通过科幻小说和推理小说来充电，着迷于一切简洁美好的设计。
-这里是记录我生活和工作中所知所想的地方，思绪无影无形，希望能通过这些文字与你也与我自己交流。
-
-除了这个博客，你还可以通过 *[AIGC Things Newsletter](https://aigcthings.futurelog.xyz)*， *[Architecture Things Newsletter](https://archthings.futurelog.xyz)* 和 *[CloudBrain Digital Garden](https://futurelog.xyz/cloudbrain)* 发现和关注我。
-在 *AIGC Things* 中主要会定期分享观察了解到的 *AI/AIGC* 相关的技术、动态和应用;
-在 *Architecture Things* 中主要会定期分享观察了解到的系统架构和软件工程相关的技术、动态和应用;
-在 *CloudBrain* 中主要保存了一些未成文的草稿、笔记、资料和想法。
-
+欢迎来到 *wallezen* 的个人博客(内容搬迁中...)，我是一名正在努力成为独立开发者的工程师。
+生活理想主义，技术实用主义，通过推理小说和科幻小说来充电，着迷于一切简洁美好的设计。
+这里是记录我生活和工作中所知所想的地方，思绪无影无形，希望能通过这些文字与同存于这个世界的你们交流。
 <br />
-
-> futurelog means "log for the future, shape the future".
->
-> *- wallezen*
->
-
+除了这个博客，你还可以通过以下方式发现和关注我：
+- *[AIGC Things Newsletter](https://aigcthings.futurelog.xyz)*： 定期分享观察了解到的 *AI/AIGC* 相关的技术、动态和应用;，
+- *[Architecture Things Newsletter](https://archthings.futurelog.xyz)*：定期分享观察了解到的系统架构和软件工程相关的技术、动态和应用;
+- *[CloudBrain Digital Garden](https://futurelog.xyz/cloudbrain)*：主要保存了一些未成文的草稿、笔记、资料和想法。
 
 <br />
 
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=95% height=65 src="https://i.y.qq.com/n2/m/outchain/player/index.html?songid=290873678&songtype=0"></iframe>
 
+<br />
 <br />
 
 <figure><embed src="https://wakatime.com/share/@wallezen/11d9bb72-c0b3-42ec-ae02-96985004e265.svg"></embed></figure>
@@ -44,7 +37,7 @@ width: wide
 <!-- <div class="hx-mt-6 hx-mb-60" style="background-image: url('https://futurelog-1251943639.cos.accelerate.myqcloud.com/img/202403231447772.jpg'); height: 720px; width: 100%;">
 </div> -->
 
-<!-- 
+<!--
 {{< card link="/" title="" image="https://futurelog-1251943639.cos.accelerate.myqcloud.com/img/202403231447772.jpg" subtitle="" >}}
 
 
