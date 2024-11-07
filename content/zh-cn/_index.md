@@ -13,7 +13,8 @@ width: wide
 这里是记录我生活和工作中所知所想的地方，思绪无影无形，希望能通过这些文字与同存于这个世界的你交流。
 <br />
 除了这个博客，你还可以通过以下方式发现和关注我：
-- *[AIGC Things Newsletter](https://aigcthings.futurelog.xyz)*： 定期分享观察了解到的 *AI/AIGC* 相关的技术、动态和应用;，
+- *[Going Abroad Newsletter](https://goingabroad.futurelog.xyz)*： 定期分享作为独立开发者所发现和了解到的出海相关的产品机会，以及自身的思考和实践;
+- *[AIGC Things Newsletter](https://aigcthings.futurelog.xyz)*： 定期分享观察了解到的 *AI/AIGC* 相关的技术、动态和应用;
 - *[Architecture Things Newsletter](https://archthings.futurelog.xyz)*：定期分享观察了解到的系统架构和软件工程相关的技术、动态和应用;
 - *[CloudBrain Digital Garden](https://futurelog.xyz/cloudbrain)*：主要保存了一些未成文的草稿、笔记、资料和想法。
 
@@ -25,56 +26,3 @@ width: wide
 <br />
 
 <figure><embed src="https://wakatime.com/share/@wallezen/11d9bb72-c0b3-42ec-ae02-96985004e265.svg"></embed></figure>
-
-
-
-
-
-
-
-
-
-<!-- <div class="hx-mt-6 hx-mb-60" style="background-image: url('https://futurelog-1251943639.cos.accelerate.myqcloud.com/img/202403231447772.jpg'); height: 720px; width: 100%;">
-</div> -->
-
-<!--
-{{< card link="/" title="" image="https://futurelog-1251943639.cos.accelerate.myqcloud.com/img/202403231447772.jpg" subtitle="" >}}
-
-
-<div class="hx-mt-6 hx-mb-60" style="font-size: 2em; width: 100%; text-align: center; margin-top:10px;">
-<h1>
-******
-</h1>
-</div>
-
-<div class="hx-mt-6 hx-mb-60 hx-h-2" style="background: radial-gradient(ellipse at 50% 80%,rgba(221,210,59,0.15),hsla(0,0%,100%,0)); font-size: 2em;  width: 100%;">
-<h1>
-🔥 精选文章
-</h1>
-</div>
-
-{{< cards >}}
-  {{< card link="/blog/markdown" title="Image Card" image="https://source.unsplash.com/featured/800x600?landscape" subtitle="Unsplash Landscape" >}}
-  {{< card link="/" title="Local Image" image="/images/card-image-unprocessed.jpg" subtitle="Raw image under static directory." >}}
-  {{< card link="/" title="Local Image" image="images/space.jpg" subtitle="Image under assets directory, processed by Hugo." method="Resize" options="600x q80 webp" >}}
-{{< /cards >}}
-
-<div class="hx-mt-6 hx-mb-60" style="font-size: 2em; width: 100%; text-align: center; margin-top:10px">
-<h1>
-******
-</h1>
-</div>
-
-
-<div class="hx-mt-60 hx-mb-60" style="background: radial-gradient(ellipse at 50% 80%,rgba(221,210,59,0.15),hsla(0,0%,100%,0)); font-size: 2em; width: 100%; ">
-<h1>
-🏗️ 近期项目
-</h1>
-</div>
-
-{{< cards >}}
-  {{< card link="/blog/markdown" title="Image Card" image="https://source.unsplash.com/featured/800x600?landscape" subtitle="Unsplash Landscape" >}}
-  {{< card link="/" title="Local Image" image="/images/card-image-unprocessed.jpg" subtitle="Raw image under static directory." >}}
-  {{< card link="/" title="Local Image" image="images/space.jpg" subtitle="Image under assets directory, processed by Hugo." method="Resize" options="600x q80 webp" >}}
-{{< /cards >}} -->
-

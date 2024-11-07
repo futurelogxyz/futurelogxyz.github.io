@@ -110,34 +110,38 @@ menu:
     #   name: "About"
     #   pageRef: "/about"
     #   weight: 2
+    - identifier: Going Abroad
+      name: "Going Abroad ↗"
+      url: "https://goingabroad.futurelog.xyz"
+      weight: 2
     - identifier: AIGC Things
       name: "AIGC Things ↗"
       url: "https://aigcthings.futurelog.xyz"
-      weight: 2
+      weight: 3
     - identifier: Architecture Things
       name: "Architecture Things ↗"
       url: "https://archthings.futurelog.xyz"
-      weight: 3
+      weight: 4
     - identifier: cloudbrain
       name: "CloudBrain ↗"
       url: "https://futurelog.xyz/cloudbrain"
-      weight: 4
+      weight: 5
     - identifier: presentation
       name: "Presentation ↗"
       url: "https://futurelog.xyz/presentations"
-      weight: 5
-    - identifier: blogStats
-      name: "Blog Stats ↗"
-      url: "https://eu.umami.is/share/pVLP0xsDCYYzqe3k/futurelog.xyz"
       weight: 6
-    - identifier: newsletterStats
-      name: "Newsletter Stats ↗"
-      url: "https://eu.umami.is/share/zR6xVNuL0PjH6SIp/aigcthings.futurelog.xyz"
-      weight: 7
-    - identifier: cloudbrainStats
-      name: "CloudBrain Stats ↗"
-      url: "https://eu.umami.is/share/osj0QcmVXL20jiR2/futurelog.xyz"
-      weight: 8
+    # - identifier: blogStats
+    #   name: "Blog Stats ↗"
+    #   url: "https://eu.umami.is/share/pVLP0xsDCYYzqe3k/futurelog.xyz"
+    #   weight: 7
+    # - identifier: newsletterStats
+    #   name: "Newsletter Stats ↗"
+    #   url: "https://eu.umami.is/share/zR6xVNuL0PjH6SIp/aigcthings.futurelog.xyz"
+    #   weight: 8
+    # - identifier: cloudbrainStats
+    #   name: "CloudBrain Stats ↗"
+    #   url: "https://eu.umami.is/share/osj0QcmVXL20jiR2/futurelog.xyz"
+    #   weight: 9
 
 
 params:
